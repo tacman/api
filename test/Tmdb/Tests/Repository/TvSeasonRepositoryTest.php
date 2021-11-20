@@ -65,7 +65,7 @@ class TvSeasonRepositoryTest extends TestCase
         $season = new Tv\Season();
         $season->setSeasonNumber(self::SEASON_NUMBER);
 
-        $repository->getCredits($tv, $season);
+        $repository->getCredits($tv->getId(), self::SEASON_NUMBER);
         $this->assertLastRequestIsWithPathAndMethod('/3/tv/' . self::TV_ID . '/season/' . self::SEASON_NUMBER . '/credits');
     }
 
