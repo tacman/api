@@ -41,6 +41,9 @@ jobs:
             deps: "dev"
 
           - php-version: "8.0"
+            deps: "normal"
+
+          - php-version: "8.1"
             deps: "dev"
 
     steps:
