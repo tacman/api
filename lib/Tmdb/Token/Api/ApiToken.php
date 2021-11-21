@@ -27,9 +27,9 @@ class ApiToken
     /**
      * Token bag
      *
-     * @param $apiToken
+     * @param string $apiToken
      */
-    public function __construct($apiToken = null)
+    public function __construct(string $apiToken = null)
     {
         $this->apiToken = $apiToken;
     }
