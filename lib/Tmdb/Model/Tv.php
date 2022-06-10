@@ -265,10 +265,7 @@ class Tv extends AbstractModel
         $this->watchProviders = new GenericCollection();
     }
 
-    /**
-     * @return string
-     */
-    public function getBackdropPath()
+    public function getBackdropPath(): string
     {
         return $this->backdropPath;
     }
@@ -277,17 +274,14 @@ class Tv extends AbstractModel
      * @param string $backdropPath
      * @return $this
      */
-    public function setBackdropPath($backdropPath)
+    public function setBackdropPath($backdropPath): self
     {
         $this->backdropPath = $backdropPath;
 
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getContentRatings()
+    public function getContentRatings(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->contentRatings;
     }
@@ -296,17 +290,14 @@ class Tv extends AbstractModel
      * @param GenericCollection $contentRatings
      * @return $this
      */
-    public function setContentRatings($contentRatings)
+    public function setContentRatings($contentRatings): self
     {
         $this->contentRatings = $contentRatings;
 
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getCreatedBy()
+    public function getCreatedBy(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->createdBy;
     }
@@ -315,17 +306,14 @@ class Tv extends AbstractModel
      * @param GenericCollection $createdBy
      * @return $this
      */
-    public function setCreatedBy($createdBy)
+    public function setCreatedBy($createdBy): self
     {
         $this->createdBy = $createdBy;
 
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getEpisodeRunTime()
+    public function getEpisodeRunTime(): array
     {
         return $this->episodeRunTime;
     }
@@ -334,17 +322,14 @@ class Tv extends AbstractModel
      * @param array $episodeRunTime
      * @return $this
      */
-    public function setEpisodeRunTime($episodeRunTime)
+    public function setEpisodeRunTime($episodeRunTime): self
     {
         $this->episodeRunTime = $episodeRunTime;
 
         return $this;
     }
 
-    /**
-     * @return DateTime
-     */
-    public function getFirstAirDate()
+    public function getFirstAirDate(): \DateTime
     {
         return $this->firstAirDate;
     }
@@ -353,7 +338,7 @@ class Tv extends AbstractModel
      * @param DateTime|string|null $firstAirDate
      * @return $this
      */
-    public function setFirstAirDate($firstAirDate = null)
+    public function setFirstAirDate($firstAirDate = null): self
     {
         if (!$firstAirDate instanceof DateTime && $firstAirDate !== null) {
             $firstAirDate = new DateTime($firstAirDate);
@@ -364,10 +349,7 @@ class Tv extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return Genres
-     */
-    public function getGenres()
+    public function getGenres(): \Tmdb\Model\Collection\Genres
     {
         return $this->genres;
     }
@@ -376,17 +358,14 @@ class Tv extends AbstractModel
      * @param Genres $genres
      * @return $this
      */
-    public function setGenres($genres)
+    public function setGenres($genres): self
     {
         $this->genres = $genres;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getHomepage()
+    public function getHomepage(): string
     {
         return $this->homepage;
     }
@@ -395,17 +374,14 @@ class Tv extends AbstractModel
      * @param string $homepage
      * @return $this
      */
-    public function setHomepage($homepage)
+    public function setHomepage($homepage): self
     {
         $this->homepage = $homepage;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -414,17 +390,14 @@ class Tv extends AbstractModel
      * @param int $id
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): self
     {
         $this->id = (int)$id;
 
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getInProduction()
+    public function getInProduction(): bool
     {
         return $this->inProduction;
     }
@@ -433,7 +406,7 @@ class Tv extends AbstractModel
      * @param boolean $inProduction
      * @return $this
      */
-    public function setInProduction($inProduction)
+    public function setInProduction($inProduction): self
     {
         $this->inProduction = $inProduction;
 
@@ -452,17 +425,14 @@ class Tv extends AbstractModel
      * @param GenericCollection $languages
      * @return $this
      */
-    public function setLanguages($languages)
+    public function setLanguages($languages): self
     {
         $this->languages = $languages;
 
         return $this;
     }
 
-    /**
-     * @return DateTime
-     */
-    public function getLastAirDate()
+    public function getLastAirDate(): \DateTime
     {
         return $this->lastAirDate;
     }
@@ -471,7 +441,7 @@ class Tv extends AbstractModel
      * @param DateTime|string|null $lastAirDate
      * @return $this
      */
-    public function setLastAirDate($lastAirDate = null)
+    public function setLastAirDate($lastAirDate = null): self
     {
         if (!$lastAirDate instanceof DateTime && $lastAirDate !== null) {
             $lastAirDate = new DateTime($lastAirDate);
@@ -482,10 +452,7 @@ class Tv extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -494,7 +461,7 @@ class Tv extends AbstractModel
      * @param string $name
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
 
@@ -515,17 +482,14 @@ class Tv extends AbstractModel
      * @param GenericCollection $networks
      * @return $this
      */
-    public function setNetworks($networks)
+    public function setNetworks($networks): self
     {
         $this->networks = $networks;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getNumberOfEpisodes()
+    public function getNumberOfEpisodes(): int
     {
         return $this->numberOfEpisodes;
     }
@@ -534,17 +498,14 @@ class Tv extends AbstractModel
      * @param int $numberOfEpisodes
      * @return $this
      */
-    public function setNumberOfEpisodes($numberOfEpisodes)
+    public function setNumberOfEpisodes($numberOfEpisodes): self
     {
         $this->numberOfEpisodes = (int)$numberOfEpisodes;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getNumberOfSeasons()
+    public function getNumberOfSeasons(): int
     {
         return $this->numberOfSeasons;
     }
@@ -553,7 +514,7 @@ class Tv extends AbstractModel
      * @param int $numberOfSeasons
      * @return $this
      */
-    public function setNumberOfSeasons($numberOfSeasons)
+    public function setNumberOfSeasons($numberOfSeasons): self
     {
         $this->numberOfSeasons = (int)$numberOfSeasons;
 
@@ -563,7 +524,7 @@ class Tv extends AbstractModel
     /**
      * @return ?Episode
      */
-    public function getLastEpisodeToAir(): ?Episode
+    public function getLastEpisodeToAir(): \Tmdb\Model\Tv\Episode
     {
         return $this->lastEpisodeToAir;
     }
@@ -572,7 +533,7 @@ class Tv extends AbstractModel
      * @param  ?Episode   $lastEpisodeToAir
      * @return $this
      */
-    public function setLastEpisodeToAir($lastEpisodeToAir)
+    public function setLastEpisodeToAir($lastEpisodeToAir): self
     {
         $this->lastEpisodeToAir = $lastEpisodeToAir;
 
@@ -582,7 +543,7 @@ class Tv extends AbstractModel
     /**
      * @return ?Episode
      */
-    public function getNextEpisodeToAir(): ?Episode
+    public function getNextEpisodeToAir(): \Tmdb\Model\Tv\Episode
     {
         return $this->nextEpisodeToAir;
     }
@@ -591,17 +552,14 @@ class Tv extends AbstractModel
      * @param  ?Episode   $nextEpisodeToAir
      * @return $this
      */
-    public function setNextEpisodeToAir($nextEpisodeToAir)
+    public function setNextEpisodeToAir($nextEpisodeToAir): self
     {
         $this->nextEpisodeToAir = $nextEpisodeToAir;
 
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getOriginCountry()
+    public function getOriginCountry(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->originCountry;
     }
@@ -610,17 +568,14 @@ class Tv extends AbstractModel
      * @param GenericCollection $originCountry
      * @return $this
      */
-    public function setOriginCountry($originCountry)
+    public function setOriginCountry($originCountry): self
     {
         $this->originCountry = $originCountry;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getOriginalName()
+    public function getOriginalName(): string
     {
         return $this->originalName;
     }
@@ -629,17 +584,14 @@ class Tv extends AbstractModel
      * @param string $originalName
      * @return $this
      */
-    public function setOriginalName($originalName)
+    public function setOriginalName($originalName): self
     {
         $this->originalName = $originalName;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getOriginalLanguage()
+    public function getOriginalLanguage(): string
     {
         return $this->originalLanguage;
     }
@@ -648,17 +600,14 @@ class Tv extends AbstractModel
      * @param string $originalLanguage
      * @return $this
      */
-    public function setOriginalLanguage($originalLanguage)
+    public function setOriginalLanguage($originalLanguage): self
     {
         $this->originalLanguage = $originalLanguage;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getOverview()
+    public function getOverview(): string
     {
         return $this->overview;
     }
@@ -667,17 +616,14 @@ class Tv extends AbstractModel
      * @param string $overview
      * @return $this
      */
-    public function setOverview($overview)
+    public function setOverview($overview): self
     {
         $this->overview = $overview;
 
         return $this;
     }
 
-    /**
-     * @return float
-     */
-    public function getPopularity()
+    public function getPopularity(): float
     {
         return $this->popularity;
     }
@@ -686,17 +632,14 @@ class Tv extends AbstractModel
      * @param float $popularity
      * @return $this
      */
-    public function setPopularity($popularity)
+    public function setPopularity($popularity): self
     {
         $this->popularity = (float)$popularity;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getPosterPath()
+    public function getPosterPath(): string
     {
         return $this->posterPath;
     }
@@ -705,17 +648,14 @@ class Tv extends AbstractModel
      * @param string $posterPath
      * @return $this
      */
-    public function setPosterPath($posterPath)
+    public function setPosterPath($posterPath): self
     {
         $this->posterPath = $posterPath;
 
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getSeasons()
+    public function getSeasons(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->seasons;
     }
@@ -724,17 +664,14 @@ class Tv extends AbstractModel
      * @param GenericCollection $seasons
      * @return $this
      */
-    public function setSeasons($seasons)
+    public function setSeasons($seasons): self
     {
         $this->seasons = $seasons;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getStatus()
+    public function getStatus(): string
     {
         return $this->status;
     }
@@ -743,17 +680,14 @@ class Tv extends AbstractModel
      * @param string $status
      * @return $this
      */
-    public function setStatus($status)
+    public function setStatus($status): self
     {
         $this->status = $status;
 
         return $this;
     }
 
-    /**
-     * @return float
-     */
-    public function getVoteAverage()
+    public function getVoteAverage(): float
     {
         return $this->voteAverage;
     }
@@ -762,17 +696,14 @@ class Tv extends AbstractModel
      * @param float $voteAverage
      * @return $this
      */
-    public function setVoteAverage($voteAverage)
+    public function setVoteAverage($voteAverage): self
     {
         $this->voteAverage = (float)$voteAverage;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getVoteCount()
+    public function getVoteCount(): int
     {
         return $this->voteCount;
     }
@@ -781,17 +712,14 @@ class Tv extends AbstractModel
      * @param int $voteCount
      * @return $this
      */
-    public function setVoteCount($voteCount)
+    public function setVoteCount($voteCount): self
     {
         $this->voteCount = (int)$voteCount;
 
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getTranslations()
+    public function getTranslations(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->translations;
     }
@@ -800,17 +728,14 @@ class Tv extends AbstractModel
      * @param GenericCollection $translations
      * @return $this
      */
-    public function setTranslations($translations)
+    public function setTranslations($translations): self
     {
         $this->translations = $translations;
 
         return $this;
     }
 
-    /**
-     * @return Images
-     */
-    public function getImages()
+    public function getImages(): \Tmdb\Model\Collection\Images
     {
         return $this->images;
     }
@@ -819,17 +744,14 @@ class Tv extends AbstractModel
      * @param Images $images
      * @return $this
      */
-    public function setImages($images)
+    public function setImages($images): self
     {
         $this->images = $images;
 
         return $this;
     }
 
-    /**
-     * @return ExternalIds
-     */
-    public function getExternalIds()
+    public function getExternalIds(): \Tmdb\Model\Common\ExternalIds
     {
         return $this->externalIds;
     }
@@ -838,17 +760,14 @@ class Tv extends AbstractModel
      * @param ExternalIds $externalIds
      * @return $this
      */
-    public function setExternalIds($externalIds)
+    public function setExternalIds($externalIds): self
     {
         $this->externalIds = $externalIds;
 
         return $this;
     }
 
-    /**
-     * @return CreditsCollection
-     */
-    public function getCredits()
+    public function getCredits(): \Tmdb\Model\Collection\CreditsCollection
     {
         return $this->credits;
     }
@@ -857,7 +776,7 @@ class Tv extends AbstractModel
      * @param CreditsCollection $credits
      * @return $this
      */
-    public function setCredits($credits)
+    public function setCredits($credits): self
     {
         $this->credits = $credits;
 
@@ -868,17 +787,14 @@ class Tv extends AbstractModel
      * @param BackdropImage $backdrop
      * @return $this
      */
-    public function setBackdropImage(BackdropImage $backdrop)
+    public function setBackdropImage(BackdropImage $backdrop): self
     {
         $this->backdrop = $backdrop;
 
         return $this;
     }
 
-    /**
-     * @return BackdropImage
-     */
-    public function getBackdropImage()
+    public function getBackdropImage(): \Tmdb\Model\Image\BackdropImage
     {
         return $this->backdrop;
     }
@@ -887,25 +803,19 @@ class Tv extends AbstractModel
      * @param PosterImage $poster
      * @return $this
      */
-    public function setPosterImage(PosterImage $poster)
+    public function setPosterImage(PosterImage $poster): self
     {
         $this->poster = $poster;
 
         return $this;
     }
 
-    /**
-     * @return PosterImage
-     */
-    public function getPosterImage()
+    public function getPosterImage(): \Tmdb\Model\Image\PosterImage
     {
         return $this->poster;
     }
 
-    /**
-     * @return Videos
-     */
-    public function getVideos()
+    public function getVideos(): \Tmdb\Model\Collection\Videos
     {
         return $this->videos;
     }
@@ -914,17 +824,14 @@ class Tv extends AbstractModel
      * @param Videos $videos
      * @return $this
      */
-    public function setVideos($videos)
+    public function setVideos($videos): self
     {
         $this->videos = $videos;
 
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getChanges()
+    public function getChanges(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->changes;
     }
@@ -933,17 +840,14 @@ class Tv extends AbstractModel
      * @param GenericCollection $changes
      * @return $this
      */
-    public function setChanges($changes)
+    public function setChanges($changes): self
     {
         $this->changes = $changes;
 
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getKeywords()
+    public function getKeywords(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->keywords;
     }
@@ -952,17 +856,14 @@ class Tv extends AbstractModel
      * @param GenericCollection $keywords
      * @return $this
      */
-    public function setKeywords($keywords)
+    public function setKeywords($keywords): self
     {
         $this->keywords = $keywords;
 
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getSimilar()
+    public function getSimilar(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->similar;
     }
@@ -971,17 +872,14 @@ class Tv extends AbstractModel
      * @param GenericCollection $similar
      * @return $this
      */
-    public function setSimilar($similar)
+    public function setSimilar($similar): self
     {
         $this->similar = $similar;
 
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getRecommendations()
+    public function getRecommendations(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->recommendations;
     }
@@ -990,17 +888,14 @@ class Tv extends AbstractModel
      * @param GenericCollection $recommendations
      * @return $this
      */
-    public function setRecommendations($recommendations)
+    public function setRecommendations($recommendations): self
     {
         $this->recommendations = $recommendations;
 
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getProductionCompanies()
+    public function getProductionCompanies(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->productionCompanies;
     }
@@ -1009,17 +904,14 @@ class Tv extends AbstractModel
      * @param GenericCollection $productionCompanies
      * @return $this
      */
-    public function setProductionCompanies($productionCompanies)
+    public function setProductionCompanies($productionCompanies): self
     {
         $this->productionCompanies = $productionCompanies;
 
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getAlternativeTitles()
+    public function getAlternativeTitles(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->alternativeTitles;
     }
@@ -1028,7 +920,7 @@ class Tv extends AbstractModel
      * @param GenericCollection $alternativeTitles
      * @return $this
      */
-    public function setAlternativeTitles($alternativeTitles)
+    public function setAlternativeTitles($alternativeTitles): self
     {
         $this->alternativeTitles = $alternativeTitles;
 
@@ -1044,7 +936,7 @@ class Tv extends AbstractModel
      * @param string $type
      * @return $this
      */
-    public function setType(string $type)
+    public function setType(string $type): self
     {
         $this->type = $type;
 
@@ -1063,7 +955,7 @@ class Tv extends AbstractModel
      * @param GenericCollection $watchProviders
      * @return $this
      */
-    public function setWatchProviders($watchProviders)
+    public function setWatchProviders($watchProviders): self
     {
         $this->watchProviders = $watchProviders;
 

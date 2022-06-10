@@ -40,7 +40,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param string $country
      * @return $this
      */
-    public function certificationCountry($country)
+    public function certificationCountry($country): self
     {
         $this->set('certification_country', $country);
 
@@ -55,7 +55,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param mixed $value
      * @return $this
      */
-    public function certification($value)
+    public function certification($value): self
     {
         $this->set('certification', $value);
 
@@ -70,7 +70,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param mixed $value
      * @return $this
      */
-    public function certificationLte($value)
+    public function certificationLte($value): self
     {
         $this->set('certification.lte', $value);
 
@@ -85,7 +85,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param boolean $allow
      * @return $this
      */
-    public function includeAdult($allow = true)
+    public function includeAdult($allow = true): self
     {
         $this->set('include_adult', (bool)$allow);
 
@@ -100,7 +100,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param boolean $allow
      * @return $this
      */
-    public function includeVideo($allow = true)
+    public function includeVideo($allow = true): self
     {
         $this->set('include_video', (bool)$allow);
 
@@ -113,7 +113,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param string $language
      * @return $this
      */
-    public function language($language)
+    public function language($language): self
     {
         $this->set('language', $language);
 
@@ -126,7 +126,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param string $watchRegion
      * @return $this
      */
-    public function watchRegion($watchRegion)
+    public function watchRegion($watchRegion): self
     {
         $this->set('watch_region', $watchRegion);
 
@@ -140,7 +140,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param int $mode
      * @return $this
      */
-    public function withWatchProviders($watchProviders, $mode = self::MODE_OR)
+    public function withWatchProviders($watchProviders, $mode = self::MODE_OR): self
     {
         $this->set('with_watch_providers', $this->with($watchProviders, $mode));
 
@@ -156,7 +156,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param int $mode
      * @return $this
      */
-    public function withWatchMonetizationTypes($watchProviders, $mode = self::MODE_OR)
+    public function withWatchMonetizationTypes($watchProviders, $mode = self::MODE_OR): self
     {
         $this->set('with_watch_monetization_types', $this->with($watchProviders, $mode));
 
@@ -169,7 +169,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param integer $page
      * @return $this
      */
-    public function page($page = 1)
+    public function page($page = 1): self
     {
         $this->set('page', (int)$page);
 
@@ -183,7 +183,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param DateTime|integer $year
      * @return $this
      */
-    public function primaryReleaseYear($year)
+    public function primaryReleaseYear($year): self
     {
         $this->set('primary_release_year', (int)$this->getDate($year, 'Y'));
 
@@ -196,7 +196,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      *
      * @return false|string
      */
-    protected function getDate($year, $format = 'Y-m-d')
+    protected function getDate($year, $format = 'Y-m-d'): string
     {
         return ($year instanceof DateTime) ? $year->format($format) : (string)$year;
     }
@@ -219,7 +219,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param DateTime|integer $year
      * @return $this
      */
-    public function primaryReleaseDateGte($year)
+    public function primaryReleaseDateGte($year): self
     {
         $this->set('primary_release_date.gte', $this->getDate($year));
 
@@ -244,7 +244,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param DateTime|integer $year
      * @return $this
      */
-    public function primaryReleaseDateLte($year)
+    public function primaryReleaseDateLte($year): self
     {
         $this->set('primary_release_date.lte', $this->getDate($year));
 
@@ -259,7 +259,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param DateTime|string $date
      * @return $this
      */
-    public function releaseDateGte($date)
+    public function releaseDateGte($date): self
     {
         $this->set('release_date.gte', $this->getDate($date));
 
@@ -274,7 +274,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param DateTime $date
      * @return $this
      */
-    public function releaseDateLte($date)
+    public function releaseDateLte($date): self
     {
         $this->set('release_date.lte', $this->getDate($date));
 
@@ -302,7 +302,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param string $option
      * @return $this
      */
-    public function sortBy($option)
+    public function sortBy($option): self
     {
         $this->set('sort_by', $option);
 
@@ -316,7 +316,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param integer $count
      * @return $this
      */
-    public function voteCountGte($count)
+    public function voteCountGte($count): self
     {
         $this->set('vote_count.gte', (int)$count);
 
@@ -332,7 +332,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param integer $count
      * @return $this
      */
-    public function voteCountLte($count)
+    public function voteCountLte($count): self
     {
         $this->set('vote_count.lte', (int)$count);
 
@@ -348,7 +348,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param float $average
      * @return $this
      */
-    public function voteAverageGte($average)
+    public function voteAverageGte($average): self
     {
         $this->set('vote_average.gte', (float)$average);
 
@@ -364,7 +364,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param float $average
      * @return $this
      */
-    public function voteAverageLte($average)
+    public function voteAverageLte($average): self
     {
         $this->set('vote_average.lte', (float)$average);
 
@@ -381,7 +381,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param int $mode
      * @return $this
      */
-    public function withCast($cast, $mode = self::MODE_OR)
+    public function withCast($cast, $mode = self::MODE_OR): self
     {
         $this->set('with_cast', $this->with($cast, $mode));
 
@@ -414,9 +414,8 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      *
      * @param array $with
      * @param int $mode
-     * @return string
      */
-    protected function andWith(array $with, $mode)
+    protected function andWith(array $with, $mode): string
     {
         return (
         implode(
@@ -436,7 +435,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param int $mode
      * @return $this
      */
-    public function withCrew($crew, $mode = self::MODE_OR)
+    public function withCrew($crew, $mode = self::MODE_OR): self
     {
         $this->set('with_crew', $this->with($crew, $mode));
 
@@ -453,7 +452,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param int $mode
      * @return $this
      */
-    public function withCompanies($companies, $mode = self::MODE_OR)
+    public function withCompanies($companies, $mode = self::MODE_OR): self
     {
         $this->set('with_companies', $this->with($companies, $mode));
 
@@ -474,7 +473,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param int $mode
      * @return $this
      */
-    public function withGenres($genres, $mode = self::MODE_OR)
+    public function withGenres($genres, $mode = self::MODE_OR): self
     {
         $this->set('with_genres', $this->with($genres, $mode));
 
@@ -495,7 +494,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param int $mode
      * @return $this
      */
-    public function withKeywords($keywords, $mode = self::MODE_OR)
+    public function withKeywords($keywords, $mode = self::MODE_OR): self
     {
         $this->set('with_keywords', $this->with($keywords, $mode));
 
@@ -512,7 +511,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param int $mode
      * @return $this
      */
-    public function withPeople($people, $mode = self::MODE_OR)
+    public function withPeople($people, $mode = self::MODE_OR): self
     {
         $this->set('with_people', $this->with($people, $mode));
 
@@ -526,7 +525,7 @@ class DiscoverMoviesQuery extends QueryParametersCollection
      * @param DateTime|integer $year
      * @return $this
      */
-    public function year($year)
+    public function year($year): self
     {
         $this->set('year', (int)$this->getDate($year, 'Y'));
 

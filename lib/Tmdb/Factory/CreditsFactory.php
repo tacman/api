@@ -60,7 +60,7 @@ class CreditsFactory extends AbstractFactory
      *
      * @return Credits
      */
-    public function create(array $data = [])
+    public function create(array $data = []): ?Credits
     {
         $credits = new Credits();
 
@@ -91,10 +91,7 @@ class CreditsFactory extends AbstractFactory
         return $this->hydrate($credits, $data);
     }
 
-    /**
-     * @return TvSeasonFactory
-     */
-    public function getTvSeasonFactory()
+    public function getTvSeasonFactory(): \Tmdb\Factory\TvSeasonFactory
     {
         return $this->tvSeasonFactory;
     }
@@ -103,17 +100,14 @@ class CreditsFactory extends AbstractFactory
      * @param TvSeasonFactory $tvSeasonFactory
      * @return $this
      */
-    public function setTvSeasonFactory($tvSeasonFactory)
+    public function setTvSeasonFactory($tvSeasonFactory): self
     {
         $this->tvSeasonFactory = $tvSeasonFactory;
 
         return $this;
     }
 
-    /**
-     * @return TvEpisodeFactory
-     */
-    public function getTvEpisodeFactory()
+    public function getTvEpisodeFactory(): \Tmdb\Factory\TvEpisodeFactory
     {
         return $this->tvEpisodeFactory;
     }
@@ -122,17 +116,14 @@ class CreditsFactory extends AbstractFactory
      * @param TvEpisodeFactory $tvEpisodeFactory
      * @return $this
      */
-    public function setTvEpisodeFactory($tvEpisodeFactory)
+    public function setTvEpisodeFactory($tvEpisodeFactory): self
     {
         $this->tvEpisodeFactory = $tvEpisodeFactory;
 
         return $this;
     }
 
-    /**
-     * @return PeopleFactory
-     */
-    public function getPeopleFactory()
+    public function getPeopleFactory(): \Tmdb\Factory\PeopleFactory
     {
         return $this->peopleFactory;
     }
@@ -141,7 +132,7 @@ class CreditsFactory extends AbstractFactory
      * @param PeopleFactory $peopleFactory
      * @return $this
      */
-    public function setPeopleFactory($peopleFactory)
+    public function setPeopleFactory($peopleFactory): self
     {
         $this->peopleFactory = $peopleFactory;
 
@@ -151,7 +142,7 @@ class CreditsFactory extends AbstractFactory
     /**
      * @throws NotImplementedException
      */
-    public function createCollection(array $data = [])
+    public function createCollection(array $data = []): ?Credits
     {
         throw new NotImplementedException(
             'Credits are usually obtained through the PeopleFactory,

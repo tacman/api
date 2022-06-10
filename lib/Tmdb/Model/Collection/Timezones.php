@@ -25,10 +25,8 @@ class Timezones extends GenericCollection
 {
     /**
      * Returns all countries with timezones
-     *
-     * @return array
      */
-    public function getCountries()
+    public function getCountries(): array
     {
         return $this->data;
     }

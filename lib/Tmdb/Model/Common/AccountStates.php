@@ -52,10 +52,7 @@ class AccountStates extends AbstractModel
         $this->rated = new Rating();
     }
 
-    /**
-     * @return boolean
-     */
-    public function getFavorite()
+    public function getFavorite(): bool
     {
         return $this->favorite;
     }
@@ -64,17 +61,14 @@ class AccountStates extends AbstractModel
      * @param boolean $favorite
      * @return $this
      */
-    public function setFavorite($favorite)
+    public function setFavorite($favorite): self
     {
         $this->favorite = $favorite;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -83,7 +77,7 @@ class AccountStates extends AbstractModel
      * @param int $id
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): self
     {
         $this->id = $id;
 
@@ -102,17 +96,14 @@ class AccountStates extends AbstractModel
      * @param Rating|bool $rated
      * @return $this
      */
-    public function setRated($rated)
+    public function setRated($rated): self
     {
         $this->rated = $rated;
 
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getWatchlist()
+    public function getWatchlist(): bool
     {
         return $this->watchlist;
     }
@@ -121,7 +112,7 @@ class AccountStates extends AbstractModel
      * @param boolean $watchlist
      * @return $this
      */
-    public function setWatchlist($watchlist)
+    public function setWatchlist($watchlist): self
     {
         $this->watchlist = $watchlist;
 

@@ -30,10 +30,7 @@ class SpokenLanguage extends AbstractModel implements LanguageFilter
     private $iso6391;
     private $name;
 
-    /**
-     * @return string
-     */
-    public function getIso6391()
+    public function getIso6391(): ?string
     {
         return $this->iso6391;
     }
@@ -42,17 +39,14 @@ class SpokenLanguage extends AbstractModel implements LanguageFilter
      * @param string $iso6391
      * @return $this
      */
-    public function setIso6391($iso6391)
+    public function setIso6391($iso6391): self
     {
         $this->iso6391 = $iso6391;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -61,7 +55,7 @@ class SpokenLanguage extends AbstractModel implements LanguageFilter
      * @param string $name
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
 

@@ -54,10 +54,7 @@ class Media extends AbstractModel
      */
     private $seasons;
 
-    /**
-     * @return string
-     */
-    public function getCharacter()
+    public function getCharacter(): string
     {
         return $this->character;
     }
@@ -66,17 +63,14 @@ class Media extends AbstractModel
      * @param string $character
      * @return $this
      */
-    public function setCharacter($character)
+    public function setCharacter($character): self
     {
         $this->character = $character;
 
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getEpisodes()
+    public function getEpisodes(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->episodes;
     }
@@ -85,17 +79,14 @@ class Media extends AbstractModel
      * @param GenericCollection $episodes
      * @return $this
      */
-    public function setEpisodes($episodes)
+    public function setEpisodes($episodes): self
     {
         $this->episodes = $episodes;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -104,17 +95,14 @@ class Media extends AbstractModel
      * @param int $id
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): self
     {
         $this->id = $id;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -123,17 +111,14 @@ class Media extends AbstractModel
      * @param string $name
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getOriginalName()
+    public function getOriginalName(): string
     {
         return $this->originalName;
     }
@@ -142,17 +127,14 @@ class Media extends AbstractModel
      * @param string $originalName
      * @return $this
      */
-    public function setOriginalName($originalName)
+    public function setOriginalName($originalName): self
     {
         $this->originalName = $originalName;
 
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getSeasons()
+    public function getSeasons(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->seasons;
     }
@@ -161,7 +143,7 @@ class Media extends AbstractModel
      * @param GenericCollection $seasons
      * @return $this
      */
-    public function setSeasons($seasons)
+    public function setSeasons($seasons): self
     {
         $this->seasons = $seasons;
 

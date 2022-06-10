@@ -47,9 +47,8 @@ class GenreRepository extends AbstractRepository
      *
      * @param array $parameters
      * @param array $headers
-     * @return GenericCollection
      */
-    public function loadCollection(array $parameters = [], array $headers = [])
+    public function loadCollection(array $parameters = [], array $headers = []): \Tmdb\Model\Collection\Genres
     {
         return $this->createCollection(
             $this->getApi()->getGenres($parameters, $headers)
@@ -60,27 +59,21 @@ class GenreRepository extends AbstractRepository
      * Create an collection of an array
      *
      * @param $data
-     * @return \Tmdb\Model\Collection\Genres
      */
-    private function createCollection($data)
+    private function createCollection($data): \Tmdb\Model\Common\GenericCollection
     {
         return $this->getFactory()->createCollection($data);
     }
 
-    /**
-     * @return GenreFactory
-     */
-    public function getFactory()
+    public function getFactory(): \Tmdb\Factory\GenreFactory
     {
         return new GenreFactory($this->getClient()->getHttpClient());
     }
 
     /**
      * Return the related API class
-     *
-     * @return Genres
      */
-    public function getApi()
+    public function getApi(): \Tmdb\Api\Genres
     {
         return $this->getClient()->getGenresApi();
     }
@@ -90,9 +83,8 @@ class GenreRepository extends AbstractRepository
      *
      * @param array $parameters
      * @param array $headers
-     * @return GenericCollection
      */
-    public function loadMovieCollection(array $parameters = [], array $headers = [])
+    public function loadMovieCollection(array $parameters = [], array $headers = []): \Tmdb\Model\Collection\Genres
     {
         return $this->createCollection(
             $this->getApi()->getMovieGenres($parameters, $headers)
@@ -104,9 +96,8 @@ class GenreRepository extends AbstractRepository
      *
      * @param array $parameters
      * @param array $headers
-     * @return GenericCollection
      */
-    public function loadTvCollection(array $parameters = [], array $headers = [])
+    public function loadTvCollection(array $parameters = [], array $headers = []): \Tmdb\Model\Collection\Genres
     {
         return $this->createCollection(
             $this->getApi()->getTvGenres($parameters, $headers)

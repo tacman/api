@@ -26,7 +26,7 @@ class NetworkFactory extends AbstractFactory
     /**
      * {@inheritdoc}
      */
-    public function createCollection(array $data = [])
+    public function createCollection(array $data = []): \Tmdb\Model\Common\GenericCollection
     {
         $collection = new GenericCollection();
 
@@ -43,10 +43,8 @@ class NetworkFactory extends AbstractFactory
 
     /**
      * @param array $data
-     *
-     * @return Network
      */
-    public function create(array $data = [])
+    public function create(array $data = []): \Tmdb\Model\AbstractModel
     {
         return $this->hydrate(new Network(), $data);
     }

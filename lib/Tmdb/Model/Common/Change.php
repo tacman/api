@@ -39,10 +39,7 @@ class Change extends AbstractModel
         $this->items = new GenericCollection();
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getItems()
+    public function getItems(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->items;
     }
@@ -51,17 +48,14 @@ class Change extends AbstractModel
      * @param GenericCollection $items
      * @return $this
      */
-    public function setItems($items)
+    public function setItems($items): self
     {
         $this->items = $items;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getKey()
+    public function getKey(): string
     {
         return $this->key;
     }
@@ -70,7 +64,7 @@ class Change extends AbstractModel
      * @param string $key
      * @return $this
      */
-    public function setKey($key)
+    public function setKey($key): self
     {
         $this->key = $key;
 

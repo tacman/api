@@ -54,7 +54,7 @@ class RequestToken
     /**
      * @return string|null
      */
-    public function getToken()
+    public function getToken(): ?string
     {
         return $this->token;
     }
@@ -63,17 +63,14 @@ class RequestToken
      * @param string|null $token
      * @return $this
      */
-    public function setToken(string $token = null)
+    public function setToken(string $token = null): self
     {
         $this->token = $token;
 
         return $this;
     }
 
-    /**
-     * @return DateTime
-     */
-    public function getExpiresAt()
+    public function getExpiresAt(): \DateTime
     {
         return $this->expiresAt;
     }
@@ -82,7 +79,7 @@ class RequestToken
      * @param DateTime|string $expiresAt
      * @return $this
      */
-    public function setExpiresAt($expiresAt)
+    public function setExpiresAt($expiresAt): self
     {
         if (!$expiresAt instanceof DateTime) {
             $expiresAt = new DateTime($expiresAt);
@@ -93,10 +90,7 @@ class RequestToken
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getSuccess()
+    public function getSuccess(): bool
     {
         return $this->success;
     }
@@ -105,7 +99,7 @@ class RequestToken
      * @param boolean $success
      * @return $this
      */
-    public function setSuccess(bool $success)
+    public function setSuccess(bool $success): self
     {
         $this->success = $success;
 

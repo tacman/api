@@ -79,9 +79,8 @@ class HydrationListener
      * Hydrate the subject
      *
      * @param HydrationEvent $event
-     * @return AbstractModel
      */
-    public function hydrateSubject(HydrationEvent $event)
+    public function hydrateSubject(HydrationEvent $event): \Tmdb\Model\AbstractModel
     {
         return $this->hydrator->hydrate($event->getSubject(), $event->getData());
     }

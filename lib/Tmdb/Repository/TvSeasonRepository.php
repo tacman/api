@@ -43,7 +43,7 @@ class TvSeasonRepository extends AbstractRepository
      * @return null|AbstractModel
      * @throws RuntimeException
      */
-    public function load($tvShow, $season, array $parameters = [], array $headers = [])
+    public function load($tvShow, $season, array $parameters = [], array $headers = []): ?\Tmdb\Model\AbstractModel
     {
         if ($tvShow instanceof Tv) {
             $tvShow = $tvShow->getId();
@@ -76,18 +76,13 @@ class TvSeasonRepository extends AbstractRepository
 
     /**
      * Return the Seasons API Class
-     *
-     * @return TvSeason
      */
-    public function getApi()
+    public function getApi(): \Tmdb\Api\TvSeason
     {
         return $this->getClient()->getTvSeasonApi();
     }
 
-    /**
-     * @return TvSeasonFactory
-     */
-    public function getFactory()
+    public function getFactory(): \Tmdb\Factory\TvSeasonFactory
     {
         return new TvSeasonFactory($this->getClient()->getHttpClient());
     }
@@ -103,7 +98,7 @@ class TvSeasonRepository extends AbstractRepository
      * @param array $headers
      * @return null|AbstractModel
      */
-    public function getCredits($tvShow, $season, array $parameters = [], array $headers = [])
+    public function getCredits($tvShow, $season, array $parameters = [], array $headers = []): ?\Tmdb\Model\AbstractModel
     {
         if ($tvShow instanceof Tv) {
             $tvShow = $tvShow->getId();
@@ -128,7 +123,7 @@ class TvSeasonRepository extends AbstractRepository
      * @param $headers
      * @return null|AbstractModel
      */
-    public function getExternalIds($tvShow, $season, array $parameters = [], array $headers = [])
+    public function getExternalIds($tvShow, $season, array $parameters = [], array $headers = []): ?\Tmdb\Model\AbstractModel
     {
         if ($tvShow instanceof Tv) {
             $tvShow = $tvShow->getId();
@@ -153,7 +148,7 @@ class TvSeasonRepository extends AbstractRepository
      * @param $headers
      * @return null|AbstractModel
      */
-    public function getImages($tvShow, $season, array $parameters = [], array $headers = [])
+    public function getImages($tvShow, $season, array $parameters = [], array $headers = []): ?\Tmdb\Model\AbstractModel
     {
         if ($tvShow instanceof Tv) {
             $tvShow = $tvShow->getId();

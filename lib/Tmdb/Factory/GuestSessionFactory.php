@@ -14,6 +14,8 @@
 
 namespace Tmdb\Factory;
 
+use Tmdb\Model\AbstractModel;
+
 /**
  * Currently a place-holder for future expansions
  *
@@ -24,19 +26,15 @@ class GuestSessionFactory extends AbstractFactory
 {
     /**
      * {@inheritdoc}
-     *
-     * @return void
      */
-    public function create(array $data = [])
+    public function create(array $data = []): ?AbstractModel
     {
     }
 
     /**
      * {@inheritdoc}
-     *
-     * @return void
      */
-    public function createCollection(array $data = [])
+    public function createCollection(array $data = []): ?AbstractModel
     {
     }
 }

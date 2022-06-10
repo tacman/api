@@ -168,20 +168,16 @@ abstract class AbstractApi implements ApiInterface
 
     /**
      * Retrieve the client
-     *
-     * @return Client
      */
-    public function getClient()
+    public function getClient(): \Tmdb\Client
     {
         return $this->client;
     }
 
     /**
      * Retrieve the http client
-     *
-     * @return HttpClient
      */
-    public function getHttpClient()
+    public function getHttpClient(): \Tmdb\HttpClient\HttpClient
     {
         return $this->client->getHttpClient();
     }

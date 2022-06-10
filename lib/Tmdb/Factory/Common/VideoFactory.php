@@ -28,7 +28,7 @@ class VideoFactory extends AbstractFactory
     /**
      * {@inheritdoc}
      */
-    public function createCollection(array $data = [])
+    public function createCollection(array $data = []): \Tmdb\Model\Collection\Videos
     {
         $collection = new Videos();
 

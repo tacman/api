@@ -16,6 +16,7 @@ namespace Tmdb\Factory\People;
 
 use Tmdb\Factory\PeopleFactory;
 use Tmdb\Model\Collection\People\Cast;
+use Tmdb\Model\Person\AbstractMember;
 use Tmdb\Model\Person\CastMember;
 
 /**
@@ -26,9 +27,9 @@ class CastFactory extends PeopleFactory
 {
     /**
      * {@inheritdoc}
-     * @param CastMember|null $person
+     * @return  CastMember|null
      */
-    public function createCollection(array $data = [], $person = null, $collection = null)
+    public function createCollection(array $data = [], $person = null, $collection = null): ?AbstractMember
     {
         $collection = new Cast();
 

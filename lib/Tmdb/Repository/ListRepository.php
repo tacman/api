@@ -41,20 +41,15 @@ class ListRepository extends AbstractRepository
         );
     }
 
-    /**
-     * @return ListFactory
-     */
-    public function getFactory()
+    public function getFactory(): \Tmdb\Factory\ListFactory
     {
         return new ListFactory($this->getClient()->getHttpClient());
     }
 
     /**
      * Return the related API class
-     *
-     * @return \Tmdb\Api\Lists
      */
-    public function getApi()
+    public function getApi(): \Tmdb\Api\Lists
     {
         return $this->getClient()->getListsApi();
     }

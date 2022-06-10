@@ -33,10 +33,7 @@ class Gravatar extends AbstractModel
      */
     private $hash;
 
-    /**
-     * @return string
-     */
-    public function getHash()
+    public function getHash(): string
     {
         return $this->hash;
     }
@@ -45,7 +42,7 @@ class Gravatar extends AbstractModel
      * @param string $hash
      * @return $this
      */
-    public function setHash($hash)
+    public function setHash($hash): self
     {
         $this->hash = $hash;
 

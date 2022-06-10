@@ -33,10 +33,7 @@ class ResultWithListId extends Result
      */
     private $listId;
 
-    /**
-     * @return string
-     */
-    public function getListId()
+    public function getListId(): string
     {
         return $this->listId;
     }
@@ -45,7 +42,7 @@ class ResultWithListId extends Result
      * @param string $listId
      * @return $this
      */
-    public function setListId($listId)
+    public function setListId($listId): self
     {
         $this->listId = $listId;
 

@@ -87,25 +87,19 @@ class Collection extends AbstractModel
      * @param BackdropImage $backdrop
      * @return $this
      */
-    public function setBackdropImage(BackdropImage $backdrop)
+    public function setBackdropImage(BackdropImage $backdrop): self
     {
         $this->backdrop = $backdrop;
 
         return $this;
     }
 
-    /**
-     * @return BackdropImage
-     */
-    public function getBackdropImage()
+    public function getBackdropImage(): \Tmdb\Model\Image\BackdropImage
     {
         return $this->backdrop;
     }
 
-    /**
-     * @return string
-     */
-    public function getBackdropPath()
+    public function getBackdropPath(): string
     {
         return $this->backdropPath;
     }
@@ -114,17 +108,14 @@ class Collection extends AbstractModel
      * @param string $backdropPath
      * @return $this
      */
-    public function setBackdropPath($backdropPath)
+    public function setBackdropPath($backdropPath): self
     {
         $this->backdropPath = $backdropPath;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -133,17 +124,14 @@ class Collection extends AbstractModel
      * @param int $id
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): self
     {
         $this->id = (int)$id;
 
         return $this;
     }
 
-    /**
-     * @return Images
-     */
-    public function getImages()
+    public function getImages(): \Tmdb\Model\Collection\Images
     {
         return $this->images;
     }
@@ -152,17 +140,14 @@ class Collection extends AbstractModel
      * @param Images $images
      * @return $this
      */
-    public function setImages(Images $images)
+    public function setImages(Images $images): self
     {
         $this->images = $images;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -171,16 +156,13 @@ class Collection extends AbstractModel
      * @param  GenericCollection $translations
      * @return $this
      */
-    public function setTranslations($translations)
+    public function setTranslations($translations): self
     {
         $this->translations = $translations;
          return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getTranslations()
+    public function getTranslations(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->translations;
     }
@@ -189,17 +171,14 @@ class Collection extends AbstractModel
      * @param string $name
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getOverview()
+    public function getOverview(): string
     {
         return $this->overview;
     }
@@ -208,17 +187,14 @@ class Collection extends AbstractModel
      * @param string $overview
      * @return $this
      */
-    public function setOverview($overview)
+    public function setOverview($overview): self
     {
         $this->overview = $overview;
 
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getParts()
+    public function getParts(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->parts;
     }
@@ -227,7 +203,7 @@ class Collection extends AbstractModel
      * @param GenericCollection $parts
      * @return $this
      */
-    public function setParts($parts)
+    public function setParts($parts): self
     {
         $this->parts = $parts;
 
@@ -238,25 +214,19 @@ class Collection extends AbstractModel
      * @param PosterImage $poster
      * @return $this
      */
-    public function setPosterImage(PosterImage $poster)
+    public function setPosterImage(PosterImage $poster): self
     {
         $this->poster = $poster;
 
         return $this;
     }
 
-    /**
-     * @return PosterImage
-     */
-    public function getPosterImage()
+    public function getPosterImage(): \Tmdb\Model\Image\PosterImage
     {
         return $this->poster;
     }
 
-    /**
-     * @return string
-     */
-    public function getPosterPath()
+    public function getPosterPath(): string
     {
         return $this->posterPath;
     }
@@ -265,7 +235,7 @@ class Collection extends AbstractModel
      * @param string $posterPath
      * @return $this
      */
-    public function setPosterPath($posterPath)
+    public function setPosterPath($posterPath): self
     {
         $this->posterPath = $posterPath;
 

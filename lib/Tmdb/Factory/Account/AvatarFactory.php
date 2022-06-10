@@ -28,7 +28,7 @@ class AvatarFactory extends AbstractFactory
     /**
      * {@inheritdoc}
      */
-    public function createCollection(array $data = [])
+    public function createCollection(array $data = []): \Tmdb\Model\Common\GenericCollection
     {
         // @todo 4.0.x double check on this bug
         if (array_key_exists(0, $data)) {
@@ -48,7 +48,7 @@ class AvatarFactory extends AbstractFactory
      * @throws InvalidArgumentException
      *
      */
-    public function create(array $data = [])
+    public function create(array $data = []): ?\Tmdb\Model\AbstractModel
     {
         foreach ($data as $type => $content) {
             // @todo 4.0.x double check on this bug

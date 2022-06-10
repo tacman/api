@@ -26,10 +26,8 @@ class TimezoneRepository extends AbstractRepository
 {
     /**
      * Get the list of supported timezones for the API methods that support them.
-     *
-     * @return Timezones
      */
-    public function getTimezones()
+    public function getTimezones(): \Tmdb\Model\Common\GenericCollection
     {
         $data = $this->getApi()->getTimezones();
 
@@ -38,18 +36,13 @@ class TimezoneRepository extends AbstractRepository
 
     /**
      * Return the Collection API Class
-     *
-     * @return \Tmdb\Api\Timezones
      */
-    public function getApi()
+    public function getApi(): \Tmdb\Api\Timezones
     {
         return $this->getClient()->getTimezonesApi();
     }
 
-    /**
-     * @return TimezoneFactory
-     */
-    public function getFactory()
+    public function getFactory(): \Tmdb\Factory\TimezoneFactory
     {
         return new TimezoneFactory($this->getClient()->getHttpClient());
     }

@@ -36,7 +36,7 @@ class DiscoverTvQuery extends QueryParametersCollection
      * @param integer $page
      * @return $this
      */
-    public function page($page = 1)
+    public function page($page = 1): self
     {
         $this->set('page', (int)$page);
 
@@ -49,7 +49,7 @@ class DiscoverTvQuery extends QueryParametersCollection
      * @param string $language
      * @return $this
      */
-    public function language($language)
+    public function language($language): self
     {
         $this->set('language', $language);
 
@@ -62,7 +62,7 @@ class DiscoverTvQuery extends QueryParametersCollection
      * @param string $watchRegion
      * @return $this
      */
-    public function watchRegion($watchRegion)
+    public function watchRegion($watchRegion): self
     {
         $this->set('watch_region', $watchRegion);
 
@@ -76,7 +76,7 @@ class DiscoverTvQuery extends QueryParametersCollection
      * @param int $mode
      * @return $this
      */
-    public function withWatchProviders($watchProviders, $mode = self::MODE_OR)
+    public function withWatchProviders($watchProviders, $mode = self::MODE_OR): self
     {
         $this->set('with_watch_providers', $this->with($watchProviders, $mode));
 
@@ -92,7 +92,7 @@ class DiscoverTvQuery extends QueryParametersCollection
      * @param int $mode
      * @return $this
      */
-    public function withWatchMonetizationTypes($watchProviders, $mode = self::MODE_OR)
+    public function withWatchMonetizationTypes($watchProviders, $mode = self::MODE_OR): self
     {
         $this->set('with_watch_monetization_types', $this->with($watchProviders, $mode));
 
@@ -106,7 +106,7 @@ class DiscoverTvQuery extends QueryParametersCollection
      * @param string $option
      * @return $this
      */
-    public function sortBy($option)
+    public function sortBy($option): self
     {
         $this->set('sort_by', $option);
 
@@ -120,7 +120,7 @@ class DiscoverTvQuery extends QueryParametersCollection
      * @param DateTime|integer $year
      * @return $this
      */
-    public function firstAirDateYear($year)
+    public function firstAirDateYear($year): self
     {
         if ($year instanceof DateTime) {
             $year = $year->format('Y');
@@ -138,7 +138,7 @@ class DiscoverTvQuery extends QueryParametersCollection
      * @param integer $count
      * @return $this
      */
-    public function voteCountGte($count)
+    public function voteCountGte($count): self
     {
         $this->set('vote_count.gte', (int)$count);
 
@@ -152,7 +152,7 @@ class DiscoverTvQuery extends QueryParametersCollection
      * @param float $average
      * @return $this
      */
-    public function voteAverageGte($average)
+    public function voteAverageGte($average): self
     {
         $this->set('vote_average.gte', (float)$average);
 
@@ -185,9 +185,8 @@ class DiscoverTvQuery extends QueryParametersCollection
      *
      * @param array $with
      * @param int $mode
-     * @return string
      */
-    protected function andWith(array $with, $mode)
+    protected function andWith(array $with, $mode): string
     {
         return (
         implode(
@@ -203,7 +202,7 @@ class DiscoverTvQuery extends QueryParametersCollection
      * @param array $genres
      * @return $this
      */
-    public function withGenresOr(array $genres = [])
+    public function withGenresOr(array $genres = []): self
     {
         return $this->withGenres(
             implode('|', $genres)
@@ -222,7 +221,7 @@ class DiscoverTvQuery extends QueryParametersCollection
      * @param array|string $genres
      * @return $this
      */
-    public function withGenres($genres)
+    public function withGenres($genres): self
     {
         if (is_array($genres)) {
             $genres = $this->withGenresAnd($genres);
@@ -239,7 +238,7 @@ class DiscoverTvQuery extends QueryParametersCollection
      * @param array $genres
      * @return $this
      */
-    public function withGenresAnd(array $genres = [])
+    public function withGenresAnd(array $genres = []): self
     {
         return $this->withGenres(
             implode(',', $genres)
@@ -252,7 +251,7 @@ class DiscoverTvQuery extends QueryParametersCollection
      * @param DateTime|string $date
      * @return $this
      */
-    public function firstAirDateGte($date)
+    public function firstAirDateGte($date): self
     {
         if ($date instanceof DateTime) {
             $date = $date->format('Y-m-d');
@@ -269,7 +268,7 @@ class DiscoverTvQuery extends QueryParametersCollection
      * @param DateTime|string $date
      * @return $this
      */
-    public function firstAirDateLte($date)
+    public function firstAirDateLte($date): self
     {
         if ($date instanceof DateTime) {
             $date = $date->format('Y-m-d');
@@ -292,7 +291,7 @@ class DiscoverTvQuery extends QueryParametersCollection
      * @param array|string $networks
      * @return $this
      */
-    public function withNetworks($networks)
+    public function withNetworks($networks): self
     {
         if (is_array($networks)) {
             $networks = $this->withNetworksAnd($networks);
@@ -309,7 +308,7 @@ class DiscoverTvQuery extends QueryParametersCollection
      * @param array $networks
      * @return $this
      */
-    public function withNetworksAnd(array $networks = [])
+    public function withNetworksAnd(array $networks = []): self
     {
         return $this->withNetworks(
             implode(',', $networks)

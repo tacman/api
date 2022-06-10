@@ -45,7 +45,7 @@ class TvRepository extends AbstractRepository
      * @param $headers
      * @return null|AbstractModel
      */
-    public function load($id, array $parameters = [], array $headers = [])
+    public function load($id, array $parameters = [], array $headers = []): ?\Tmdb\Model\AbstractModel
     {
         if (!isset($parameters['append_to_response'])) {
             $parameters = array_merge($parameters, [
@@ -73,18 +73,13 @@ class TvRepository extends AbstractRepository
 
     /**
      * Return the Tvs API Class
-     *
-     * @return \Tmdb\Api\Tv
      */
-    public function getApi()
+    public function getApi(): \Tmdb\Api\Tv
     {
         return $this->getClient()->getTvApi();
     }
 
-    /**
-     * @return TvFactory
-     */
-    public function getFactory()
+    public function getFactory(): \Tmdb\Factory\TvFactory
     {
         return new TvFactory($this->getClient()->getHttpClient());
     }
@@ -133,7 +128,7 @@ class TvRepository extends AbstractRepository
      * @param $headers
      * @return null|AbstractModel
      */
-    public function getExternalIds($id, array $parameters = [], array $headers = [])
+    public function getExternalIds($id, array $parameters = [], array $headers = []): ?\Tmdb\Model\AbstractModel
     {
         $data = $this->getApi()->getExternalIds($id, $this->parseQueryParameters($parameters), $headers);
         $tv = $this->getFactory()->create(['external_ids' => $data]);
@@ -233,9 +228,8 @@ class TvRepository extends AbstractRepository
      * @param $id
      * @param $parameters
      * @param $headers
-     * @return GenericCollection
      */
-    public function getWatchProviders($id, array $parameters = [], array $headers = [])
+    public function getWatchProviders($id, array $parameters = [], array $headers = []): \Tmdb\Model\Common\GenericCollection
     {
         $data = $this->getApi()->getWatchProviders($id, $this->parseQueryParameters($parameters), $headers);
         $tv = $this->getFactory()->create(['watch/providers' => $data]);
@@ -329,7 +323,7 @@ class TvRepository extends AbstractRepository
      * @param array $options
      * @return null|AbstractModel
      */
-    public function getLatest(array $options = [])
+    public function getLatest(array $options = []): ?\Tmdb\Model\AbstractModel
     {
         return $this->getFactory()->create(
             $this->getApi()->getLatest($options)
@@ -343,9 +337,8 @@ class TvRepository extends AbstractRepository
      * A valid session id is required.
      *
      * @param integer $id
-     * @return AccountStates
      */
-    public function getAccountStates($id)
+    public function getAccountStates($id): \Tmdb\Model\AbstractModel
     {
         return $this->getFactory()->createAccountStates(
             $this->getApi()->getAccountStates($id)
@@ -359,9 +352,8 @@ class TvRepository extends AbstractRepository
      *
      * @param integer $id
      * @param float $rating
-     * @return Result
      */
-    public function rate($id, $rating)
+    public function rate($id, $rating): \Tmdb\Model\AbstractModel
     {
         return $this->getFactory()->createResult(
             $this->getApi()->rateTvShow($id, $rating)

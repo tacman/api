@@ -15,6 +15,7 @@
 namespace Tmdb\Tests\Factory;
 
 use Tmdb\Factory\CollectionFactory;
+use Tmdb\Factory\MovieFactory;
 use Tmdb\Model\Collection;
 
 class CollectionFactoryTest extends TestCase
@@ -60,10 +61,10 @@ class CollectionFactoryTest extends TestCase
 
         $class = new \stdClass();
 
-        $factory->setMovieFactory($class);
-        $factory->setImageFactory($class);
+        $factory->setMovieFactory(new MovieFactory());
+        $this->assertInstanceOf(MovieFactory::class, $factory->getMovieFactory());
 
-        $this->assertInstanceOf('stdClass', $factory->getMovieFactory());
+        $factory->setImageFactory($class);
         $this->assertInstanceOf('stdClass', $factory->getImageFactory());
     }
 

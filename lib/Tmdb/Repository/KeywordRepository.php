@@ -33,37 +33,28 @@ class KeywordRepository extends AbstractRepository
      * @param $id
      * @param array $parameters
      * @param array $headers
-     * @return Keyword
      */
-    public function load($id, array $parameters = [], array $headers = [])
+    public function load($id, array $parameters = [], array $headers = []): \Tmdb\Model\Keyword
     {
         return $this->getFactory()->create(
             $this->getApi()->getKeyword($id, $parameters, $headers)
         );
     }
 
-    /**
-     * @return KeywordFactory
-     */
-    public function getFactory()
+    public function getFactory(): \Tmdb\Factory\KeywordFactory
     {
         return new KeywordFactory($this->getClient()->getHttpClient());
     }
 
-    /**
-     * @return MovieFactory
-     */
-    public function getMovieFactory()
+    public function getMovieFactory(): \Tmdb\Factory\MovieFactory
     {
         return new MovieFactory($this->getClient()->getHttpClient());
     }
 
     /**
      * Return the related API class
-     *
-     * @return Keywords
      */
-    public function getApi()
+    public function getApi(): \Tmdb\Api\Keywords
     {
         return $this->getClient()->getKeywordsApi();
     }
@@ -77,7 +68,7 @@ class KeywordRepository extends AbstractRepository
      * @param array $headers
      * @return ResultCollection|Keyword[]
      */
-    public function getMovies($id, array $parameters = [], array $headers = [])
+    public function getMovies($id, array $parameters = [], array $headers = []): \Tmdb\Model\Collection\ResultCollection
     {
         return $this->getMovieFactory()->createResultCollection(
             $this->getApi()->getMovies($id, $parameters, $headers)

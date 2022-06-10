@@ -45,10 +45,7 @@ abstract class AbstractMember extends AbstractModel
      */
     private $profile;
 
-    /**
-     * @return integer
-     */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -57,17 +54,14 @@ abstract class AbstractMember extends AbstractModel
      * @param mixed $id
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): self
     {
         $this->id = (int)$id;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -76,17 +70,14 @@ abstract class AbstractMember extends AbstractModel
      * @param string $name
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getProfilePath()
+    public function getProfilePath(): string
     {
         return $this->profilePath;
     }
@@ -95,7 +86,7 @@ abstract class AbstractMember extends AbstractModel
      * @param string $profilePath
      * @return $this
      */
-    public function setProfilePath($profilePath)
+    public function setProfilePath($profilePath): self
     {
         $this->profilePath = $profilePath;
 
@@ -106,27 +97,22 @@ abstract class AbstractMember extends AbstractModel
      * @param Image\ProfileImage $profile
      * @return $this
      */
-    public function setProfileImage($profile = null)
+    public function setProfileImage($profile = null): self
     {
         $this->profile = $profile;
 
         return $this;
     }
 
-    /**
-     * @return Image\ProfileImage
-     */
-    public function getProfileImage()
+    public function getProfileImage(): \Tmdb\Model\Image\ProfileImage
     {
         return $this->profile;
     }
 
     /**
      * Assert if there is an profile image object
-     *
-     * @return bool
      */
-    public function hasProfileImage()
+    public function hasProfileImage(): bool
     {
         return $this->profile instanceof Image;
     }

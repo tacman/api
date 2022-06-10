@@ -33,9 +33,8 @@ class CompanyRepository extends AbstractRepository
      * @param $id
      * @param array $parameters
      * @param array $headers
-     * @return Company
      */
-    public function load($id, array $parameters = [], array $headers = [])
+    public function load($id, array $parameters = [], array $headers = []): \Tmdb\Model\AbstractModel
     {
         $data = $this->getApi()->getCompany($id, $this->parseQueryParameters($parameters), $headers);
 
@@ -44,18 +43,13 @@ class CompanyRepository extends AbstractRepository
 
     /**
      * Return the related API class
-     *
-     * @return Companies
      */
-    public function getApi()
+    public function getApi(): \Tmdb\Api\Companies
     {
         return $this->getClient()->getCompaniesApi();
     }
 
-    /**
-     * @return CompanyFactory
-     */
-    public function getFactory()
+    public function getFactory(): \Tmdb\Factory\CompanyFactory
     {
         return new CompanyFactory($this->getClient()->getHttpClient());
     }
@@ -66,9 +60,8 @@ class CompanyRepository extends AbstractRepository
      * @param integer $id
      * @param array $parameters
      * @param array $headers
-     * @return ResultCollection
      */
-    public function getMovies($id, array $parameters = [], array $headers = [])
+    public function getMovies($id, array $parameters = [], array $headers = []): \Tmdb\Model\Collection\ResultCollection
     {
         return $this->createMovieCollection(
             $this->getApi()->getMovies($id, $this->parseQueryParameters($parameters), $headers)
@@ -79,9 +72,8 @@ class CompanyRepository extends AbstractRepository
      * Create an collection of an array
      *
      * @param $data
-     * @return ResultCollection
      */
-    public function createMovieCollection($data)
+    public function createMovieCollection($data): \Tmdb\Model\Collection\ResultCollection
     {
         $collection = new ResultCollection();
 
@@ -96,10 +88,7 @@ class CompanyRepository extends AbstractRepository
         return $collection;
     }
 
-    /**
-     * @return MovieFactory
-     */
-    public function getMovieFactory()
+    public function getMovieFactory(): \Tmdb\Factory\MovieFactory
     {
         return new MovieFactory($this->getClient()->getHttpClient());
     }

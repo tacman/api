@@ -117,10 +117,7 @@ class Season extends AbstractModel
         $this->changes = new Changes();
     }
 
-    /**
-     * @return DateTime
-     */
-    public function getAirDate()
+    public function getAirDate(): \DateTime
     {
         return $this->airDate;
     }
@@ -129,7 +126,7 @@ class Season extends AbstractModel
      * @param DateTime $airDate
      * @return $this
      */
-    public function setAirDate($airDate)
+    public function setAirDate($airDate): self
     {
         $this->airDate = new DateTime($airDate);
 
@@ -148,17 +145,14 @@ class Season extends AbstractModel
      * @param GenericCollection $episodes
      * @return $this
      */
-    public function setEpisodes($episodes)
+    public function setEpisodes($episodes): self
     {
         $this->episodes = $episodes;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -167,17 +161,14 @@ class Season extends AbstractModel
      * @param int $id
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): self
     {
         $this->id = (int)$id;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -186,17 +177,14 @@ class Season extends AbstractModel
      * @param string $name
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getOverview()
+    public function getOverview(): string
     {
         return $this->overview;
     }
@@ -205,17 +193,14 @@ class Season extends AbstractModel
      * @param string $overview
      * @return $this
      */
-    public function setOverview($overview)
+    public function setOverview($overview): self
     {
         $this->overview = $overview;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getPosterPath()
+    public function getPosterPath(): string
     {
         return $this->posterPath;
     }
@@ -224,17 +209,14 @@ class Season extends AbstractModel
      * @param string $posterPath
      * @return $this
      */
-    public function setPosterPath($posterPath)
+    public function setPosterPath($posterPath): self
     {
         $this->posterPath = $posterPath;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getSeasonNumber()
+    public function getSeasonNumber(): int
     {
         return $this->seasonNumber;
     }
@@ -243,17 +225,14 @@ class Season extends AbstractModel
      * @param int $seasonNumber
      * @return $this
      */
-    public function setSeasonNumber($seasonNumber)
+    public function setSeasonNumber($seasonNumber): self
     {
         $this->seasonNumber = $seasonNumber;
 
         return $this;
     }
 
-    /**
-     * @return CreditsCollection
-     */
-    public function getCredits()
+    public function getCredits(): \Tmdb\Model\Collection\CreditsCollection
     {
         return $this->credits;
     }
@@ -262,17 +241,14 @@ class Season extends AbstractModel
      * @param CreditsCollection $credits
      * @return $this
      */
-    public function setCredits($credits)
+    public function setCredits($credits): self
     {
         $this->credits = $credits;
 
         return $this;
     }
 
-    /**
-     * @return ExternalIds
-     */
-    public function getExternalIds()
+    public function getExternalIds(): \Tmdb\Model\Common\ExternalIds
     {
         return $this->externalIds;
     }
@@ -281,17 +257,14 @@ class Season extends AbstractModel
      * @param ExternalIds $externalIds
      * @return $this
      */
-    public function setExternalIds($externalIds)
+    public function setExternalIds($externalIds): self
     {
         $this->externalIds = $externalIds;
 
         return $this;
     }
 
-    /**
-     * @return Images
-     */
-    public function getImages()
+    public function getImages(): \Tmdb\Model\Collection\Images
     {
         return $this->images;
     }
@@ -300,7 +273,7 @@ class Season extends AbstractModel
      * @param Images $images
      * @return $this
      */
-    public function setImages($images)
+    public function setImages($images): self
     {
         $this->images = $images;
 
@@ -311,25 +284,19 @@ class Season extends AbstractModel
      * @param PosterImage $poster
      * @return $this
      */
-    public function setPosterImage($poster)
+    public function setPosterImage($poster): self
     {
         $this->poster = $poster;
 
         return $this;
     }
 
-    /**
-     * @return PosterImage
-     */
-    public function getPosterImage()
+    public function getPosterImage(): \Tmdb\Model\Image\PosterImage
     {
         return $this->poster;
     }
 
-    /**
-     * @return Videos
-     */
-    public function getVideos()
+    public function getVideos(): \Tmdb\Model\Collection\Videos
     {
         return $this->videos;
     }
@@ -338,17 +305,14 @@ class Season extends AbstractModel
      * @param Videos $videos
      * @return $this
      */
-    public function setVideos($videos)
+    public function setVideos($videos): self
     {
         $this->videos = $videos;
 
         return $this;
     }
 
-    /**
-     * @return Changes
-     */
-    public function getChanges()
+    public function getChanges(): \Tmdb\Model\Collection\Changes
     {
         return $this->changes;
     }
@@ -357,7 +321,7 @@ class Season extends AbstractModel
      * @param Changes $changes
      * @return $this
      */
-    public function setChanges($changes)
+    public function setChanges($changes): self
     {
         $this->changes = $changes;
 

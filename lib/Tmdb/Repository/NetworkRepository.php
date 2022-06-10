@@ -34,29 +34,23 @@ class NetworkRepository extends AbstractRepository
      * @param $id
      * @param array $parameters
      * @param array $headers
-     * @return Network
      */
-    public function load($id, array $parameters = [], array $headers = [])
+    public function load($id, array $parameters = [], array $headers = []): \Tmdb\Model\Network
     {
         return $this->getFactory()->create(
             $this->getApi()->getNetwork($id, $parameters, $headers)
         );
     }
 
-    /**
-     * @return NetworkFactory
-     */
-    public function getFactory()
+    public function getFactory(): \Tmdb\Factory\NetworkFactory
     {
         return new NetworkFactory($this->getClient()->getHttpClient());
     }
 
     /**
      * Return the related API class
-     *
-     * @return Networks
      */
-    public function getApi()
+    public function getApi(): \Tmdb\Api\Networks
     {
         return $this->getClient()->getNetworksApi();
     }

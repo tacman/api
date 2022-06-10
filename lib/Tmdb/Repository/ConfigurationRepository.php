@@ -28,9 +28,8 @@ class ConfigurationRepository extends AbstractRepository
      * Load up TMDB Configuration
      *
      * @param array $headers
-     * @return Configuration
      */
-    public function load(array $headers = [])
+    public function load(array $headers = []): \Tmdb\Model\AbstractModel
     {
         $data = $this->getApi()->getConfiguration($headers);
 
@@ -39,18 +38,13 @@ class ConfigurationRepository extends AbstractRepository
 
     /**
      * Return the Movies API Class
-     *
-     * @return \Tmdb\Api\Configuration
      */
-    public function getApi()
+    public function getApi(): \Tmdb\Api\Configuration
     {
         return $this->getClient()->getConfigurationApi();
     }
 
-    /**
-     * @return ConfigurationFactory
-     */
-    public function getFactory()
+    public function getFactory(): \Tmdb\Factory\ConfigurationFactory
     {
         return new ConfigurationFactory($this->getClient()->getHttpClient());
     }

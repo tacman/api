@@ -82,9 +82,8 @@ class Client
      * Configure options
      *
      * @param array $options
-     * @return array
      */
-    protected function configureOptions(array $options)
+    protected function configureOptions(array $options): array
     {
         $resolver = new OptionsResolver();
 
@@ -246,10 +245,7 @@ class Client
         return $this->httpClient;
     }
 
-    /**
-     * @return array
-     */
-    public function getOptions()
+    public function getOptions(): array
     {
         return $this->options;
     }

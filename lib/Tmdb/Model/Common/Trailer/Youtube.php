@@ -36,18 +36,13 @@ class Youtube extends AbstractTrailer
 
     /**
      * Retrieve the url to the source
-     *
-     * @return string
      */
-    public function getUrl()
+    public function getUrl(): string
     {
         return sprintf(self::URL, $this->source);
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -56,17 +51,14 @@ class Youtube extends AbstractTrailer
      * @param string $name
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getSize()
+    public function getSize(): ?string
     {
         return $this->size;
     }
@@ -75,17 +67,14 @@ class Youtube extends AbstractTrailer
      * @param string $size
      * @return $this
      */
-    public function setSize($size)
+    public function setSize($size): self
     {
         $this->size = $size;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getSource()
+    public function getSource(): ?string
     {
         return $this->source;
     }
@@ -94,17 +83,14 @@ class Youtube extends AbstractTrailer
      * @param string $source
      * @return $this
      */
-    public function setSource($source)
+    public function setSource($source): self
     {
         $this->source = $source;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getType()
+    public function getType(): ?string
     {
         return $this->type;
     }
@@ -113,7 +99,7 @@ class Youtube extends AbstractTrailer
      * @param string $type
      * @return $this
      */
-    public function setType($type)
+    public function setType($type): self
     {
         $this->type = $type;
 

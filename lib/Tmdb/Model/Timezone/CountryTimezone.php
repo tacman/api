@@ -38,10 +38,7 @@ class CountryTimezone extends AbstractModel
         $this->timezones = new Timezones();
     }
 
-    /**
-     * @return Timezones
-     */
-    public function getTimezones()
+    public function getTimezones(): \Tmdb\Model\Collection\Timezones
     {
         return $this->timezones;
     }
@@ -50,17 +47,14 @@ class CountryTimezone extends AbstractModel
      * @param Timezones $timezones
      * @return $this
      */
-    public function setTimezones($timezones)
+    public function setTimezones($timezones): self
     {
         $this->timezones = $timezones;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getIso31661()
+    public function getIso31661(): string
     {
         return $this->iso31661;
     }
@@ -69,7 +63,7 @@ class CountryTimezone extends AbstractModel
      * @param string $iso31661
      * @return $this
      */
-    public function setIso31661($iso31661)
+    public function setIso31661($iso31661): self
     {
         $this->iso31661 = $iso31661;
 
@@ -80,9 +74,8 @@ class CountryTimezone extends AbstractModel
      * Verify if a country supports a certain timezone
      *
      * @param $timezone
-     * @return boolean
      */
-    public function supports($timezone)
+    public function supports($timezone): bool
     {
         return false !== $this->timezones->hasValue($timezone);
     }

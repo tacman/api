@@ -150,10 +150,7 @@ class Episode extends AbstractModel
         $this->changes = new Changes();
     }
 
-    /**
-     * @return DateTime
-     */
-    public function getAirDate()
+    public function getAirDate(): ?\DateTime
     {
         return $this->airDate;
     }
@@ -162,7 +159,7 @@ class Episode extends AbstractModel
      * @param DateTime|string|null $airDate
      * @return $this
      */
-    public function setAirDate($airDate = null)
+    public function setAirDate($airDate = null): self
     {
         if (!$airDate instanceof DateTime && $airDate !== null) {
             $airDate = new DateTime($airDate);
@@ -173,10 +170,7 @@ class Episode extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getEpisodeNumber()
+    public function getEpisodeNumber(): int
     {
         return $this->episodeNumber;
     }
@@ -185,17 +179,14 @@ class Episode extends AbstractModel
      * @param int $episodeNumber
      * @return $this
      */
-    public function setEpisodeNumber($episodeNumber)
+    public function setEpisodeNumber($episodeNumber): self
     {
         $this->episodeNumber = (int)$episodeNumber;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -204,17 +195,14 @@ class Episode extends AbstractModel
      * @param int $id
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): self
     {
         $this->id = (int)$id;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -223,17 +211,14 @@ class Episode extends AbstractModel
      * @param string $name
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getOverview()
+    public function getOverview(): string
     {
         return $this->overview;
     }
@@ -242,17 +227,14 @@ class Episode extends AbstractModel
      * @param string $overview
      * @return $this
      */
-    public function setOverview($overview)
+    public function setOverview($overview): self
     {
         $this->overview = $overview;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getProductionCode()
+    public function getProductionCode(): string
     {
         return $this->productionCode;
     }
@@ -261,17 +243,14 @@ class Episode extends AbstractModel
      * @param string $productionCode
      * @return $this
      */
-    public function setProductionCode($productionCode)
+    public function setProductionCode($productionCode): self
     {
         $this->productionCode = $productionCode;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getSeasonNumber()
+    public function getSeasonNumber(): int
     {
         return $this->seasonNumber;
     }
@@ -280,17 +259,14 @@ class Episode extends AbstractModel
      * @param int $seasonNumber
      * @return $this
      */
-    public function setSeasonNumber($seasonNumber)
+    public function setSeasonNumber($seasonNumber): self
     {
         $this->seasonNumber = (int)$seasonNumber;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getStillPath()
+    public function getStillPath(): string
     {
         return $this->stillPath;
     }
@@ -299,17 +275,14 @@ class Episode extends AbstractModel
      * @param string $stillPath
      * @return $this
      */
-    public function setStillPath($stillPath)
+    public function setStillPath($stillPath): self
     {
         $this->stillPath = $stillPath;
 
         return $this;
     }
 
-    /**
-     * @return float
-     */
-    public function getVoteAverage()
+    public function getVoteAverage(): float
     {
         return $this->voteAverage;
     }
@@ -318,17 +291,14 @@ class Episode extends AbstractModel
      * @param float $voteAverage
      * @return $this
      */
-    public function setVoteAverage($voteAverage)
+    public function setVoteAverage($voteAverage): self
     {
         $this->voteAverage = (float)$voteAverage;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getVoteCount()
+    public function getVoteCount(): int
     {
         return $this->voteCount;
     }
@@ -337,17 +307,14 @@ class Episode extends AbstractModel
      * @param int $voteCount
      * @return $this
      */
-    public function setVoteCount($voteCount)
+    public function setVoteCount($voteCount): self
     {
         $this->voteCount = (int)$voteCount;
 
         return $this;
     }
 
-    /**
-     * @return CreditsCollection
-     */
-    public function getCredits()
+    public function getCredits(): \Tmdb\Model\Collection\CreditsCollection
     {
         return $this->credits;
     }
@@ -356,17 +323,14 @@ class Episode extends AbstractModel
      * @param CreditsCollection $credits
      * @return $this
      */
-    public function setCredits($credits)
+    public function setCredits($credits): self
     {
         $this->credits = $credits;
 
         return $this;
     }
 
-    /**
-     * @return ExternalIds
-     */
-    public function getExternalIds()
+    public function getExternalIds(): \Tmdb\Model\Common\ExternalIds
     {
         return $this->externalIds;
     }
@@ -375,17 +339,14 @@ class Episode extends AbstractModel
      * @param ExternalIds $externalIds
      * @return $this
      */
-    public function setExternalIds($externalIds)
+    public function setExternalIds($externalIds): self
     {
         $this->externalIds = $externalIds;
 
         return $this;
     }
 
-    /**
-     * @return Images
-     */
-    public function getImages()
+    public function getImages(): \Tmdb\Model\Collection\Images
     {
         return $this->images;
     }
@@ -394,17 +355,14 @@ class Episode extends AbstractModel
      * @param Images $images
      * @return $this
      */
-    public function setImages($images)
+    public function setImages($images): self
     {
         $this->images = $images;
 
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getTranslations()
+    public function getTranslations(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->translations;
     }
@@ -413,7 +371,7 @@ class Episode extends AbstractModel
      * @param GenericCollection $translations
      * @return $this
      */
-    public function setTranslations($translations)
+    public function setTranslations($translations): self
     {
         $this->translations = $translations;
 
@@ -424,25 +382,19 @@ class Episode extends AbstractModel
      * @param StillImage $still
      * @return $this
      */
-    public function setStillImage($still)
+    public function setStillImage($still): self
     {
         $this->still = $still;
 
         return $this;
     }
 
-    /**
-     * @return StillImage
-     */
-    public function getStillImage()
+    public function getStillImage(): \Tmdb\Model\Image\StillImage
     {
         return $this->still;
     }
 
-    /**
-     * @return Videos
-     */
-    public function getVideos()
+    public function getVideos(): \Tmdb\Model\Collection\Videos
     {
         return $this->videos;
     }
@@ -451,17 +403,14 @@ class Episode extends AbstractModel
      * @param Videos|ResultCollection $videos
      * @return $this
      */
-    public function setVideos($videos)
+    public function setVideos($videos): self
     {
         $this->videos = $videos;
 
         return $this;
     }
 
-    /**
-     * @return Changes
-     */
-    public function getChanges()
+    public function getChanges(): \Tmdb\Model\Collection\Changes
     {
         return $this->changes;
     }
@@ -470,7 +419,7 @@ class Episode extends AbstractModel
      * @param Changes $changes
      * @return $this
      */
-    public function setChanges($changes)
+    public function setChanges($changes): self
     {
         $this->changes = $changes;
 

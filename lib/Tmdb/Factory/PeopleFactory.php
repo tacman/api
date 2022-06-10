@@ -17,7 +17,9 @@ namespace Tmdb\Factory;
 use Tmdb\Common\ObjectHydrator;
 use Tmdb\Factory\Common\ChangeFactory;
 use Tmdb\HttpClient\HttpClient;
+use Tmdb\Model\AbstractModel;
 use Tmdb\Model\Collection\People;
+use Tmdb\Model\Common\AbstractTrailer;
 use Tmdb\Model\Common\ExternalIds;
 use Tmdb\Model\Common\GenericCollection;
 use Tmdb\Model\Image;
@@ -60,7 +62,7 @@ class PeopleFactory extends AbstractFactory
      * @param Person\AbstractMember|null $person
      * @param GenericCollection|null $collection
      */
-    public function createCollection(array $data = [], $person = null, $collection = null)
+    public function createCollection(array $data = [], $person = null, $collection = null): ?Person\AbstractMember
     {
         if (!$collection) {
             $collection = new People();
@@ -89,7 +91,7 @@ class PeopleFactory extends AbstractFactory
      *
      * @return Person
      */
-    public function create(array $data = [], $person = null)
+    public function create(array $data = [], $person = null): ?AbstractModel
     {
         if (!is_object($person)) {
             if (array_key_exists('character', $data)) {

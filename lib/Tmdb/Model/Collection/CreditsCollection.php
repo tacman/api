@@ -47,10 +47,7 @@ class CreditsCollection
         $this->guestStars = new GuestStars();
     }
 
-    /**
-     * @return Cast
-     */
-    public function getCast()
+    public function getCast(): \Tmdb\Model\Collection\People\Cast
     {
         return $this->cast;
     }
@@ -59,17 +56,14 @@ class CreditsCollection
      * @param Cast $cast
      * @return $this
      */
-    public function setCast(Cast $cast)
+    public function setCast(Cast $cast): self
     {
         $this->cast = $cast;
 
         return $this;
     }
 
-    /**
-     * @return Crew
-     */
-    public function getCrew()
+    public function getCrew(): \Tmdb\Model\Collection\People\Crew
     {
         return $this->crew;
     }
@@ -78,17 +72,14 @@ class CreditsCollection
      * @param Crew $crew
      * @return $this
      */
-    public function setCrew(Crew $crew)
+    public function setCrew(Crew $crew): self
     {
         $this->crew = $crew;
 
         return $this;
     }
 
-    /**
-     * @return GuestStars
-     */
-    public function getGuestStars()
+    public function getGuestStars(): \Tmdb\Model\Collection\People\GuestStars
     {
         return $this->guestStars;
     }

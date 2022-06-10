@@ -91,10 +91,7 @@ class TmdbApiException extends Exception
         $this->response = $response;
     }
 
-    /**
-     * @return RequestInterface
-     */
-    public function getRequest()
+    public function getRequest(): \Psr\Http\Message\RequestInterface
     {
         return $this->request;
     }
@@ -110,10 +107,7 @@ class TmdbApiException extends Exception
         return $this;
     }
 
-    /**
-     * @return ResponseInterface
-     */
-    public function getResponse()
+    public function getResponse(): \Psr\Http\Message\ResponseInterface
     {
         return $this->response;
     }

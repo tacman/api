@@ -25,10 +25,8 @@ class Videos extends GenericCollection
 {
     /**
      * Returns all videos
-     *
-     * @return array
      */
-    public function getVideos()
+    public function getVideos(): array
     {
         return $this->data;
     }
@@ -37,10 +35,8 @@ class Videos extends GenericCollection
      * Retrieve a video from the collection
      *
      * @param $id
-     *
-     * @return GenericCollection
      */
-    public function getVideo($id): GenericCollection
+    public function getVideo($id): ?\Tmdb\Model\AbstractModel
     {
         return $this->filterId($id);
     }

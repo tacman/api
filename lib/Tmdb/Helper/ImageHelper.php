@@ -42,10 +42,8 @@ class ImageHelper
 
     /**
      * Load the image configuration collection
-     *
-     * @return array
      */
-    public function getImageConfiguration()
+    public function getImageConfiguration(): array
     {
         return $this->config->getImages();
     }
@@ -59,9 +57,8 @@ class ImageHelper
      * @param int|null $height
      * @param string $alt
      * @param string $title
-     * @return string
      */
-    public function getHtml($image, $size = 'original', $width = null, $height = null, $alt = '', $title = '')
+    public function getHtml($image, $size = 'original', $width = null, $height = null, $alt = '', $title = ''): string
     {
         if ($image instanceof Image) {
             if (null == $image->getFilePath()) {
@@ -102,9 +99,8 @@ class ImageHelper
      *
      * @param Image|string $image Either an instance of Image or the file_path
      * @param string $size
-     * @return string
      */
-    public function getUrl($image, $size = 'original')
+    public function getUrl($image, $size = 'original'): string
     {
         return $this->protocolLessBaseUrl . $size . $image;
     }

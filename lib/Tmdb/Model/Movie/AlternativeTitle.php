@@ -30,10 +30,7 @@ class AlternativeTitle extends AbstractModel implements CountryFilter
     private $iso31661;
     private $title;
 
-    /**
-     * @return string
-     */
-    public function getIso31661()
+    public function getIso31661(): ?string
     {
         return $this->iso31661;
     }
@@ -42,17 +39,14 @@ class AlternativeTitle extends AbstractModel implements CountryFilter
      * @param string $iso31661
      * @return $this
      */
-    public function setIso31661($iso31661)
+    public function setIso31661($iso31661): self
     {
         $this->iso31661 = $iso31661;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getTitle()
+    public function getTitle(): ?string
     {
         return $this->title;
     }
@@ -61,7 +55,7 @@ class AlternativeTitle extends AbstractModel implements CountryFilter
      * @param string $title
      * @return $this
      */
-    public function setTitle($title)
+    public function setTitle($title): self
     {
         $this->title = $title;
 

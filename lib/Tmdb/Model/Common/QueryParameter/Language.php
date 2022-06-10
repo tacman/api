@@ -27,18 +27,12 @@ class Language implements QueryParameterInterface
         $this->language = $language;
     }
 
-    /**
-     * @return string
-     */
-    public function getKey()
+    public function getKey(): string
     {
         return 'language';
     }
 
-    /**
-     * @return string
-     */
-    public function getValue()
+    public function getValue(): string
     {
         return $this->language;
     }

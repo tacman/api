@@ -58,25 +58,20 @@ class JobsRepository extends AbstractRepository
      * @param $data
      * @return Jobs|Job[]
      */
-    private function createCollection($data)
+    private function createCollection($data): \Tmdb\Model\Common\GenericCollection
     {
         return $this->getFactory()->createCollection($data);
     }
 
-    /**
-     * @return JobsFactory
-     */
-    public function getFactory()
+    public function getFactory(): \Tmdb\Factory\JobsFactory
     {
         return new JobsFactory($this->getClient()->getHttpClient());
     }
 
     /**
      * Return the related API class
-     *
-     * @return \Tmdb\Api\Jobs
      */
-    public function getApi()
+    public function getApi(): \Tmdb\Api\Jobs
     {
         return $this->getClient()->getJobsApi();
     }

@@ -73,10 +73,7 @@ class Video extends AbstractModel implements CountryFilter, LanguageFilter
      */
     private $url_format;
 
-    /**
-     * @return string
-     */
-    public function getId()
+    public function getId(): string
     {
         return $this->id;
     }
@@ -85,17 +82,14 @@ class Video extends AbstractModel implements CountryFilter, LanguageFilter
      * @param string $id
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): self
     {
         $this->id = $id;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getIso6391()
+    public function getIso6391(): string
     {
         return $this->iso6391;
     }
@@ -104,17 +98,14 @@ class Video extends AbstractModel implements CountryFilter, LanguageFilter
      * @param string $iso6391
      * @return $this
      */
-    public function setIso6391($iso6391)
+    public function setIso6391($iso6391): self
     {
         $this->iso6391 = $iso6391;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getIso31661()
+    public function getIso31661(): string
     {
         return $this->iso31661;
     }
@@ -123,17 +114,14 @@ class Video extends AbstractModel implements CountryFilter, LanguageFilter
      * @param string $iso31661
      * @return $this
      */
-    public function setIso31661($iso31661)
+    public function setIso31661($iso31661): self
     {
         $this->iso31661 = $iso31661;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -142,17 +130,14 @@ class Video extends AbstractModel implements CountryFilter, LanguageFilter
      * @param string $name
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getSite()
+    public function getSite(): string
     {
         return $this->site;
     }
@@ -161,17 +146,14 @@ class Video extends AbstractModel implements CountryFilter, LanguageFilter
      * @param string $site
      * @return $this
      */
-    public function setSite($site)
+    public function setSite($site): self
     {
         $this->site = $site;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getSize()
+    public function getSize(): int
     {
         return $this->size;
     }
@@ -180,17 +162,14 @@ class Video extends AbstractModel implements CountryFilter, LanguageFilter
      * @param int $size
      * @return $this
      */
-    public function setSize($size)
+    public function setSize($size): self
     {
         $this->size = $size;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getType()
+    public function getType(): string
     {
         return $this->type;
     }
@@ -199,7 +178,7 @@ class Video extends AbstractModel implements CountryFilter, LanguageFilter
      * @param string $type
      * @return $this
      */
-    public function setType($type)
+    public function setType($type): self
     {
         $this->type = $type;
 
@@ -208,18 +187,13 @@ class Video extends AbstractModel implements CountryFilter, LanguageFilter
 
     /**
      * Retrieve the url to the source
-     *
-     * @return string
      */
-    public function getUrl()
+    public function getUrl(): string
     {
         return sprintf($this->getUrlFormat(), $this->getKey());
     }
 
-    /**
-     * @return string
-     */
-    public function getUrlFormat()
+    public function getUrlFormat(): string
     {
         return $this->url_format;
     }
@@ -228,7 +202,7 @@ class Video extends AbstractModel implements CountryFilter, LanguageFilter
      * @param string $url_format
      * @return $this
      */
-    public function setUrlFormat($url_format)
+    public function setUrlFormat($url_format): self
     {
         $this->url_format = $url_format;
 
@@ -247,7 +221,7 @@ class Video extends AbstractModel implements CountryFilter, LanguageFilter
      * @param mixed $key
      * @return $this
      */
-    public function setKey($key)
+    public function setKey($key): self
     {
         $this->key = $key;
 

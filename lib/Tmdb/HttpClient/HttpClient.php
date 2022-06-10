@@ -79,7 +79,7 @@ class HttpClient
      *
      * @psalm-return array<empty, empty>|string
      */
-    public function send(string $path, string $method, array $parameters = [], array $headers = [], $body = null)
+    public function send(string $path, string $method, array $parameters = [], array $headers = [], $body = null): \Psr\Http\Message\ResponseInterface
     {
         $request = $this->createRequest(
             $path,
@@ -116,7 +116,6 @@ class HttpClient
      * @param array $parameters
      * @param array $headers
      * @param string|null $body
-     * @return RequestInterface
      */
     private function createRequest(
         string $path,
@@ -124,7 +123,7 @@ class HttpClient
         array $parameters = [],
         array $headers = [],
         $body = null
-    ) {
+    ): \Psr\Http\Message\RequestInterface {
         if (!empty($parameters)) {
             ksort($parameters);
         }
@@ -230,7 +229,7 @@ class HttpClient
     /**
      * @return RequestInterface|null
      */
-    public function getLastRequest(): ?RequestInterface
+    public function getLastRequest(): ?\Psr\Http\Message\RequestInterface
     {
         return $this->lastRequest;
     }
@@ -238,7 +237,7 @@ class HttpClient
     /**
      * @return ResponseInterface|null
      */
-    public function getLastResponse(): ?ResponseInterface
+    public function getLastResponse(): ?\Psr\Http\Message\ResponseInterface
     {
         return $this->lastResponse;
     }

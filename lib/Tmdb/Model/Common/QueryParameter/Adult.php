@@ -27,18 +27,12 @@ class Adult implements QueryParameterInterface
         $this->adult = $adult;
     }
 
-    /**
-     * @return string
-     */
-    public function getKey()
+    public function getKey(): string
     {
         return 'adult';
     }
 
-    /**
-     * @return string
-     */
-    public function getValue()
+    public function getValue(): string
     {
         return $this->adult;
     }

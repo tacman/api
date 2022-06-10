@@ -25,7 +25,7 @@ class ReviewFactory extends AbstractFactory
     /**
      * {@inheritdoc}
      */
-    public function create(array $data = [])
+    public function create(array $data = []): \Tmdb\Model\AbstractModel
     {
         $review = new Review();
 
@@ -35,7 +35,7 @@ class ReviewFactory extends AbstractFactory
     /**
      * {@inheritdoc}
      */
-    public function createCollection(array $data = [])
+    public function createCollection(array $data = []): \Tmdb\Model\Collection\ResultCollection
     {
         return $this->createResultCollection($data);
     }

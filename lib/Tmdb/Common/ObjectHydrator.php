@@ -30,10 +30,9 @@ class ObjectHydrator
      *
      * @param AbstractModel $object
      * @param array $data
-     * @return AbstractModel
      * @throws RuntimeException
      */
-    public function hydrate(AbstractModel $object, $data = [])
+    public function hydrate(AbstractModel $object, $data = []): \Tmdb\Model\AbstractModel
     {
         if (!empty($data)) {
             foreach ($data as $k => $v) {
@@ -64,9 +63,8 @@ class ObjectHydrator
      * @see https://gist.github.com/troelskn/751517
      *
      * @param string $candidate
-     * @return string
      */
-    public function camelize($candidate)
+    public function camelize($candidate): string
     {
         return lcfirst(
             implode(

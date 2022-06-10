@@ -30,29 +30,23 @@ class FindRepository extends AbstractRepository
      * @param $id
      * @param array $parameters
      * @param array $headers
-     * @return Find
      */
-    public function findBy($id, array $parameters = [], array $headers = [])
+    public function findBy($id, array $parameters = [], array $headers = []): \Tmdb\Model\AbstractModel
     {
         return $this->getFactory()->create(
             $this->getApi()->findBy($id, $parameters, $headers)
         );
     }
 
-    /**
-     * @return FindFactory
-     */
-    public function getFactory()
+    public function getFactory(): \Tmdb\Factory\FindFactory
     {
         return new FindFactory($this->getClient()->getHttpClient());
     }
 
     /**
      * Return the related API class
-     *
-     * @return \Tmdb\Api\Find
      */
-    public function getApi()
+    public function getApi(): \Tmdb\Api\Find
     {
         return $this->getClient()->getFindApi();
     }

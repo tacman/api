@@ -66,10 +66,7 @@ class Credits extends AbstractModel
         $this->media = new Media();
     }
 
-    /**
-     * @return string
-     */
-    public function getCreditType()
+    public function getCreditType(): string
     {
         return $this->creditType;
     }
@@ -78,17 +75,14 @@ class Credits extends AbstractModel
      * @param string $creditType
      * @return $this
      */
-    public function setCreditType($creditType)
+    public function setCreditType($creditType): self
     {
         $this->creditType = $creditType;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDepartment()
+    public function getDepartment(): string
     {
         return $this->department;
     }
@@ -97,17 +91,14 @@ class Credits extends AbstractModel
      * @param string $department
      * @return $this
      */
-    public function setDepartment($department)
+    public function setDepartment($department): self
     {
         $this->department = $department;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getId()
+    public function getId(): string
     {
         return $this->id;
     }
@@ -116,17 +107,14 @@ class Credits extends AbstractModel
      * @param string $id
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): self
     {
         $this->id = $id;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getJob()
+    public function getJob(): string
     {
         return $this->job;
     }
@@ -135,17 +123,14 @@ class Credits extends AbstractModel
      * @param string $job
      * @return $this
      */
-    public function setJob($job)
+    public function setJob($job): self
     {
         $this->job = $job;
 
         return $this;
     }
 
-    /**
-     * @return Media
-     */
-    public function getMedia()
+    public function getMedia(): \Tmdb\Model\Credits\Media
     {
         return $this->media;
     }
@@ -154,17 +139,14 @@ class Credits extends AbstractModel
      * @param Media $media
      * @return $this
      */
-    public function setMedia($media)
+    public function setMedia($media): self
     {
         $this->media = $media;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getMediaType()
+    public function getMediaType(): string
     {
         return $this->mediaType;
     }
@@ -173,17 +155,14 @@ class Credits extends AbstractModel
      * @param string $mediaType
      * @return $this
      */
-    public function setMediaType($mediaType)
+    public function setMediaType($mediaType): self
     {
         $this->mediaType = $mediaType;
 
         return $this;
     }
 
-    /**
-     * @return Person
-     */
-    public function getPerson()
+    public function getPerson(): \Tmdb\Model\Person
     {
         return $this->person;
     }
@@ -192,7 +171,7 @@ class Credits extends AbstractModel
      * @param Person $person
      * @return $this
      */
-    public function setPerson($person)
+    public function setPerson($person): self
     {
         $this->person = $person;
 

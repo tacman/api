@@ -62,10 +62,7 @@ class Account extends AbstractModel
      */
     private $avatar;
 
-    /**
-     * @return int
-     */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -74,17 +71,14 @@ class Account extends AbstractModel
      * @param int $id
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): self
     {
         $this->id = $id;
 
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getIncludeAdult()
+    public function getIncludeAdult(): bool
     {
         return $this->includeAdult;
     }
@@ -93,17 +87,14 @@ class Account extends AbstractModel
      * @param boolean $includeAdult
      * @return $this
      */
-    public function setIncludeAdult($includeAdult)
+    public function setIncludeAdult($includeAdult): self
     {
         $this->includeAdult = $includeAdult;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getIso31661()
+    public function getIso31661(): string
     {
         return $this->iso31661;
     }
@@ -112,17 +103,14 @@ class Account extends AbstractModel
      * @param string $iso31661
      * @return $this
      */
-    public function setIso31661($iso31661)
+    public function setIso31661($iso31661): self
     {
         $this->iso31661 = $iso31661;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getIso6391()
+    public function getIso6391(): string
     {
         return $this->iso6391;
     }
@@ -131,17 +119,14 @@ class Account extends AbstractModel
      * @param string $iso6391
      * @return $this
      */
-    public function setIso6391($iso6391)
+    public function setIso6391($iso6391): self
     {
         $this->iso6391 = $iso6391;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -150,17 +135,14 @@ class Account extends AbstractModel
      * @param string $name
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getUsername()
+    public function getUsername(): string
     {
         return $this->username;
     }
@@ -169,17 +151,14 @@ class Account extends AbstractModel
      * @param string $username
      * @return $this
      */
-    public function setUsername($username)
+    public function setUsername($username): self
     {
         $this->username = $username;
 
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getAvatar()
+    public function getAvatar(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->avatar;
     }
@@ -188,7 +167,7 @@ class Account extends AbstractModel
      * @param GenericCollection $avatar
      * @return $this
      */
-    public function setAvatar($avatar)
+    public function setAvatar($avatar): self
     {
         $this->avatar = $avatar;
 

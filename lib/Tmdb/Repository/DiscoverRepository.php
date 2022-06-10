@@ -17,7 +17,7 @@ namespace Tmdb\Repository;
 use Tmdb\Api\Discover;
 use Tmdb\Exception\NotImplementedException;
 use Tmdb\Exception\RuntimeException;
-use Tmdb\Factory\FactoryInterface;
+use Tmdb\Factory\AbstractFactory;
 use Tmdb\Factory\MovieFactory;
 use Tmdb\Factory\TvFactory;
 use Tmdb\Model\Collection\ResultCollection;
@@ -59,18 +59,13 @@ class DiscoverRepository extends AbstractRepository
 
     /**
      * Return the related API class
-     *
-     * @return Discover
      */
-    public function getApi()
+    public function getApi(): \Tmdb\Api\Discover
     {
         return $this->getClient()->getDiscoverApi();
     }
 
-    /**
-     * @return MovieFactory
-     */
-    public function getMovieFactory()
+    public function getMovieFactory(): \Tmdb\Factory\MovieFactory
     {
         return new MovieFactory($this->getClient()->getHttpClient());
     }
@@ -91,10 +86,7 @@ class DiscoverRepository extends AbstractRepository
         return $this->getTvFactory()->createResultCollection($data);
     }
 
-    /**
-     * @return TvFactory
-     */
-    public function getTvFactory()
+    public function getTvFactory(): \Tmdb\Factory\TvFactory
     {
         return new TvFactory($this->getClient()->getHttpClient());
     }
@@ -102,10 +94,9 @@ class DiscoverRepository extends AbstractRepository
     /**
      * Discover currently does not offer an factory
      *
-     * @return null|FactoryInterface
      * @throws NotImplementedException
      */
-    public function getFactory()
+    public function getFactory(): AbstractFactory
     {
         throw new NotImplementedException('Discover does not support a generic factory.');
     }

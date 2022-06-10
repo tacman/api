@@ -30,10 +30,7 @@ class Country extends AbstractModel implements CountryFilter
     private $iso31661;
     private $name;
 
-    /**
-     * @return string
-     */
-    public function getIso31661()
+    public function getIso31661(): ?string
     {
         return $this->iso31661;
     }
@@ -42,17 +39,14 @@ class Country extends AbstractModel implements CountryFilter
      * @param string $iso31661
      * @return $this
      */
-    public function setIso31661($iso31661)
+    public function setIso31661($iso31661): self
     {
         $this->iso31661 = $iso31661;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -61,7 +55,7 @@ class Country extends AbstractModel implements CountryFilter
      * @param string $name
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
 

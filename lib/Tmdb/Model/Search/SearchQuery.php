@@ -36,7 +36,7 @@ class SearchQuery extends QueryParametersCollection
      * @param int $page
      * @return $this
      */
-    public function page($page)
+    public function page($page): self
     {
         $this->set('page', $page);
 
@@ -49,7 +49,7 @@ class SearchQuery extends QueryParametersCollection
      * @param string $query
      * @return $this
      */
-    public function query($query)
+    public function query($query): self
     {
         $this->set('query', $query);
 

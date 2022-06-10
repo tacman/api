@@ -28,7 +28,7 @@ class Genres extends GenericCollection
      *
      * @return Genre[]
      */
-    public function getGenres()
+    public function getGenres(): array
     {
         return $this->data;
     }
@@ -56,7 +56,7 @@ class Genres extends GenericCollection
      * @param Genre $genre
      * @return $this
      */
-    public function addGenre(Genre $genre)
+    public function addGenre(Genre $genre): self
     {
         $this->data[] = $genre;
 

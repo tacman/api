@@ -28,7 +28,7 @@ class Crew extends People
      *
      * @return Person[]
      */
-    public function getCrew()
+    public function getCrew(): array
     {
         return parent::getPeople();
     }
@@ -37,10 +37,8 @@ class Crew extends People
      * Retrieve a crew member from the collection
      *
      * @param $id
-     *
-     * @return \Tmdb\Model\Common\GenericCollection
      */
-    public function getCrewMember($id): \Tmdb\Model\Common\GenericCollection
+    public function getCrewMember($id): ?\Tmdb\Model\Collection\People\PersonInterface
     {
         return parent::getPerson($id);
     }

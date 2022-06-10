@@ -46,10 +46,7 @@ class Item extends AbstractModel
      */
     private $value;
 
-    /**
-     * @return string
-     */
-    public function getAction()
+    public function getAction(): string
     {
         return $this->action;
     }
@@ -58,17 +55,14 @@ class Item extends AbstractModel
      * @param string $action
      * @return $this
      */
-    public function setAction($action)
+    public function setAction($action): self
     {
         $this->action = $action;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getId()
+    public function getId(): string
     {
         return $this->id;
     }
@@ -77,17 +71,14 @@ class Item extends AbstractModel
      * @param string $id
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): self
     {
         $this->id = $id;
 
         return $this;
     }
 
-    /**
-     * @return DateTime
-     */
-    public function getTime()
+    public function getTime(): \DateTime
     {
         return $this->time;
     }
@@ -96,7 +87,7 @@ class Item extends AbstractModel
      * @param string|DateTime|null $time
      * @return $this
      */
-    public function setTime($time = null)
+    public function setTime($time = null): self
     {
         if (!$time instanceof DateTime && $time !== null) {
             $time = new DateTime($time);
@@ -107,10 +98,7 @@ class Item extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getValue()
+    public function getValue(): array
     {
         return $this->value;
     }
@@ -119,7 +107,7 @@ class Item extends AbstractModel
      * @param array $value
      * @return $this
      */
-    public function setValue($value)
+    public function setValue($value): self
     {
         $this->value = $value;
 

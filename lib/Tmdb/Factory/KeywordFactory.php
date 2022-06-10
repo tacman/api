@@ -26,7 +26,7 @@ class KeywordFactory extends AbstractFactory
     /**
      * {@inheritdoc}
      */
-    public function createCollection(array $data = [])
+    public function createCollection(array $data = []): \Tmdb\Model\Collection\Keywords
     {
         $collection = new Keywords();
 
@@ -43,10 +43,8 @@ class KeywordFactory extends AbstractFactory
 
     /**
      * @param array $data
-     *
-     * @return Keyword
      */
-    public function create(array $data = [])
+    public function create(array $data = []): \Tmdb\Model\AbstractModel
     {
         return $this->hydrate(new Keyword(), $data);
     }

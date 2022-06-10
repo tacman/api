@@ -64,7 +64,7 @@ class MovieRepository extends AbstractRepository
      * @param $headers
      * @return null|AbstractModel
      */
-    public function load($id, array $parameters = [], array $headers = [])
+    public function load($id, array $parameters = [], array $headers = []): ?\Tmdb\Model\AbstractModel
     {
         if (!isset($parameters['append_to_response'])) {
             $parameters = array_merge($parameters, [
@@ -94,20 +94,16 @@ class MovieRepository extends AbstractRepository
 
     /**
      * Return the Movies API Class
-     *
-     * @return Movies
      */
-    public function getApi()
+    public function getApi(): \Tmdb\Api\Movies
     {
         return $this->getClient()->getMoviesApi();
     }
 
     /**
      * Return the Movie Factory
-     *
-     * @return MovieFactory
      */
-    public function getFactory()
+    public function getFactory(): \Tmdb\Factory\MovieFactory
     {
         return new MovieFactory($this->getClient()->getHttpClient());
     }
@@ -326,7 +322,7 @@ class MovieRepository extends AbstractRepository
      * @param $headers
      * @return null|AbstractModel
      */
-    public function getChanges($id, array $parameters = [], array $headers = [])
+    public function getChanges($id, array $parameters = [], array $headers = []): ?\Tmdb\Model\AbstractModel
     {
         $data = $this->getApi()->getChanges($id, $this->parseQueryParameters($parameters), $headers);
         $movie = $this->getFactory()->create(['changes' => $data]);
@@ -340,7 +336,7 @@ class MovieRepository extends AbstractRepository
      * @param array $options
      * @return null|AbstractModel
      */
-    public function getLatest(array $options = [])
+    public function getLatest(array $options = []): ?\Tmdb\Model\AbstractModel
     {
         return $this->getFactory()->create(
             $this->getApi()->getLatest($options)
@@ -461,9 +457,8 @@ class MovieRepository extends AbstractRepository
      * @param $id
      * @param $parameters
      * @param $headers
-     * @return GenericCollection
      */
-    public function getWatchProviders($id, array $parameters = [], array $headers = [])
+    public function getWatchProviders($id, array $parameters = [], array $headers = []): \Tmdb\Model\Common\GenericCollection
     {
         $data = $this->getApi()->getWatchProviders($id, $this->parseQueryParameters($parameters), $headers);
         $movie = $this->getFactory()->create(['watch/providers' => $data]);
@@ -479,7 +474,7 @@ class MovieRepository extends AbstractRepository
      * @param $headers
      * @return null|AbstractModel
      */
-    public function getExternalIds($id, array $parameters = [], array $headers = [])
+    public function getExternalIds($id, array $parameters = [], array $headers = []): ?\Tmdb\Model\AbstractModel
     {
         $data = $this->getApi()->getExternalIds($id, $this->parseQueryParameters($parameters), $headers);
         $movie = $this->getFactory()->create(['external_ids' => $data]);
@@ -487,10 +482,7 @@ class MovieRepository extends AbstractRepository
         return $movie->getExternalIds();
     }
 
-    /**
-     * @return AlternativeTitleFactory
-     */
-    public function getAlternativeTitleFactory()
+    public function getAlternativeTitleFactory(): \Tmdb\Factory\Movie\AlternativeTitleFactory
     {
         return $this->alternativeTitleFactory;
     }
@@ -499,17 +491,14 @@ class MovieRepository extends AbstractRepository
      * @param AlternativeTitleFactory $alternativeTitleFactory
      * @return $this
      */
-    public function setAlternativeTitleFactory($alternativeTitleFactory)
+    public function setAlternativeTitleFactory($alternativeTitleFactory): self
     {
         $this->alternativeTitleFactory = $alternativeTitleFactory;
 
         return $this;
     }
 
-    /**
-     * @return ImageFactory
-     */
-    public function getImageFactory()
+    public function getImageFactory(): \Tmdb\Factory\ImageFactory
     {
         return $this->imageFactory;
     }
@@ -518,17 +507,14 @@ class MovieRepository extends AbstractRepository
      * @param ImageFactory $imageFactory
      * @return $this
      */
-    public function setImageFactory($imageFactory)
+    public function setImageFactory($imageFactory): self
     {
         $this->imageFactory = $imageFactory;
 
         return $this;
     }
 
-    /**
-     * @return PeopleFactory
-     */
-    public function getPeopleFactory()
+    public function getPeopleFactory(): \Tmdb\Factory\PeopleFactory
     {
         return $this->peopleFactory;
     }
@@ -537,7 +523,7 @@ class MovieRepository extends AbstractRepository
      * @param PeopleFactory $peopleFactory
      * @return $this
      */
-    public function setPeopleFactory($peopleFactory)
+    public function setPeopleFactory($peopleFactory): self
     {
         $this->peopleFactory = $peopleFactory;
 

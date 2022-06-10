@@ -104,7 +104,7 @@ class MovieFactory extends AbstractFactory
     /**
      * {@inheritdoc}
      */
-    public function createCollection(array $data = [])
+    public function createCollection(array $data = []): ?AbstractModel
     {
         $collection = new GenericCollection();
 
@@ -211,7 +211,7 @@ class MovieFactory extends AbstractFactory
             $watchProviders = new GenericCollection();
             foreach ($data['watch/providers']['results'] as $iso31661 => $countryWatchData) {
                 $countryWatchData['iso_3166_1'] = $iso31661;
-                
+
                 foreach (['flatrate', 'rent', 'buy'] as $providerType) {
                     $typeProviders = new GenericCollection();
                     foreach ($countryWatchData[$providerType] ?? [] as $providerData) {
@@ -221,14 +221,14 @@ class MovieFactory extends AbstractFactory
                         if (isset($providerData['provider_name'])) {
                             $providerData['name'] = $providerData['provider_name'];
                         }
-                        
+
                         $providerData['iso_3166_1'] = $iso31661;
                         $providerData['type'] = $providerType;
                         $typeProviders->add(null, $this->hydrate(new Watch\Provider(), $providerData));
                     }
                     $countryWatchData[$providerType] = $typeProviders;
                 }
-                
+
                 $watchProviders->add($iso31661, $this->hydrate(new Watch\Providers(), $countryWatchData));
             }
             $movie->setWatchProviders($watchProviders);
@@ -288,10 +288,7 @@ class MovieFactory extends AbstractFactory
         return $this->hydrate($movie, $data);
     }
 
-    /**
-     * @return CastFactory
-     */
-    public function getCastFactory()
+    public function getCastFactory(): \Tmdb\Factory\People\CastFactory
     {
         return $this->castFactory;
     }
@@ -300,17 +297,14 @@ class MovieFactory extends AbstractFactory
      * @param CastFactory $castFactory
      * @return $this
      */
-    public function setCastFactory($castFactory)
+    public function setCastFactory($castFactory): self
     {
         $this->castFactory = $castFactory;
 
         return $this;
     }
 
-    /**
-     * @return CrewFactory
-     */
-    public function getCrewFactory()
+    public function getCrewFactory(): \Tmdb\Factory\People\CrewFactory
     {
         return $this->crewFactory;
     }
@@ -319,17 +313,14 @@ class MovieFactory extends AbstractFactory
      * @param CrewFactory $crewFactory
      * @return $this
      */
-    public function setCrewFactory($crewFactory)
+    public function setCrewFactory($crewFactory): self
     {
         $this->crewFactory = $crewFactory;
 
         return $this;
     }
 
-    /**
-     * @return GenreFactory
-     */
-    public function getGenreFactory()
+    public function getGenreFactory(): \Tmdb\Factory\GenreFactory
     {
         return $this->genreFactory;
     }
@@ -338,17 +329,14 @@ class MovieFactory extends AbstractFactory
      * @param GenreFactory $genreFactory
      * @return $this
      */
-    public function setGenreFactory($genreFactory)
+    public function setGenreFactory($genreFactory): self
     {
         $this->genreFactory = $genreFactory;
 
         return $this;
     }
 
-    /**
-     * @return ImageFactory
-     */
-    public function getImageFactory()
+    public function getImageFactory(): \Tmdb\Factory\ImageFactory
     {
         return $this->imageFactory;
     }
@@ -357,17 +345,14 @@ class MovieFactory extends AbstractFactory
      * @param ImageFactory $imageFactory
      * @return $this
      */
-    public function setImageFactory($imageFactory)
+    public function setImageFactory($imageFactory): self
     {
         $this->imageFactory = $imageFactory;
 
         return $this;
     }
 
-    /**
-     * @return KeywordFactory
-     */
-    public function getKeywordFactory()
+    public function getKeywordFactory(): \Tmdb\Factory\KeywordFactory
     {
         return $this->keywordFactory;
     }
@@ -376,17 +361,14 @@ class MovieFactory extends AbstractFactory
      * @param KeywordFactory $keywordFactory
      * @return $this
      */
-    public function setKeywordFactory($keywordFactory)
+    public function setKeywordFactory($keywordFactory): self
     {
         $this->keywordFactory = $keywordFactory;
 
         return $this;
     }
 
-    /**
-     * @return VideoFactory
-     */
-    public function getVideoFactory()
+    public function getVideoFactory(): \Tmdb\Factory\Common\VideoFactory
     {
         return $this->videoFactory;
     }
@@ -395,17 +377,14 @@ class MovieFactory extends AbstractFactory
      * @param VideoFactory $videoFactory
      * @return $this
      */
-    public function setVideoFactory($videoFactory)
+    public function setVideoFactory($videoFactory): self
     {
         $this->videoFactory = $videoFactory;
 
         return $this;
     }
 
-    /**
-     * @return ReviewFactory
-     */
-    public function getReviewFactory()
+    public function getReviewFactory(): \Tmdb\Factory\ReviewFactory
     {
         return $this->reviewFactory;
     }
@@ -414,17 +393,14 @@ class MovieFactory extends AbstractFactory
      * @param ReviewFactory $reviewFactory
      * @return $this
      */
-    public function setReviewFactory($reviewFactory)
+    public function setReviewFactory($reviewFactory): self
     {
         $this->reviewFactory = $reviewFactory;
 
         return $this;
     }
 
-    /**
-     * @return ListItemFactory
-     */
-    public function getListItemFactory()
+    public function getListItemFactory(): \Tmdb\Factory\Movie\ListItemFactory
     {
         return $this->listItemFactory;
     }
@@ -433,17 +409,14 @@ class MovieFactory extends AbstractFactory
      * @param ListItemFactory $listItemFactory
      * @return $this
      */
-    public function setListItemFactory($listItemFactory)
+    public function setListItemFactory($listItemFactory): self
     {
         $this->listItemFactory = $listItemFactory;
 
         return $this;
     }
 
-    /**
-     * @return ChangeFactory
-     */
-    public function getChangeFactory()
+    public function getChangeFactory(): \Tmdb\Factory\Common\ChangeFactory
     {
         return $this->changeFactory;
     }
@@ -452,7 +425,7 @@ class MovieFactory extends AbstractFactory
      * @param ChangeFactory $changeFactory
      * @return $this
      */
-    public function setChangeFactory($changeFactory)
+    public function setChangeFactory($changeFactory): self
     {
         $this->changeFactory = $changeFactory;
 

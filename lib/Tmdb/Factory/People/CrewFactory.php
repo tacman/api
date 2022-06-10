@@ -16,6 +16,7 @@ namespace Tmdb\Factory\People;
 
 use Tmdb\Factory\PeopleFactory;
 use Tmdb\Model\Collection\People\Crew;
+use Tmdb\Model\Person\AbstractMember;
 use Tmdb\Model\Person\CrewMember;
 
 /**
@@ -28,7 +29,7 @@ class CrewFactory extends PeopleFactory
      * {@inheritdoc}
      * @param CrewMember|null $person
      */
-    public function createCollection(array $data = [], $person = null, $collection = null)
+    public function createCollection(array $data = [], $person = null, $collection = null): ?AbstractMember
     {
         $collection = new Crew();
 

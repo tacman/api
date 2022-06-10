@@ -52,7 +52,7 @@ class Company extends AbstractModel
      * @param mixed $description
      * @return $this
      */
-    public function setDescription($description)
+    public function setDescription($description): self
     {
         $this->description = $description;
 
@@ -71,7 +71,7 @@ class Company extends AbstractModel
      * @param mixed $headquarters
      * @return $this
      */
-    public function setHeadquarters($headquarters)
+    public function setHeadquarters($headquarters): self
     {
         $this->headquarters = $headquarters;
 
@@ -90,17 +90,14 @@ class Company extends AbstractModel
      * @param mixed $homepage
      * @return $this
      */
-    public function setHomepage($homepage)
+    public function setHomepage($homepage): self
     {
         $this->homepage = $homepage;
 
         return $this;
     }
 
-    /**
-     * @return integer
-     */
-    public function getId()
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -109,7 +106,7 @@ class Company extends AbstractModel
      * @param mixed $id
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): self
     {
         $this->id = (int)$id;
 
@@ -120,17 +117,14 @@ class Company extends AbstractModel
      * @param LogoImage $logo
      * @return $this
      */
-    public function setLogoImage(LogoImage $logo)
+    public function setLogoImage(LogoImage $logo): self
     {
         $this->logo = $logo;
 
         return $this;
     }
 
-    /**
-     * @return LogoImage
-     */
-    public function getLogoImage()
+    public function getLogoImage(): ?\Tmdb\Model\Image\LogoImage
     {
         return $this->logo;
     }
@@ -147,7 +141,7 @@ class Company extends AbstractModel
      * @param mixed $logoPath
      * @return $this
      */
-    public function setLogoPath($logoPath)
+    public function setLogoPath($logoPath): self
     {
         $this->logoPath = $logoPath;
 
@@ -166,7 +160,7 @@ class Company extends AbstractModel
      * @param mixed $name
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
 
@@ -185,7 +179,7 @@ class Company extends AbstractModel
      * @param mixed $parentCompany
      * @return $this
      */
-    public function setParentCompany($parentCompany)
+    public function setParentCompany($parentCompany): self
     {
         $this->parentCompany = $parentCompany;
 

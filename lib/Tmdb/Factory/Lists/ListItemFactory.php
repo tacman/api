@@ -46,7 +46,7 @@ class ListItemFactory extends AbstractFactory
     /**
      * {@inheritdoc}
      */
-    public function createCollection(array $data = [])
+    public function createCollection(array $data = []): \Tmdb\Model\Common\GenericCollection
     {
         $collection = new GenericCollection();
 
@@ -63,10 +63,8 @@ class ListItemFactory extends AbstractFactory
 
     /**
      * @param array $data
-     *
-     * @return ListItem
      */
-    public function create(array $data = [])
+    public function create(array $data = []): \Tmdb\Model\AbstractModel
     {
         $listItem = new ListItem();
 
@@ -86,10 +84,7 @@ class ListItemFactory extends AbstractFactory
         return $this->hydrate($listItem, $data);
     }
 
-    /**
-     * @return ImageFactory
-     */
-    public function getImageFactory()
+    public function getImageFactory(): \Tmdb\Factory\ImageFactory
     {
         return $this->imageFactory;
     }
@@ -98,7 +93,7 @@ class ListItemFactory extends AbstractFactory
      * @param ImageFactory $imageFactory
      * @return $this
      */
-    public function setImageFactory($imageFactory)
+    public function setImageFactory($imageFactory): self
     {
         $this->imageFactory = $imageFactory;
 

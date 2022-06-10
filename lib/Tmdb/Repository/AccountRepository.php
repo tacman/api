@@ -31,10 +31,8 @@ class AccountRepository extends AbstractRepository
     /**
      * Get the basic information for an account.
      * You will need to have a valid session id.
-     *
-     * @return \Tmdb\Model\Account
      */
-    public function getAccount()
+    public function getAccount(): \Tmdb\Model\Account
     {
         $data = $this->getApi()->getAccount();
 
@@ -43,18 +41,13 @@ class AccountRepository extends AbstractRepository
 
     /**
      * Return the Collection API Class
-     *
-     * @return Account
      */
-    public function getApi()
+    public function getApi(): \Tmdb\Api\Account
     {
         return $this->getClient()->getAccountApi();
     }
 
-    /**
-     * @return AccountFactory
-     */
-    public function getFactory()
+    public function getFactory(): \Tmdb\Factory\AccountFactory
     {
         return new AccountFactory($this->getClient()->getHttpClient());
     }
@@ -65,9 +58,8 @@ class AccountRepository extends AbstractRepository
      * @param string $accountId
      * @param array $parameters
      * @param array $headers
-     * @return ResultCollection
      */
-    public function getLists($accountId, array $parameters = [], array $headers = [])
+    public function getLists($accountId, array $parameters = [], array $headers = []): \Tmdb\Model\Collection\ResultCollection
     {
         $data = $this->getApi()->getLists($accountId, $parameters, $headers);
 
@@ -80,9 +72,8 @@ class AccountRepository extends AbstractRepository
      * @param string $accountId
      * @param array $parameters
      * @param array $headers
-     * @return ResultCollection
      */
-    public function getFavoriteMovies($accountId, array $parameters = [], array $headers = [])
+    public function getFavoriteMovies($accountId, array $parameters = [], array $headers = []): \Tmdb\Model\Collection\ResultCollection
     {
         $data = $this->getApi()->getFavoriteMovies($accountId, $parameters, $headers);
 
@@ -95,9 +86,8 @@ class AccountRepository extends AbstractRepository
      * @param string $accountId
      * @param array $parameters
      * @param array $headers
-     * @return ResultCollection
      */
-    public function getFavoriteTvShows($accountId, array $parameters = [], array $headers = [])
+    public function getFavoriteTvShows($accountId, array $parameters = [], array $headers = []): \Tmdb\Model\Collection\ResultCollection
     {
         $data = $this->getApi()->getFavoriteTvShows($accountId, $parameters, $headers);
 
@@ -111,9 +101,8 @@ class AccountRepository extends AbstractRepository
      * @param int|Movie|Tv $media
      * @param boolean $isFavorite
      * @param string $mediaType
-     * @return Result
      */
-    public function favorite($accountId, $media, $isFavorite = true, $mediaType = 'movie')
+    public function favorite($accountId, $media, $isFavorite = true, $mediaType = 'movie'): \Tmdb\Model\Lists\Result
     {
         if ($media instanceof Tv) {
             $mediaType = 'tv';
@@ -134,9 +123,8 @@ class AccountRepository extends AbstractRepository
      * @param string $accountId
      * @param array $parameters
      * @param array $headers
-     * @return ResultCollection
      */
-    public function getRatedMovies($accountId, array $parameters = [], array $headers = [])
+    public function getRatedMovies($accountId, array $parameters = [], array $headers = []): \Tmdb\Model\Collection\ResultCollection
     {
         $data = $this->getApi()->getRatedMovies($accountId, $parameters, $headers);
 
@@ -149,9 +137,8 @@ class AccountRepository extends AbstractRepository
      * @param string $accountId
      * @param array $parameters
      * @param array $headers
-     * @return ResultCollection
      */
-    public function getRatedTvShows($accountId, array $parameters = [], array $headers = [])
+    public function getRatedTvShows($accountId, array $parameters = [], array $headers = []): \Tmdb\Model\Collection\ResultCollection
     {
         $data = $this->getApi()->getRatedTvShows($accountId, $parameters, $headers);
 
@@ -164,9 +151,8 @@ class AccountRepository extends AbstractRepository
      * @param string $accountId
      * @param array $parameters
      * @param array $headers
-     * @return ResultCollection
      */
-    public function getMovieWatchlist($accountId, array $parameters = [], array $headers = [])
+    public function getMovieWatchlist($accountId, array $parameters = [], array $headers = []): \Tmdb\Model\Collection\ResultCollection
     {
         $data = $this->getApi()->getMovieWatchlist($accountId, $parameters, $headers);
 
@@ -179,9 +165,8 @@ class AccountRepository extends AbstractRepository
      * @param string $accountId
      * @param array $parameters
      * @param array $headers
-     * @return ResultCollection
      */
-    public function getTvWatchlist($accountId, array $parameters = [], array $headers = [])
+    public function getTvWatchlist($accountId, array $parameters = [], array $headers = []): \Tmdb\Model\Collection\ResultCollection
     {
         $data = $this->getApi()->getTvWatchlist($accountId, $parameters, $headers);
 
@@ -195,9 +180,8 @@ class AccountRepository extends AbstractRepository
      * @param integer $media
      * @param bool $isOnWatchlist
      * @param string $mediaType
-     * @return Result
      */
-    public function watchlist($accountId, $media, $isOnWatchlist = true, $mediaType = 'movie')
+    public function watchlist($accountId, $media, $isOnWatchlist = true, $mediaType = 'movie'): \Tmdb\Model\Lists\Result
     {
         if ($media instanceof Tv) {
             $mediaType = 'tv';

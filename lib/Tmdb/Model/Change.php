@@ -36,10 +36,7 @@ class Change extends AbstractModel
      */
     private $adult;
 
-    /**
-     * @return boolean
-     */
-    public function getAdult()
+    public function getAdult(): bool
     {
         return $this->adult;
     }
@@ -48,17 +45,14 @@ class Change extends AbstractModel
      * @param boolean $adult
      * @return $this
      */
-    public function setAdult($adult)
+    public function setAdult($adult): self
     {
         $this->adult = (bool)$adult;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -67,7 +61,7 @@ class Change extends AbstractModel
      * @param int $id
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): self
     {
         $this->id = (int)$id;
 

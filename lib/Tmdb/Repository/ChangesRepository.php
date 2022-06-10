@@ -39,9 +39,8 @@ class ChangesRepository extends AbstractRepository
      *
      * @param ChangesQuery $query
      * @param array $headers
-     * @return GenericCollection
      */
-    public function getMovieChanges(ChangesQuery $query, array $headers = [])
+    public function getMovieChanges(ChangesQuery $query, array $headers = []): \Tmdb\Model\Collection\ResultCollection
     {
         $data = $this->getApi()->getMovieChanges($query->toArray(), $headers);
 
@@ -50,20 +49,16 @@ class ChangesRepository extends AbstractRepository
 
     /**
      * Return the related API class
-     *
-     * @return Changes
      */
-    public function getApi()
+    public function getApi(): \Tmdb\Api\Changes
     {
         return $this->getClient()->getChangesApi();
     }
 
     /**
      * Changes does not support a generic factory
-     *
-     * @return ChangesFactory
      */
-    public function getFactory()
+    public function getFactory(): \Tmdb\Factory\ChangesFactory
     {
         return new ChangesFactory($this->getClient()->getHttpClient());
     }
@@ -103,9 +98,8 @@ class ChangesRepository extends AbstractRepository
      *
      * @param ChangesQuery $query
      * @param array $headers
-     * @return GenericCollection
      */
-    public function getTvChanges(ChangesQuery $query, array $headers = [])
+    public function getTvChanges(ChangesQuery $query, array $headers = []): \Tmdb\Model\Collection\ResultCollection
     {
         $data = $this->getApi()->getTvChanges($query->toArray(), $headers);
 

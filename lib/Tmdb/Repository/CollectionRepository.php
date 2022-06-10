@@ -48,7 +48,7 @@ class CollectionRepository extends AbstractRepository
      * @param $headers
      * @return ApiCollection
      */
-    public function load($id, array $parameters = [], array $headers = [])
+    public function load($id, array $parameters = [], array $headers = []): ApiCollection
     {
         if (empty($parameters)) {
             $parameters = [
@@ -66,18 +66,13 @@ class CollectionRepository extends AbstractRepository
 
     /**
      * Return the Collection API Class
-     *
-     * @return Collections
      */
-    public function getApi()
+    public function getApi(): \Tmdb\Api\Collections
     {
         return $this->getClient()->getCollectionsApi();
     }
 
-    /**
-     * @return CollectionFactory
-     */
-    public function getFactory()
+    public function getFactory(): \Tmdb\Factory\CollectionFactory
     {
         return new CollectionFactory($this->getClient()->getHttpClient());
     }
@@ -107,7 +102,7 @@ class CollectionRepository extends AbstractRepository
      * @param $headers
      * @return null|\Tmdb\Model\AbstractModel
      */
-    public function getTranslations($id, array $parameters = [], array $headers = [])
+    public function getTranslations($id, array $parameters = [], array $headers = []): ApiCollection
     {
         $data = $this->getApi()->getTranslations($id, $this->parseQueryParameters($parameters), $headers);
 
@@ -117,7 +112,7 @@ class CollectionRepository extends AbstractRepository
     /**
      * @return mixed
      */
-    public function getImageFactory()
+    public function getImageFactory(): \Tmdb\Factory\ImageFactory
     {
         return $this->imageFactory;
     }
@@ -126,7 +121,7 @@ class CollectionRepository extends AbstractRepository
      * @param mixed $imageFactory
      * @return $this
      */
-    public function setImageFactory($imageFactory)
+    public function setImageFactory($imageFactory): self
     {
         $this->imageFactory = $imageFactory;
 

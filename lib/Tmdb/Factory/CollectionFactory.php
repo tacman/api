@@ -51,7 +51,7 @@ class CollectionFactory extends AbstractFactory
     /**
      * {@inheritdoc}
      */
-    public function createCollection(array $data = [])
+    public function createCollection(array $data = []): \Tmdb\Model\Common\GenericCollection
     {
         $collection = new GenericCollection();
 
@@ -64,9 +64,8 @@ class CollectionFactory extends AbstractFactory
 
     /**
      * {@inheritdoc}
-     * @return Collection
      */
-    public function create(array $data = [])
+    public function create(array $data = []): \Tmdb\Model\AbstractModel
     {
         $collection = new Collection();
 
@@ -110,10 +109,7 @@ class CollectionFactory extends AbstractFactory
         return $this->hydrate($collection, $data);
     }
 
-    /**
-     * @return MovieFactory
-     */
-    public function getMovieFactory()
+    public function getMovieFactory(): MovieFactory
     {
         return $this->movieFactory;
     }
@@ -122,17 +118,14 @@ class CollectionFactory extends AbstractFactory
      * @param MovieFactory $movieFactory
      * @return $this
      */
-    public function setMovieFactory($movieFactory)
+    public function setMovieFactory($movieFactory): self
     {
         $this->movieFactory = $movieFactory;
 
         return $this;
     }
 
-    /**
-     * @return ImageFactory
-     */
-    public function getImageFactory()
+    public function getImageFactory(): \Tmdb\Factory\ImageFactory
     {
         return $this->imageFactory;
     }
@@ -141,7 +134,7 @@ class CollectionFactory extends AbstractFactory
      * @param ImageFactory $imageFactory
      * @return $this
      */
-    public function setImageFactory($imageFactory)
+    public function setImageFactory($imageFactory): self
     {
         $this->imageFactory = $imageFactory;
 

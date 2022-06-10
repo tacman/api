@@ -52,17 +52,15 @@ abstract class AbstractFactory
      * Convert an array to an hydrated object
      *
      * @param array $data
-     * @return AbstractModel
      */
-    abstract public function create(array $data = []);
+    abstract public function create(array $data = []): ?AbstractModel;
 
     /**
      * Convert an array with an collection of items to an hydrated object collection
      *
      * @param array $data
-     * @return GenericCollection
      */
-    abstract public function createCollection(array $data = []);
+    abstract public function createCollection(array $data = []): ?AbstractModel;
 
     /**
      * Create a result collection

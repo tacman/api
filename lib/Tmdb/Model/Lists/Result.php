@@ -38,10 +38,7 @@ class Result extends AbstractModel
      */
     private $statusMessage;
 
-    /**
-     * @return int
-     */
-    public function getStatusCode()
+    public function getStatusCode(): int
     {
         return $this->statusCode;
     }
@@ -50,17 +47,14 @@ class Result extends AbstractModel
      * @param int $statusCode
      * @return $this
      */
-    public function setStatusCode($statusCode)
+    public function setStatusCode($statusCode): self
     {
         $this->statusCode = $statusCode;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getStatusMessage()
+    public function getStatusMessage(): string
     {
         return $this->statusMessage;
     }
@@ -69,7 +63,7 @@ class Result extends AbstractModel
      * @param string $statusMessage
      * @return $this
      */
-    public function setStatusMessage($statusMessage)
+    public function setStatusMessage($statusMessage): self
     {
         $this->statusMessage = $statusMessage;
 

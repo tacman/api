@@ -58,7 +58,7 @@ class TmdbExceptionEvent extends StoppableEvent
     /**
      * @return ResponseInterface|null
      */
-    public function getResponse(): ?ResponseInterface
+    public function getResponse(): \Psr\Http\Message\ResponseInterface
     {
         return $this->response;
     }

@@ -39,10 +39,7 @@ class Certification extends AbstractModel
         $this->certifications = new GenericCollection();
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getCertifications()
+    public function getCertifications(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->certifications;
     }
@@ -51,17 +48,14 @@ class Certification extends AbstractModel
      * @param GenericCollection $certifications
      * @return $this
      */
-    public function setCertifications($certifications)
+    public function setCertifications($certifications): self
     {
         $this->certifications = $certifications;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCountry()
+    public function getCountry(): string
     {
         return $this->country;
     }
@@ -70,7 +64,7 @@ class Certification extends AbstractModel
      * @param string $country
      * @return $this
      */
-    public function setCountry($country)
+    public function setCountry($country): self
     {
         $this->country = $country;
 

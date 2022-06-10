@@ -26,7 +26,7 @@ class GenreFactory extends AbstractFactory
     /**
      * {@inheritdoc}
      */
-    public function createCollection(array $data = [], $key = 'genres')
+    public function createCollection(array $data = [], $key = 'genres'): \Tmdb\Model\Collection\Genres
     {
         $collection = new Genres();
 
@@ -43,10 +43,8 @@ class GenreFactory extends AbstractFactory
 
     /**
      * @param array $data
-     *
-     * @return Genre
      */
-    public function create(array $data = [])
+    public function create(array $data = []): \Tmdb\Model\AbstractModel
     {
         return $this->hydrate(new Genre(), $data);
     }

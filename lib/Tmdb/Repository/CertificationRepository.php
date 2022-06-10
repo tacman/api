@@ -33,9 +33,8 @@ class CertificationRepository extends AbstractRepository
      *
      * @param $parameters
      * @param $headers
-     * @return GenericCollection
      */
-    public function getMovieList(array $parameters = [], array $headers = [])
+    public function getMovieList(array $parameters = [], array $headers = []): \Tmdb\Model\Common\GenericCollection
     {
         $data = $this->getApi()->getMovieList($this->parseQueryParameters($parameters), $headers);
 
@@ -44,18 +43,13 @@ class CertificationRepository extends AbstractRepository
 
     /**
      * Return the Collection API Class
-     *
-     * @return Certifications
      */
-    public function getApi()
+    public function getApi(): \Tmdb\Api\Certifications
     {
         return $this->getClient()->getCertificationsApi();
     }
 
-    /**
-     * @return CertificationFactory
-     */
-    public function getFactory()
+    public function getFactory(): \Tmdb\Factory\CertificationFactory
     {
         return new CertificationFactory($this->getClient()->getHttpClient());
     }
@@ -68,9 +62,8 @@ class CertificationRepository extends AbstractRepository
      *
      * @param $parameters
      * @param $headers
-     * @return GenericCollection
      */
-    public function getTvList(array $parameters = [], array $headers = [])
+    public function getTvList(array $parameters = [], array $headers = []): \Tmdb\Model\Common\GenericCollection
     {
         $data = $this->getApi()->getTvList($this->parseQueryParameters($parameters), $headers);
 

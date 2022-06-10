@@ -48,10 +48,7 @@ class Find extends AbstractModel
      */
     private $tvEpisodeResults;
 
-    /**
-     * @return GenericCollection
-     */
-    public function getMovieResults()
+    public function getMovieResults(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->movieResults;
     }
@@ -60,17 +57,14 @@ class Find extends AbstractModel
      * @param GenericCollection $movieResults
      * @return $this
      */
-    public function setMovieResults($movieResults)
+    public function setMovieResults($movieResults): self
     {
         $this->movieResults = $movieResults;
 
         return $this;
     }
 
-    /**
-     * @return People
-     */
-    public function getPersonResults()
+    public function getPersonResults(): \Tmdb\Model\Collection\People
     {
         return $this->personResults;
     }
@@ -79,17 +73,14 @@ class Find extends AbstractModel
      * @param People $personResults
      * @return $this
      */
-    public function setPersonResults($personResults)
+    public function setPersonResults($personResults): self
     {
         $this->personResults = $personResults;
 
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getTvResults()
+    public function getTvResults(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->tvResults;
     }
@@ -98,17 +89,14 @@ class Find extends AbstractModel
      * @param GenericCollection $tvResults
      * @return $this
      */
-    public function setTvResults($tvResults)
+    public function setTvResults($tvResults): self
     {
         $this->tvResults = $tvResults;
 
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getTvSeasonResults()
+    public function getTvSeasonResults(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->tvSeasonResults;
     }
@@ -117,17 +105,14 @@ class Find extends AbstractModel
      * @param GenericCollection $tvSeasonResults
      * @return $this
      */
-    public function setTvSeasonResults($tvSeasonResults)
+    public function setTvSeasonResults($tvSeasonResults): self
     {
         $this->tvSeasonResults = $tvSeasonResults;
 
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getTvEpisodeResults()
+    public function getTvEpisodeResults(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->tvEpisodeResults;
     }
@@ -136,7 +121,7 @@ class Find extends AbstractModel
      * @param GenericCollection $tvEpisodeResults
      * @return $this
      */
-    public function setTvEpisodeResults($tvEpisodeResults)
+    public function setTvEpisodeResults($tvEpisodeResults): self
     {
         $this->tvEpisodeResults = $tvEpisodeResults;
 

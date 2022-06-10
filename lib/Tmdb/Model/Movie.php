@@ -262,10 +262,7 @@ class Movie extends AbstractModel
         $this->watchProviders = new GenericCollection();
     }
 
-    /**
-     * @return boolean
-     */
-    public function getAdult()
+    public function getAdult(): bool
     {
         return $this->adult;
     }
@@ -274,17 +271,14 @@ class Movie extends AbstractModel
      * @param boolean $adult
      * @return $this
      */
-    public function setAdult($adult)
+    public function setAdult($adult): self
     {
         $this->adult = (bool)$adult;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getBackdropPath()
+    public function getBackdropPath(): string
     {
         return $this->backdropPath;
     }
@@ -293,17 +287,14 @@ class Movie extends AbstractModel
      * @param string $backdropPath
      * @return $this
      */
-    public function setBackdropPath($backdropPath)
+    public function setBackdropPath($backdropPath): self
     {
         $this->backdropPath = $backdropPath;
 
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getBelongsToCollection()
+    public function getBelongsToCollection(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->belongsToCollection;
     }
@@ -312,7 +303,7 @@ class Movie extends AbstractModel
      * @param null $belongsToCollection
      * @return $this
      */
-    public function setBelongsToCollection($belongsToCollection)
+    public function setBelongsToCollection($belongsToCollection): self
     {
         $this->belongsToCollection = $belongsToCollection;
 
@@ -331,17 +322,14 @@ class Movie extends AbstractModel
      * @param GenericCollection $changes
      * @return $this
      */
-    public function setChanges(GenericCollection $changes)
+    public function setChanges(GenericCollection $changes): self
     {
         $this->changes = $changes;
 
         return $this;
     }
 
-    /**
-     * @return Genres
-     */
-    public function getGenres()
+    public function getGenres(): \Tmdb\Model\Collection\Genres
     {
         return $this->genres;
     }
@@ -350,17 +338,14 @@ class Movie extends AbstractModel
      * @param Genres $genres
      * @return $this
      */
-    public function setGenres(Genres $genres)
+    public function setGenres(Genres $genres): self
     {
         $this->genres = $genres;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getHomepage()
+    public function getHomepage(): string
     {
         return $this->homepage;
     }
@@ -369,17 +354,14 @@ class Movie extends AbstractModel
      * @param string $homepage
      * @return $this
      */
-    public function setHomepage($homepage)
+    public function setHomepage($homepage): self
     {
         $this->homepage = $homepage;
 
         return $this;
     }
 
-    /**
-     * @return integer
-     */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -388,7 +370,7 @@ class Movie extends AbstractModel
      * @param mixed $id
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): self
     {
         $this->id = (int)$id;
 
@@ -398,7 +380,7 @@ class Movie extends AbstractModel
     /**
      * @return Images Image[]
      */
-    public function getImages()
+    public function getImages(): \Tmdb\Model\Collection\Images
     {
         return $this->images;
     }
@@ -407,17 +389,14 @@ class Movie extends AbstractModel
      * @param Images $images
      * @return $this
      */
-    public function setImages(Images $images)
+    public function setImages(Images $images): self
     {
         $this->images = $images;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getImdbId()
+    public function getImdbId(): string
     {
         return $this->imdbId;
     }
@@ -426,17 +405,14 @@ class Movie extends AbstractModel
      * @param string $imdbId
      * @return $this
      */
-    public function setImdbId($imdbId)
+    public function setImdbId($imdbId): self
     {
         $this->imdbId = $imdbId;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getOriginalTitle()
+    public function getOriginalTitle(): string
     {
         return $this->originalTitle;
     }
@@ -445,17 +421,14 @@ class Movie extends AbstractModel
      * @param string $originalTitle
      * @return $this
      */
-    public function setOriginalTitle($originalTitle)
+    public function setOriginalTitle($originalTitle): self
     {
         $this->originalTitle = $originalTitle;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getOriginalLanguage()
+    public function getOriginalLanguage(): string
     {
         return $this->originalLanguage;
     }
@@ -464,17 +437,14 @@ class Movie extends AbstractModel
      * @param string $originalLanguage
      * @return $this
      */
-    public function setOriginalLanguage($originalLanguage)
+    public function setOriginalLanguage($originalLanguage): self
     {
         $this->originalLanguage = $originalLanguage;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getOverview()
+    public function getOverview(): string
     {
         return $this->overview;
     }
@@ -483,17 +453,14 @@ class Movie extends AbstractModel
      * @param string $overview
      * @return $this
      */
-    public function setOverview($overview)
+    public function setOverview($overview): self
     {
         $this->overview = $overview;
 
         return $this;
     }
 
-    /**
-     * @return double
-     */
-    public function getPopularity()
+    public function getPopularity(): float
     {
         return $this->popularity;
     }
@@ -502,17 +469,14 @@ class Movie extends AbstractModel
      * @param mixed $popularity
      * @return $this
      */
-    public function setPopularity($popularity)
+    public function setPopularity($popularity): self
     {
         $this->popularity = (float)$popularity;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getPosterPath()
+    public function getPosterPath(): string
     {
         return $this->posterPath;
     }
@@ -521,7 +485,7 @@ class Movie extends AbstractModel
      * @param string $posterPath
      * @return $this
      */
-    public function setPosterPath($posterPath)
+    public function setPosterPath($posterPath): self
     {
         $this->posterPath = $posterPath;
 
@@ -531,7 +495,7 @@ class Movie extends AbstractModel
     /**
      * @return GenericCollection|Company[]
      */
-    public function getProductionCompanies()
+    public function getProductionCompanies(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->productionCompanies;
     }
@@ -540,7 +504,7 @@ class Movie extends AbstractModel
      * @param GenericCollection $productionCompanies
      * @return $this
      */
-    public function setProductionCompanies(GenericCollection $productionCompanies)
+    public function setProductionCompanies(GenericCollection $productionCompanies): self
     {
         $this->productionCompanies = $productionCompanies;
 
@@ -550,7 +514,7 @@ class Movie extends AbstractModel
     /**
      * @return GenericCollection|Country[]
      */
-    public function getProductionCountries()
+    public function getProductionCountries(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->productionCountries;
     }
@@ -559,17 +523,14 @@ class Movie extends AbstractModel
      * @param GenericCollection $productionCountries
      * @return $this
      */
-    public function setProductionCountries(GenericCollection $productionCountries)
+    public function setProductionCountries(GenericCollection $productionCountries): self
     {
         $this->productionCountries = $productionCountries;
 
         return $this;
     }
 
-    /**
-     * @return DateTime
-     */
-    public function getReleaseDate()
+    public function getReleaseDate(): \DateTime
     {
         return $this->releaseDate;
     }
@@ -578,7 +539,7 @@ class Movie extends AbstractModel
      * @param DateTime|string|null $releaseDate
      * @return $this
      */
-    public function setReleaseDate($releaseDate = null)
+    public function setReleaseDate($releaseDate = null): self
     {
         if (!$releaseDate instanceof DateTime && $releaseDate !== null) {
             $releaseDate = new DateTime($releaseDate);
@@ -589,10 +550,7 @@ class Movie extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return integer
-     */
-    public function getRevenue()
+    public function getRevenue(): int
     {
         return $this->revenue;
     }
@@ -601,17 +559,14 @@ class Movie extends AbstractModel
      * @param mixed $revenue
      * @return $this
      */
-    public function setRevenue($revenue)
+    public function setRevenue($revenue): self
     {
         $this->revenue = (int)$revenue;
 
         return $this;
     }
 
-    /**
-     * @return integer
-     */
-    public function getRuntime()
+    public function getRuntime(): int
     {
         return $this->runtime;
     }
@@ -620,7 +575,7 @@ class Movie extends AbstractModel
      * @param mixed $runtime
      * @return $this
      */
-    public function setRuntime($runtime)
+    public function setRuntime($runtime): self
     {
         $this->runtime = (int)$runtime;
 
@@ -630,7 +585,7 @@ class Movie extends AbstractModel
     /**
      * @return GenericCollection|SpokenLanguage[]
      */
-    public function getSpokenLanguages()
+    public function getSpokenLanguages(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->spokenLanguages;
     }
@@ -639,17 +594,14 @@ class Movie extends AbstractModel
      * @param GenericCollection $spokenLanguages
      * @return $this
      */
-    public function setSpokenLanguages(GenericCollection $spokenLanguages)
+    public function setSpokenLanguages(GenericCollection $spokenLanguages): self
     {
         $this->spokenLanguages = $spokenLanguages;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getStatus()
+    public function getStatus(): string
     {
         return $this->status;
     }
@@ -658,17 +610,14 @@ class Movie extends AbstractModel
      * @param string $status
      * @return $this
      */
-    public function setStatus($status)
+    public function setStatus($status): self
     {
         $this->status = $status;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getTagline()
+    public function getTagline(): string
     {
         return $this->tagline;
     }
@@ -677,17 +626,14 @@ class Movie extends AbstractModel
      * @param string $tagline
      * @return $this
      */
-    public function setTagline($tagline)
+    public function setTagline($tagline): self
     {
         $this->tagline = $tagline;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -696,17 +642,14 @@ class Movie extends AbstractModel
      * @param string $title
      * @return $this
      */
-    public function setTitle($title)
+    public function setTitle($title): self
     {
         $this->title = $title;
 
         return $this;
     }
 
-    /**
-     * @return double
-     */
-    public function getVoteAverage()
+    public function getVoteAverage(): float
     {
         return $this->voteAverage;
     }
@@ -715,17 +658,14 @@ class Movie extends AbstractModel
      * @param mixed $voteAverage
      * @return $this
      */
-    public function setVoteAverage($voteAverage)
+    public function setVoteAverage($voteAverage): self
     {
         $this->voteAverage = (float)$voteAverage;
 
         return $this;
     }
 
-    /**
-     * @return integer
-     */
-    public function getVoteCount()
+    public function getVoteCount(): int
     {
         return $this->voteCount;
     }
@@ -734,7 +674,7 @@ class Movie extends AbstractModel
      * @param mixed $voteCount
      * @return $this
      */
-    public function setVoteCount($voteCount)
+    public function setVoteCount($voteCount): self
     {
         $this->voteCount = (int)$voteCount;
 
@@ -744,7 +684,7 @@ class Movie extends AbstractModel
     /**
      * @return GenericCollection|AlternativeTitle[]
      */
-    public function getAlternativeTitles()
+    public function getAlternativeTitles(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->alternativeTitles;
     }
@@ -753,17 +693,14 @@ class Movie extends AbstractModel
      * @param GenericCollection $alternativeTitles
      * @return $this
      */
-    public function setAlternativeTitles($alternativeTitles)
+    public function setAlternativeTitles($alternativeTitles): self
     {
         $this->alternativeTitles = $alternativeTitles;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getBudget()
+    public function getBudget(): int
     {
         return $this->budget;
     }
@@ -772,17 +709,14 @@ class Movie extends AbstractModel
      * @param int $budget
      * @return $this
      */
-    public function setBudget($budget)
+    public function setBudget($budget): self
     {
         $this->budget = $budget;
 
         return $this;
     }
 
-    /**
-     * @return CreditsCollection
-     */
-    public function getCredits()
+    public function getCredits(): \Tmdb\Model\Collection\CreditsCollection
     {
         return $this->credits;
     }
@@ -791,17 +725,14 @@ class Movie extends AbstractModel
      * @param CreditsCollection $credits
      * @return $this
      */
-    public function setCredits(CreditsCollection $credits)
+    public function setCredits(CreditsCollection $credits): self
     {
         $this->credits = $credits;
 
         return $this;
     }
 
-    /**
-     * @return ExternalIds
-     */
-    public function getExternalIds()
+    public function getExternalIds(): \Tmdb\Model\Common\ExternalIds
     {
         return $this->externalIds;
     }
@@ -810,7 +741,7 @@ class Movie extends AbstractModel
      * @param ExternalIds $externalIds
      * @return $this
      */
-    public function setExternalIds($externalIds)
+    public function setExternalIds($externalIds): self
     {
         $this->externalIds = $externalIds;
 
@@ -821,7 +752,7 @@ class Movie extends AbstractModel
     /**
      * @return GenericCollection|Keyword[]
      */
-    public function getKeywords()
+    public function getKeywords(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->keywords;
     }
@@ -830,17 +761,14 @@ class Movie extends AbstractModel
      * @param GenericCollection $keywords
      * @return $this
      */
-    public function setKeywords($keywords)
+    public function setKeywords($keywords): self
     {
         $this->keywords = $keywords;
 
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getLists()
+    public function getLists(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->lists;
     }
@@ -849,7 +777,7 @@ class Movie extends AbstractModel
      * @param GenericCollection $lists
      * @return $this
      */
-    public function setLists($lists)
+    public function setLists($lists): self
     {
         $this->lists = $lists;
 
@@ -860,7 +788,7 @@ class Movie extends AbstractModel
      * @return GenericCollection|Release[]
      * @deprecated Use the getReleaseDates instead
      */
-    public function getReleases()
+    public function getReleases(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->releases;
     }
@@ -870,7 +798,7 @@ class Movie extends AbstractModel
      * @return $this
      * @deprecated Use the setReleaseDates instead.
      */
-    public function setReleases(GenericCollection $releases)
+    public function setReleases(GenericCollection $releases): self
     {
         $this->releases = $releases;
 
@@ -880,7 +808,7 @@ class Movie extends AbstractModel
     /**
      * @return GenericCollection|ReleaseDate[]
      */
-    public function getReleaseDates()
+    public function getReleaseDates(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->release_dates;
     }
@@ -889,7 +817,7 @@ class Movie extends AbstractModel
      * @param GenericCollection $release_dates
      * @return $this
      */
-    public function setReleaseDates(GenericCollection $release_dates)
+    public function setReleaseDates(GenericCollection $release_dates): self
     {
         $this->release_dates = $release_dates;
 
@@ -899,7 +827,7 @@ class Movie extends AbstractModel
     /**
      * @return GenericCollection|Movie[]
      */
-    public function getRecommendations()
+    public function getRecommendations(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->recommendations;
     }
@@ -908,7 +836,7 @@ class Movie extends AbstractModel
      * @param GenericCollection $recommendations
      * @return $this
      */
-    public function setRecommendations($recommendations)
+    public function setRecommendations($recommendations): self
     {
         $this->recommendations = $recommendations;
 
@@ -927,7 +855,7 @@ class Movie extends AbstractModel
     /**
      * @return GenericCollection|Movie[]
      */
-    public function getSimilar()
+    public function getSimilar(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->similar;
     }
@@ -936,7 +864,7 @@ class Movie extends AbstractModel
      * @param GenericCollection $similar
      * @return $this
      */
-    public function setSimilar($similar)
+    public function setSimilar($similar): self
     {
         $this->similar = $similar;
 
@@ -955,7 +883,7 @@ class Movie extends AbstractModel
      * @param GenericCollection $translations
      * @return $this
      */
-    public function setTranslations($translations)
+    public function setTranslations($translations): self
     {
         $this->translations = $translations;
 
@@ -966,17 +894,14 @@ class Movie extends AbstractModel
      * @param Image $backdrop
      * @return $this
      */
-    public function setBackdropImage($backdrop)
+    public function setBackdropImage($backdrop): self
     {
         $this->backdrop = $backdrop;
 
         return $this;
     }
 
-    /**
-     * @return Image
-     */
-    public function getBackdropImage()
+    public function getBackdropImage(): \Tmdb\Model\Image
     {
         return $this->backdrop;
     }
@@ -985,25 +910,19 @@ class Movie extends AbstractModel
      * @param Image $poster
      * @return $this
      */
-    public function setPosterImage($poster)
+    public function setPosterImage($poster): self
     {
         $this->poster = $poster;
 
         return $this;
     }
 
-    /**
-     * @return Image
-     */
-    public function getPosterImage()
+    public function getPosterImage(): \Tmdb\Model\Image
     {
         return $this->poster;
     }
 
-    /**
-     * @return ResultCollection
-     */
-    public function getReviews()
+    public function getReviews(): \Tmdb\Model\Collection\ResultCollection
     {
         return $this->reviews;
     }
@@ -1012,17 +931,14 @@ class Movie extends AbstractModel
      * @param ResultCollection $reviews
      * @return $this
      */
-    public function setReviews($reviews)
+    public function setReviews($reviews): self
     {
         $this->reviews = $reviews;
 
         return $this;
     }
 
-    /**
-     * @return Videos
-     */
-    public function getVideos()
+    public function getVideos(): \Tmdb\Model\Collection\Videos
     {
         return $this->videos;
     }
@@ -1031,7 +947,7 @@ class Movie extends AbstractModel
      * @param Videos $videos
      * @return $this
      */
-    public function setVideos($videos)
+    public function setVideos($videos): self
     {
         $this->videos = $videos;
 
@@ -1050,7 +966,7 @@ class Movie extends AbstractModel
      * @param GenericCollection $watchProviders
      * @return $this
      */
-    public function setWatchProviders($watchProviders)
+    public function setWatchProviders($watchProviders): self
     {
         $this->watchProviders = $watchProviders;
 

@@ -49,7 +49,7 @@ class ReleaseDate extends AbstractModel implements CountryFilter, LanguageFilter
     /**
      * @return string|null
      */
-    public function getCertification()
+    public function getCertification(): ?string
     {
         return $this->certification;
     }
@@ -58,7 +58,7 @@ class ReleaseDate extends AbstractModel implements CountryFilter, LanguageFilter
      * @param string|null $certification
      * @return $this
      */
-    public function setCertification($certification)
+    public function setCertification($certification): self
     {
         $this->certification = $certification;
 
@@ -68,7 +68,7 @@ class ReleaseDate extends AbstractModel implements CountryFilter, LanguageFilter
     /**
      * @return string|null
      */
-    public function getNote()
+    public function getNote(): ?string
     {
         return $this->note;
     }
@@ -77,17 +77,14 @@ class ReleaseDate extends AbstractModel implements CountryFilter, LanguageFilter
      * @param string|null $note
      * @return $this
      */
-    public function setNote($note)
+    public function setNote($note): self
     {
         $this->note = $note;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getIso31661()
+    public function getIso31661(): ?string
     {
         return $this->iso31661;
     }
@@ -96,17 +93,14 @@ class ReleaseDate extends AbstractModel implements CountryFilter, LanguageFilter
      * @param string $iso31661
      * @return $this
      */
-    public function setIso31661($iso31661)
+    public function setIso31661($iso31661): self
     {
         $this->iso31661 = $iso31661;
 
         return $this;
     }
 
-    /**
-     * @return DateTime
-     */
-    public function getReleaseDate()
+    public function getReleaseDate(): ?\DateTime
     {
         return $this->releaseDate;
     }
@@ -115,7 +109,7 @@ class ReleaseDate extends AbstractModel implements CountryFilter, LanguageFilter
      * @param string|DateTime|null $releaseDate
      * @return $this
      */
-    public function setReleaseDate($releaseDate = null)
+    public function setReleaseDate($releaseDate = null): self
     {
         if (!$releaseDate instanceof DateTime && $releaseDate !== null) {
             $releaseDate = new DateTime($releaseDate);
@@ -129,7 +123,7 @@ class ReleaseDate extends AbstractModel implements CountryFilter, LanguageFilter
     /**
      * @return string|null
      */
-    public function getIso6391()
+    public function getIso6391(): ?string
     {
         return $this->iso6391;
     }
@@ -138,16 +132,13 @@ class ReleaseDate extends AbstractModel implements CountryFilter, LanguageFilter
      * @param string $iso6391
      * @return $this
      */
-    public function setIso6391($iso6391)
+    public function setIso6391($iso6391): self
     {
         $this->iso6391 = $iso6391;
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getType()
+    public function getType(): ?int
     {
         return $this->type;
     }
@@ -156,7 +147,7 @@ class ReleaseDate extends AbstractModel implements CountryFilter, LanguageFilter
      * @param int $type
      * @return $this
      */
-    public function setType($type)
+    public function setType($type): self
     {
         $this->type = $type;
 

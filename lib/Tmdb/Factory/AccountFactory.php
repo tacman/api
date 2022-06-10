@@ -64,10 +64,8 @@ class AccountFactory extends AbstractFactory
 
     /**
      * @param array $data
-     *
-     * @return Account
      */
-    public function create(array $data = [])
+    public function create(array $data = []): \Tmdb\Model\AbstractModel
     {
         $account = new Account();
 
@@ -80,20 +78,15 @@ class AccountFactory extends AbstractFactory
         return $this->hydrate($account, $data);
     }
 
-    /**
-     * @return AvatarFactory
-     */
-    public function getAvatarFactory()
+    public function getAvatarFactory(): \Tmdb\Factory\Account\AvatarFactory
     {
         return $this->avatarFactory;
     }
 
     /**
      * @param array $data
-     *
-     * @return Result
      */
-    public function createStatusResult(array $data = [])
+    public function createStatusResult(array $data = []): \Tmdb\Model\AbstractModel
     {
         return $this->hydrate(new Result(), $data);
     }
@@ -110,10 +103,7 @@ class AccountFactory extends AbstractFactory
         return $this->getMovieFactory()->create($data);
     }
 
-    /**
-     * @return MovieFactory
-     */
-    public function getMovieFactory()
+    public function getMovieFactory(): \Tmdb\Factory\MovieFactory
     {
         return $this->movieFactory;
     }
@@ -122,7 +112,7 @@ class AccountFactory extends AbstractFactory
      * @param MovieFactory $movieFactory
      * @return $this
      */
-    public function setMovieFactory($movieFactory)
+    public function setMovieFactory($movieFactory): self
     {
         $this->movieFactory = $movieFactory;
 
@@ -141,10 +131,7 @@ class AccountFactory extends AbstractFactory
         return $this->getTvFactory()->create($data);
     }
 
-    /**
-     * @return TvFactory
-     */
-    public function getTvFactory()
+    public function getTvFactory(): \Tmdb\Factory\TvFactory
     {
         return $this->tvFactory;
     }
@@ -153,7 +140,7 @@ class AccountFactory extends AbstractFactory
      * @param TvFactory $tvFactory
      * @return $this
      */
-    public function setTvFactory($tvFactory)
+    public function setTvFactory($tvFactory): self
     {
         $this->tvFactory = $tvFactory;
 
@@ -164,9 +151,8 @@ class AccountFactory extends AbstractFactory
      * Create list item
      *
      * @param array $data
-     * @return AbstractModel
      */
-    public function createListItem(array $data = [])
+    public function createListItem(array $data = []): \Tmdb\Model\AbstractModel
     {
         $listItem = new Account\ListItem();
 
@@ -177,10 +163,7 @@ class AccountFactory extends AbstractFactory
         return $this->hydrate($listItem, $data);
     }
 
-    /**
-     * @return ImageFactory
-     */
-    public function getImageFactory()
+    public function getImageFactory(): \Tmdb\Factory\ImageFactory
     {
         return $this->imageFactory;
     }
@@ -189,7 +172,7 @@ class AccountFactory extends AbstractFactory
      * @param ImageFactory $imageFactory
      * @return $this
      */
-    public function setImageFactory($imageFactory)
+    public function setImageFactory($imageFactory): self
     {
         $this->imageFactory = $imageFactory;
 
@@ -199,7 +182,7 @@ class AccountFactory extends AbstractFactory
     /**
      * {@inheritdoc}
      */
-    public function createCollection(array $data = [])
+    public function createCollection(array $data = []): ?AbstractModel
     {
         throw new RuntimeException(sprintf(
             'Class "%s" does not support method "%s".',
@@ -212,7 +195,7 @@ class AccountFactory extends AbstractFactory
      * @param AvatarFactory $avatarFactory
      * @return $this
      */
-    public function setAvatarFactory($avatarFactory)
+    public function setAvatarFactory($avatarFactory): self
     {
         $this->avatarFactory = $avatarFactory;
 

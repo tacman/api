@@ -48,10 +48,7 @@ class CastMember extends AbstractMember implements PersonInterface
      */
     private $creditId;
 
-    /**
-     * @return string
-     */
-    public function getCharacter()
+    public function getCharacter(): string
     {
         return $this->character;
     }
@@ -60,17 +57,14 @@ class CastMember extends AbstractMember implements PersonInterface
      * @param string $character
      * @return $this
      */
-    public function setCharacter($character)
+    public function setCharacter($character): self
     {
         $this->character = $character;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getOrder()
+    public function getOrder(): int
     {
         return $this->order;
     }
@@ -79,17 +73,14 @@ class CastMember extends AbstractMember implements PersonInterface
      * @param int $order
      * @return $this
      */
-    public function setOrder($order)
+    public function setOrder($order): self
     {
         $this->order = (int)$order;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getCastId()
+    public function getCastId(): ?int
     {
         return $this->castId;
     }
@@ -98,7 +89,7 @@ class CastMember extends AbstractMember implements PersonInterface
      * @param mixed $castId
      * @return $this
      */
-    public function setCastId($castId)
+    public function setCastId($castId): self
     {
         $this->castId = (int)$castId;
 
@@ -117,7 +108,7 @@ class CastMember extends AbstractMember implements PersonInterface
      * @param mixed $creditId
      * @return $this
      */
-    public function setCreditId($creditId)
+    public function setCreditId($creditId): self
     {
         $this->creditId = $creditId;
 

@@ -87,10 +87,8 @@ class FullHttpMessageFormatter implements HttpMessageFormatterInterface
      *
      * @param MessageInterface $request
      * @param string $message
-     *
-     * @return string
      */
-    private function addBody(MessageInterface $request, $message)
+    private function addBody(MessageInterface $request, $message): string
     {
         $message .= "\n";
         $stream = $request->getBody();

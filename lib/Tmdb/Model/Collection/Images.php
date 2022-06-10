@@ -26,10 +26,8 @@ class Images extends GenericCollection
 {
     /**
      * Returns all images
-     *
-     * @return array
      */
-    public function getImages()
+    public function getImages(): array
     {
         return $this->data;
     }
@@ -38,9 +36,8 @@ class Images extends GenericCollection
      * Retrieve a image from the collection
      *
      * @param $id
-     * @return GenericCollection
      */
-    public function getImage($id)
+    public function getImage($id): ?\Tmdb\Model\AbstractModel
     {
         return $this->filterId($id);
     }
@@ -59,10 +56,8 @@ class Images extends GenericCollection
 
     /**
      * Filter poster images
-     *
-     * @return Images
      */
-    public function filterPosters()
+    public function filterPosters(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->filter(
             function ($key, $value) {
@@ -75,10 +70,8 @@ class Images extends GenericCollection
 
     /**
      * Filter backdrop images
-     *
-     * @return Images
      */
-    public function filterBackdrops()
+    public function filterBackdrops(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->filter(
             function ($key, $value) {
@@ -91,10 +84,8 @@ class Images extends GenericCollection
 
     /**
      * Filter profile images
-     *
-     * @return Images
      */
-    public function filterProfile()
+    public function filterProfile(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->filter(
             function ($key, $value) {
@@ -107,10 +98,8 @@ class Images extends GenericCollection
 
     /**
      * Filter still images
-     *
-     * @return Images
      */
-    public function filterStills()
+    public function filterStills(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->filter(
             function ($key, $value) {
@@ -125,9 +114,8 @@ class Images extends GenericCollection
      * Filter by image size
      *
      * @param $width
-     * @return Images
      */
-    public function filterMaxWidth($width)
+    public function filterMaxWidth($width): \Tmdb\Model\Common\GenericCollection
     {
         return $this->filter(
             function ($key, $value) use ($width) {
@@ -142,9 +130,8 @@ class Images extends GenericCollection
      * Filter by image size
      *
      * @param $width
-     * @return Images
      */
-    public function filterMinWidth($width)
+    public function filterMinWidth($width): \Tmdb\Model\Common\GenericCollection
     {
         return $this->filter(
             function ($key, $value) use ($width) {
@@ -159,9 +146,8 @@ class Images extends GenericCollection
      * Filter by image size
      *
      * @param $height
-     * @return Images
      */
-    public function filterMaxHeight($height)
+    public function filterMaxHeight($height): \Tmdb\Model\Common\GenericCollection
     {
         return $this->filter(
             function ($key, $value) use ($height) {
@@ -179,9 +165,8 @@ class Images extends GenericCollection
      * Filter by image size
      *
      * @param $height
-     * @return Images
      */
-    public function filterMinHeight($height)
+    public function filterMinHeight($height): \Tmdb\Model\Common\GenericCollection
     {
         return $this->filter(
             function ($key, $value) use ($height) {
@@ -201,7 +186,7 @@ class Images extends GenericCollection
      *
      * @return ImageFilter|null
      */
-    public function filterBestVotedImage()
+    public function filterBestVotedImage(): ?\Tmdb\Model\Filter\ImageFilter
     {
         $currentImage = null;
         $voteAverage = -1;

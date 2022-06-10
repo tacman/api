@@ -26,7 +26,7 @@ class CertificationFactory extends AbstractFactory
     /**
      * {@inheritdoc}
      */
-    public function createCollection(array $data = [])
+    public function createCollection(array $data = []): \Tmdb\Model\Common\GenericCollection
     {
         if (array_key_exists('certifications', $data)) {
             $data = $data['certifications'];
@@ -52,10 +52,8 @@ class CertificationFactory extends AbstractFactory
 
     /**
      * @param array $data
-     *
-     * @return Certification
      */
-    public function create(array $data = [])
+    public function create(array $data = []): \Tmdb\Model\AbstractModel
     {
         return $this->hydrate(new Certification\CountryCertification(), $data);
     }

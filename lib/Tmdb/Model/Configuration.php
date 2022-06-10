@@ -33,10 +33,7 @@ class Configuration extends AbstractModel
      */
     private $change_keys;
 
-    /**
-     * @return array
-     */
-    public function getChangeKeys()
+    public function getChangeKeys(): array
     {
         return $this->change_keys;
     }
@@ -45,17 +42,14 @@ class Configuration extends AbstractModel
      * @param array $change_keys
      * @return $this
      */
-    public function setChangeKeys(array $change_keys = [])
+    public function setChangeKeys(array $change_keys = []): self
     {
         $this->change_keys = $change_keys;
 
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getImages()
+    public function getImages(): array
     {
         return $this->images;
     }
@@ -64,7 +58,7 @@ class Configuration extends AbstractModel
      * @param array $images
      * @return $this
      */
-    public function setImages(array $images = [])
+    public function setImages(array $images = []): self
     {
         $this->images = $images;
 

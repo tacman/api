@@ -16,6 +16,7 @@ namespace Tmdb\Factory;
 
 use DateTime;
 use RuntimeException;
+use Tmdb\Model\AbstractModel;
 use Tmdb\Token\Session\GuestSessionToken;
 use Tmdb\Token\Session\RequestToken;
 use Tmdb\Token\Session\SessionToken;
@@ -29,10 +30,9 @@ class AuthenticationFactory extends AbstractFactory
     /**
      * @param array $data
      *
-     * @return void
      * @throws RuntimeException
      */
-    public function create(array $data = [])
+    public function create(array $data = []): ?AbstractModel
     {
         throw new RuntimeException(sprintf(
             'Class "%s" does not support method "%s".',
@@ -44,10 +44,9 @@ class AuthenticationFactory extends AbstractFactory
     /**
      * @param array $data
      *
-     * @return void
      * @throws RuntimeException
      */
-    public function createCollection(array $data = [])
+    public function createCollection(array $data = []): ?AbstractModel
     {
         throw new RuntimeException(sprintf(
             'Class "%s" does not support method "%s".',
@@ -60,9 +59,8 @@ class AuthenticationFactory extends AbstractFactory
      * Create request token
      *
      * @param array $data
-     * @return RequestToken
      */
-    public function createRequestToken(array $data = [])
+    public function createRequestToken(array $data = []): \Tmdb\Token\Session\RequestToken
     {
         $token = new RequestToken();
 
@@ -85,9 +83,8 @@ class AuthenticationFactory extends AbstractFactory
      * Create session token for user
      *
      * @param array $data
-     * @return SessionToken
      */
-    public function createSessionToken(array $data = [])
+    public function createSessionToken(array $data = []): \Tmdb\Token\Session\SessionToken
     {
         $token = new SessionToken();
 
@@ -106,9 +103,8 @@ class AuthenticationFactory extends AbstractFactory
      * Create session token for guest
      *
      * @param array $data
-     * @return SessionToken
      */
-    public function createGuestSessionToken(array $data = [])
+    public function createGuestSessionToken(array $data = []): \Tmdb\Token\Session\GuestSessionToken
     {
         $token = new GuestSessionToken();
 

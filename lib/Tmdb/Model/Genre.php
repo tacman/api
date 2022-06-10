@@ -27,10 +27,7 @@ class Genre extends AbstractModel
     private $id;
     private $name;
 
-    /**
-     * @return integer
-     */
-    public function getId()
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -39,7 +36,7 @@ class Genre extends AbstractModel
      * @param mixed $id
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): self
     {
         $this->id = (int)$id;
 
@@ -58,7 +55,7 @@ class Genre extends AbstractModel
      * @param mixed $name
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
 

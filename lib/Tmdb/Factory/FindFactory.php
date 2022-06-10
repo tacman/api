@@ -68,7 +68,7 @@ class FindFactory extends AbstractFactory
     /**
      * {@inheritdoc}
      */
-    public function create(array $data = [])
+    public function create(array $data = []): ?Find
     {
         $find = new Find();
 
@@ -95,10 +95,7 @@ class FindFactory extends AbstractFactory
         return $find;
     }
 
-    /**
-     * @return MovieFactory
-     */
-    public function getMovieFactory()
+    public function getMovieFactory(): \Tmdb\Factory\MovieFactory
     {
         return $this->movieFactory;
     }
@@ -107,17 +104,14 @@ class FindFactory extends AbstractFactory
      * @param MovieFactory $movieFactory
      * @return $this
      */
-    public function setMovieFactory($movieFactory)
+    public function setMovieFactory($movieFactory): self
     {
         $this->movieFactory = $movieFactory;
 
         return $this;
     }
 
-    /**
-     * @return PeopleFactory
-     */
-    public function getPeopleFactory()
+    public function getPeopleFactory(): \Tmdb\Factory\PeopleFactory
     {
         return $this->peopleFactory;
     }
@@ -126,17 +120,14 @@ class FindFactory extends AbstractFactory
      * @param PeopleFactory $peopleFactory
      * @return $this
      */
-    public function setPeopleFactory($peopleFactory)
+    public function setPeopleFactory($peopleFactory): self
     {
         $this->peopleFactory = $peopleFactory;
 
         return $this;
     }
 
-    /**
-     * @return TvFactory
-     */
-    public function getTvFactory()
+    public function getTvFactory(): \Tmdb\Factory\TvFactory
     {
         return $this->tvFactory;
     }
@@ -145,17 +136,14 @@ class FindFactory extends AbstractFactory
      * @param TvFactory $tvFactory
      * @return $this
      */
-    public function setTvFactory($tvFactory)
+    public function setTvFactory($tvFactory): self
     {
         $this->tvFactory = $tvFactory;
 
         return $this;
     }
 
-    /**
-     * @return TvSeasonFactory
-     */
-    public function getTvSeasonFactory()
+    public function getTvSeasonFactory(): \Tmdb\Factory\TvSeasonFactory
     {
         return $this->tvSeasonFactory;
     }
@@ -164,17 +152,14 @@ class FindFactory extends AbstractFactory
      * @param TvSeasonFactory $tvSeasonFactory
      * @return $this
      */
-    public function setTvSeasonFactory($tvSeasonFactory)
+    public function setTvSeasonFactory($tvSeasonFactory): self
     {
         $this->tvSeasonFactory = $tvSeasonFactory;
 
         return $this;
     }
 
-    /**
-     * @return TvEpisodeFactory
-     */
-    public function getTvEpisodeFactory()
+    public function getTvEpisodeFactory(): \Tmdb\Factory\TvEpisodeFactory
     {
         return $this->tvEpisodeFactory;
     }
@@ -183,7 +168,7 @@ class FindFactory extends AbstractFactory
      * @param TvEpisodeFactory $tvEpisodeFactory
      * @return $this
      */
-    public function setTvEpisodeFactory($tvEpisodeFactory)
+    public function setTvEpisodeFactory($tvEpisodeFactory): self
     {
         $this->tvEpisodeFactory = $tvEpisodeFactory;
 
@@ -193,7 +178,7 @@ class FindFactory extends AbstractFactory
     /**
      * {@inheritdoc}
      */
-    public function createCollection(array $data = [])
+    public function createCollection(array $data = []): ?Find
     {
         throw new RuntimeException(sprintf(
             'Class "%s" does not support method "%s".',

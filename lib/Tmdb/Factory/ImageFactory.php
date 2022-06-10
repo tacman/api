@@ -33,7 +33,7 @@ class ImageFactory extends AbstractFactory
      * @param string $key
      * @return Image|Image\BackdropImage|Image\LogoImage|Image\PosterImage|Image\ProfileImage|Image\StillImage
      */
-    public function createFromPath($path, $key)
+    public function createFromPath($path, $key): \Tmdb\Model\AbstractModel
     {
         return $this->hydrate(
             self::resolveImageType($key),
@@ -47,7 +47,7 @@ class ImageFactory extends AbstractFactory
      * @param string|null $key
      * @return Image|Image\BackdropImage|Image\LogoImage|Image\PosterImage|Image\ProfileImage|Image\StillImage
      */
-    public function resolveImageType($key = null)
+    public function resolveImageType($key = null): \Tmdb\Model\Image
     {
         switch ($key) {
             case 'poster':
@@ -94,11 +94,10 @@ class ImageFactory extends AbstractFactory
      * reference either referring to movies / tv shows etc.
      *
      * @param array $data
-     * @return Image
      *
      * @throws \RuntimeException
      */
-    public function createMediaImage(array $data = [])
+    public function createMediaImage(array $data = []): \Tmdb\Model\AbstractModel
     {
         $type = $this->resolveImageType(array_key_exists('image_type', $data) ? $data['image_type'] : null);
         $image = $this->hydrate($type, $data);
@@ -148,9 +147,8 @@ class ImageFactory extends AbstractFactory
      * Create generic collection
      *
      * @param array $data
-     * @return Images
      */
-    public function createCollection(array $data = [])
+    public function createCollection(array $data = []): \Tmdb\Model\Collection\Images
     {
         $collection = new Images();
 
@@ -166,9 +164,8 @@ class ImageFactory extends AbstractFactory
      *
      * @param array $data
      * @param string|null $key
-     * @return Image
      */
-    public function create(array $data = [], $key = null)
+    public function create(array $data = [], $key = null): \Tmdb\Model\AbstractModel
     {
         $type = self::resolveImageType($key);
 
@@ -179,9 +176,8 @@ class ImageFactory extends AbstractFactory
      * Create full movie collection
      *
      * @param array $data
-     * @return Images
      */
-    public function createCollectionFromMovie(array $data = [])
+    public function createCollectionFromMovie(array $data = []): \Tmdb\Model\Collection\Images
     {
         return $this->createImageCollection($data);
     }
@@ -190,9 +186,8 @@ class ImageFactory extends AbstractFactory
      * Create full collection
      *
      * @param array $data
-     * @return Images
      */
-    public function createImageCollection(array $data = [])
+    public function createImageCollection(array $data = []): \Tmdb\Model\Collection\Images
     {
         $collection = new Images();
 
@@ -217,9 +212,8 @@ class ImageFactory extends AbstractFactory
      * Create full tv show collection
      *
      * @param array $data
-     * @return Images
      */
-    public function createCollectionFromTv(array $data = [])
+    public function createCollectionFromTv(array $data = []): \Tmdb\Model\Collection\Images
     {
         return $this->createImageCollection($data);
     }
@@ -228,9 +222,8 @@ class ImageFactory extends AbstractFactory
      * Create full tv season collection
      *
      * @param array $data
-     * @return Images
      */
-    public function createCollectionFromTvSeason(array $data = [])
+    public function createCollectionFromTvSeason(array $data = []): \Tmdb\Model\Collection\Images
     {
         return $this->createImageCollection($data);
     }
@@ -239,9 +232,8 @@ class ImageFactory extends AbstractFactory
      * Create full tv episode collection
      *
      * @param array $data
-     * @return Images
      */
-    public function createCollectionFromTvEpisode(array $data = [])
+    public function createCollectionFromTvEpisode(array $data = []): \Tmdb\Model\Collection\Images
     {
         return $this->createImageCollection($data);
     }
@@ -250,9 +242,8 @@ class ImageFactory extends AbstractFactory
      * Create full people collection
      *
      * @param array $data
-     * @return Images
      */
-    public function createCollectionFromPeople(array $data = [])
+    public function createCollectionFromPeople(array $data = []): \Tmdb\Model\Collection\Images
     {
         return $this->createImageCollection($data);
     }

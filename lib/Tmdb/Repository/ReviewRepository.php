@@ -31,29 +31,23 @@ class ReviewRepository extends AbstractRepository
      * @param $id
      * @param array $parameters
      * @param array $headers
-     * @return Review
      */
-    public function load($id, array $parameters = [], array $headers = [])
+    public function load($id, array $parameters = [], array $headers = []): \Tmdb\Model\AbstractModel
     {
         return $this->getFactory()->create(
             $this->getApi()->getReview($id, $parameters, $headers)
         );
     }
 
-    /**
-     * @return ReviewFactory
-     */
-    public function getFactory()
+    public function getFactory(): \Tmdb\Factory\ReviewFactory
     {
         return new ReviewFactory($this->getClient()->getHttpClient());
     }
 
     /**
      * Return the related API class
-     *
-     * @return Reviews
      */
-    public function getApi()
+    public function getApi(): \Tmdb\Api\Reviews
     {
         return $this->getClient()->getReviewsApi();
     }

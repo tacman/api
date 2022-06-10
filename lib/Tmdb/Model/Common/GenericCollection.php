@@ -32,7 +32,7 @@ use Traversable;
  * Class GenericCollection
  * @package Tmdb\Model\Common
  */
-class GenericCollection implements ArrayAccess, IteratorAggregate, Countable
+class GenericCollection extends AbstractModel implements ArrayAccess, IteratorAggregate, Countable
 {
     /** @var array Data associated with the object. */
     protected $data = [];

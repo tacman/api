@@ -51,7 +51,7 @@ class Review extends AbstractModel
      * @param mixed $author
      * @return $this
      */
-    public function setAuthor($author)
+    public function setAuthor($author): self
     {
         $this->author = $author;
 
@@ -70,7 +70,7 @@ class Review extends AbstractModel
      * @param mixed $content
      * @return $this
      */
-    public function setContent($content)
+    public function setContent($content): self
     {
         $this->content = $content;
 
@@ -89,7 +89,7 @@ class Review extends AbstractModel
      * @param mixed $id
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): self
     {
         $this->id = $id;
 
@@ -108,7 +108,7 @@ class Review extends AbstractModel
      * @param mixed $iso6391
      * @return $this
      */
-    public function setIso6391($iso6391)
+    public function setIso6391($iso6391): self
     {
         $this->iso6391 = $iso6391;
 
@@ -127,7 +127,7 @@ class Review extends AbstractModel
      * @param mixed $mediaId
      * @return $this
      */
-    public function setMediaId($mediaId)
+    public function setMediaId($mediaId): self
     {
         $this->mediaId = $mediaId;
 
@@ -146,7 +146,7 @@ class Review extends AbstractModel
      * @param mixed $mediaTitle
      * @return $this
      */
-    public function setMediaTitle($mediaTitle)
+    public function setMediaTitle($mediaTitle): self
     {
         $this->mediaTitle = $mediaTitle;
 
@@ -165,7 +165,7 @@ class Review extends AbstractModel
      * @param mixed $mediaType
      * @return $this
      */
-    public function setMediaType($mediaType)
+    public function setMediaType($mediaType): self
     {
         $this->mediaType = $mediaType;
 
@@ -184,7 +184,7 @@ class Review extends AbstractModel
      * @param mixed $url
      * @return $this
      */
-    public function setUrl($url)
+    public function setUrl($url): self
     {
         $this->url = $url;
 

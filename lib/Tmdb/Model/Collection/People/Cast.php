@@ -28,7 +28,7 @@ class Cast extends People
      *
      * @return Person[]
      */
-    public function getCast()
+    public function getCast(): array
     {
         return parent::getPeople();
     }
@@ -37,10 +37,8 @@ class Cast extends People
      * Retrieve a cast member from the collection
      *
      * @param $id
-     *
-     * @return \Tmdb\Model\Common\GenericCollection
      */
-    public function getCastMember($id): \Tmdb\Model\Common\GenericCollection
+    public function getCastMember($id): ?\Tmdb\Model\Collection\People\PersonInterface
     {
         return parent::getPerson($id);
     }

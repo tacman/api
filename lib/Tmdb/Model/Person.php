@@ -157,10 +157,7 @@ class Person extends AbstractModel implements PersonInterface
         $this->knownFor = new GenericCollection();
     }
 
-    /**
-     * @return boolean
-     */
-    public function getAdult()
+    public function getAdult(): bool
     {
         return $this->adult;
     }
@@ -169,7 +166,7 @@ class Person extends AbstractModel implements PersonInterface
      * @param boolean $adult
      * @return $this
      */
-    public function setAdult($adult)
+    public function setAdult($adult): self
     {
         $this->adult = $adult;
 
@@ -179,7 +176,7 @@ class Person extends AbstractModel implements PersonInterface
     /**
      * @return mixed
      */
-    public function getAlsoKnownAs()
+    public function getAlsoKnownAs(): array
     {
         return $this->alsoKnownAs;
     }
@@ -188,17 +185,14 @@ class Person extends AbstractModel implements PersonInterface
      * @param array $alsoKnownAs
      * @return $this
      */
-    public function setAlsoKnownAs($alsoKnownAs)
+    public function setAlsoKnownAs($alsoKnownAs): self
     {
         $this->alsoKnownAs = $alsoKnownAs;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getBiography()
+    public function getBiography(): string
     {
         return $this->biography;
     }
@@ -207,17 +201,14 @@ class Person extends AbstractModel implements PersonInterface
      * @param string $biography
      * @return $this
      */
-    public function setBiography($biography)
+    public function setBiography($biography): self
     {
         $this->biography = $biography;
 
         return $this;
     }
 
-    /**
-     * @return DateTime
-     */
-    public function getBirthday()
+    public function getBirthday(): \DateTime
     {
         return $this->birthday;
     }
@@ -226,7 +217,7 @@ class Person extends AbstractModel implements PersonInterface
      * @param mixed $birthday
      * @return $this
      */
-    public function setBirthday($birthday)
+    public function setBirthday($birthday): self
     {
         if (!$birthday instanceof DateTime && !empty($birthday)) {
             if (ctype_digit($birthday) && strlen(4)) {
@@ -251,10 +242,7 @@ class Person extends AbstractModel implements PersonInterface
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getChanges()
+    public function getChanges(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->changes;
     }
@@ -263,7 +251,7 @@ class Person extends AbstractModel implements PersonInterface
      * @param GenericCollection $changes
      * @return $this
      */
-    public function setChanges(GenericCollection $changes)
+    public function setChanges(GenericCollection $changes): self
     {
         $this->changes = $changes;
 
@@ -282,7 +270,7 @@ class Person extends AbstractModel implements PersonInterface
      * @param mixed $deathday
      * @return $this
      */
-    public function setDeathday($deathday)
+    public function setDeathday($deathday): self
     {
         if (!$deathday instanceof DateTime && !empty($deathday)) {
             if (ctype_digit($deathday) && strlen(4)) {
@@ -307,10 +295,7 @@ class Person extends AbstractModel implements PersonInterface
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getHomepage()
+    public function getHomepage(): string
     {
         return $this->homepage;
     }
@@ -319,17 +304,14 @@ class Person extends AbstractModel implements PersonInterface
      * @param string $homepage
      * @return $this
      */
-    public function setHomepage($homepage)
+    public function setHomepage($homepage): self
     {
         $this->homepage = $homepage;
 
         return $this;
     }
 
-    /**
-     * @return integer
-     */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -338,17 +320,14 @@ class Person extends AbstractModel implements PersonInterface
      * @param mixed $id
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): self
     {
         $this->id = (int)$id;
 
         return $this;
     }
 
-    /**
-     * @return Images
-     */
-    public function getImages()
+    public function getImages(): \Tmdb\Model\Collection\Images
     {
         return $this->images;
     }
@@ -357,17 +336,14 @@ class Person extends AbstractModel implements PersonInterface
      * @param Images $images
      * @return $this
      */
-    public function setImages($images)
+    public function setImages($images): self
     {
         $this->images = $images;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -376,17 +352,14 @@ class Person extends AbstractModel implements PersonInterface
      * @param  string $knownForDepartment
      * @return $this
      */
-    public function setKnownForDepartment($knownForDepartment)
+    public function setKnownForDepartment($knownForDepartment): self
     {
         $this->knownForDepartment = $knownForDepartment;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getKnownForDepartment()
+    public function getKnownForDepartment(): string
     {
         return $this->knownForDepartment;
     }
@@ -395,17 +368,14 @@ class Person extends AbstractModel implements PersonInterface
      * @param string $name
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getPlaceOfBirth()
+    public function getPlaceOfBirth(): string
     {
         return $this->placeOfBirth;
     }
@@ -414,17 +384,14 @@ class Person extends AbstractModel implements PersonInterface
      * @param string $placeOfBirth
      * @return $this
      */
-    public function setPlaceOfBirth($placeOfBirth)
+    public function setPlaceOfBirth($placeOfBirth): self
     {
         $this->placeOfBirth = $placeOfBirth;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getProfilePath()
+    public function getProfilePath(): string
     {
         return $this->profilePath;
     }
@@ -433,17 +400,14 @@ class Person extends AbstractModel implements PersonInterface
      * @param string $profilePath
      * @return $this
      */
-    public function setProfilePath($profilePath)
+    public function setProfilePath($profilePath): self
     {
         $this->profilePath = $profilePath;
 
         return $this;
     }
 
-    /**
-     * @return ProfileImage
-     */
-    public function getProfileImage()
+    public function getProfileImage(): \Tmdb\Model\Image\ProfileImage
     {
         return $this->profileImage;
     }
@@ -452,17 +416,14 @@ class Person extends AbstractModel implements PersonInterface
      * @param ProfileImage $profileImage
      * @return $this
      */
-    public function setProfileImage(ProfileImage $profileImage)
+    public function setProfileImage(ProfileImage $profileImage): self
     {
         $this->profileImage = $profileImage;
 
         return $this;
     }
 
-    /**
-     * @return CombinedCredits
-     */
-    public function getCombinedCredits()
+    public function getCombinedCredits(): \Tmdb\Model\Collection\CreditsCollection\CombinedCredits
     {
         return $this->combinedCredits;
     }
@@ -471,17 +432,14 @@ class Person extends AbstractModel implements PersonInterface
      * @param CombinedCredits $combinedCredits
      * @return $this
      */
-    public function setCombinedCredits($combinedCredits)
+    public function setCombinedCredits($combinedCredits): self
     {
         $this->combinedCredits = $combinedCredits;
 
         return $this;
     }
 
-    /**
-     * @return MovieCredits
-     */
-    public function getMovieCredits()
+    public function getMovieCredits(): \Tmdb\Model\Collection\CreditsCollection\MovieCredits
     {
         return $this->movieCredits;
     }
@@ -490,17 +448,14 @@ class Person extends AbstractModel implements PersonInterface
      * @param MovieCredits $movieCredits
      * @return $this
      */
-    public function setMovieCredits($movieCredits)
+    public function setMovieCredits($movieCredits): self
     {
         $this->movieCredits = $movieCredits;
 
         return $this;
     }
 
-    /**
-     * @return TvCredits
-     */
-    public function getTvCredits()
+    public function getTvCredits(): \Tmdb\Model\Collection\CreditsCollection\TvCredits
     {
         return $this->tvCredits;
     }
@@ -509,17 +464,14 @@ class Person extends AbstractModel implements PersonInterface
      * @param TvCredits $tvCredits
      * @return $this
      */
-    public function setTvCredits($tvCredits)
+    public function setTvCredits($tvCredits): self
     {
         $this->tvCredits = $tvCredits;
 
         return $this;
     }
 
-    /**
-     * @return ExternalIds
-     */
-    public function getExternalIds()
+    public function getExternalIds(): \Tmdb\Model\Common\ExternalIds
     {
         return $this->externalIds;
     }
@@ -528,17 +480,14 @@ class Person extends AbstractModel implements PersonInterface
      * @param ExternalIds $externalIds
      * @return $this
      */
-    public function setExternalIds($externalIds)
+    public function setExternalIds($externalIds): self
     {
         $this->externalIds = $externalIds;
 
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getTaggedImages()
+    public function getTaggedImages(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->taggedImages;
     }
@@ -547,17 +496,14 @@ class Person extends AbstractModel implements PersonInterface
      * @param GenericCollection $taggedImages
      * @return $this
      */
-    public function setTaggedImages($taggedImages)
+    public function setTaggedImages($taggedImages): self
     {
         $this->taggedImages = $taggedImages;
 
         return $this;
     }
 
-    /**
-     * @return GenericCollection
-     */
-    public function getKnownFor()
+    public function getKnownFor(): \Tmdb\Model\Common\GenericCollection
     {
         return $this->knownFor;
     }
@@ -566,33 +512,24 @@ class Person extends AbstractModel implements PersonInterface
      * @param GenericCollection $knownFor
      * @return $this
      */
-    public function setKnownFor($knownFor)
+    public function setKnownFor($knownFor): self
     {
         $this->knownFor = $knownFor;
 
         return $this;
     }
 
-    /**
-     * @return bool
-     */
-    public function isMale()
+    public function isMale(): bool
     {
         return $this->gender === 2;
     }
 
-    /**
-     * @return bool
-     */
-    public function isFemale()
+    public function isFemale(): bool
     {
         return $this->gender === 1;
     }
 
-    /**
-     * @return bool
-     */
-    public function isUnknownGender()
+    public function isUnknownGender(): bool
     {
         return $this->gender === 0;
     }
@@ -607,10 +544,7 @@ class Person extends AbstractModel implements PersonInterface
         $this->gender = (int)$gender;
     }
 
-    /**
-     * @return float
-     */
-    public function getPopularity()
+    public function getPopularity(): float
     {
         return $this->popularity;
     }

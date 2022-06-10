@@ -51,30 +51,24 @@ class ListFactory extends AbstractFactory
 
     /**
      * @param array $data
-     *
-     * @return Lists\ItemStatus
      */
-    public function createItemStatus(array $data = [])
+    public function createItemStatus(array $data = []): \Tmdb\Model\AbstractModel
     {
         return $this->hydrate(new Lists\ItemStatus(), $data);
     }
 
     /**
      * @param array $data
-     *
-     * @return Lists\Result
      */
-    public function createResult(array $data = [])
+    public function createResult(array $data = []): \Tmdb\Model\AbstractModel
     {
         return $this->hydrate(new Lists\Result(), $data);
     }
 
     /**
      * @param array $data
-     *
-     * @return Lists\ResultWithListId
      */
-    public function createResultWithListId(array $data = [])
+    public function createResultWithListId(array $data = []): \Tmdb\Model\AbstractModel
     {
         return $this->hydrate(new Lists\ResultWithListId(), $data);
     }
@@ -82,7 +76,7 @@ class ListFactory extends AbstractFactory
     /**
      * {@inheritdoc}
      */
-    public function createCollection(array $data = [])
+    public function createCollection(array $data = []): \Tmdb\Model\Common\GenericCollection
     {
         $collection = new GenericCollection();
 
@@ -95,10 +89,8 @@ class ListFactory extends AbstractFactory
 
     /**
      * @param array $data
-     *
-     * @return Lists
      */
-    public function create(array $data = [])
+    public function create(array $data = []): \Tmdb\Model\AbstractModel
     {
         $lists = new Lists();
 
@@ -116,10 +108,7 @@ class ListFactory extends AbstractFactory
         return $this->hydrate($lists, $data);
     }
 
-    /**
-     * @return ListItemFactory
-     */
-    public function getListItemFactory()
+    public function getListItemFactory(): \Tmdb\Factory\Lists\ListItemFactory
     {
         return $this->listItemFactory;
     }
@@ -128,17 +117,14 @@ class ListFactory extends AbstractFactory
      * @param ListItemFactory $listItemFactory
      * @return $this
      */
-    public function setListItemFactory($listItemFactory)
+    public function setListItemFactory($listItemFactory): self
     {
         $this->listItemFactory = $listItemFactory;
 
         return $this;
     }
 
-    /**
-     * @return ImageFactory
-     */
-    public function getImageFactory()
+    public function getImageFactory(): \Tmdb\Factory\ImageFactory
     {
         return $this->imageFactory;
     }
@@ -147,7 +133,7 @@ class ListFactory extends AbstractFactory
      * @param ImageFactory $imageFactory
      * @return $this
      */
-    public function setImageFactory($imageFactory)
+    public function setImageFactory($imageFactory): self
     {
         $this->imageFactory = $imageFactory;
 

@@ -106,10 +106,7 @@ class Credit extends AbstractModel
      */
     private $firstAirDate;
 
-    /**
-     * @return boolean
-     */
-    public function getAdult()
+    public function getAdult(): bool
     {
         return $this->adult;
     }
@@ -118,17 +115,14 @@ class Credit extends AbstractModel
      * @param boolean $adult
      * @return $this
      */
-    public function setAdult($adult)
+    public function setAdult($adult): self
     {
         $this->adult = $adult;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCharacter()
+    public function getCharacter(): string
     {
         return $this->character;
     }
@@ -137,17 +131,14 @@ class Credit extends AbstractModel
      * @param string $character
      * @return $this
      */
-    public function setCharacter($character)
+    public function setCharacter($character): self
     {
         $this->character = $character;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCreditId()
+    public function getCreditId(): string
     {
         return $this->creditId;
     }
@@ -156,17 +147,14 @@ class Credit extends AbstractModel
      * @param string $creditId
      * @return $this
      */
-    public function setCreditId($creditId)
+    public function setCreditId($creditId): self
     {
         $this->creditId = $creditId;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -175,17 +163,14 @@ class Credit extends AbstractModel
      * @param int $id
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): self
     {
         $this->id = $id;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getOriginalTitle()
+    public function getOriginalTitle(): string
     {
         return $this->originalTitle;
     }
@@ -194,17 +179,14 @@ class Credit extends AbstractModel
      * @param string $originalTitle
      * @return $this
      */
-    public function setOriginalTitle($originalTitle)
+    public function setOriginalTitle($originalTitle): self
     {
         $this->originalTitle = $originalTitle;
 
         return $this;
     }
 
-    /**
-     * @return PosterImage
-     */
-    public function getPosterImage()
+    public function getPosterImage(): \Tmdb\Model\Image\PosterImage
     {
         return $this->posterImage;
     }
@@ -213,17 +195,14 @@ class Credit extends AbstractModel
      * @param PosterImage $posterImage
      * @return $this
      */
-    public function setPosterImage($posterImage)
+    public function setPosterImage($posterImage): self
     {
         $this->posterImage = $posterImage;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getPosterPath()
+    public function getPosterPath(): string
     {
         return $this->posterPath;
     }
@@ -232,17 +211,14 @@ class Credit extends AbstractModel
      * @param string $posterPath
      * @return $this
      */
-    public function setPosterPath($posterPath)
+    public function setPosterPath($posterPath): self
     {
         $this->posterPath = $posterPath;
 
         return $this;
     }
 
-    /**
-     * @return DateTime
-     */
-    public function getReleaseDate()
+    public function getReleaseDate(): \DateTime
     {
         return $this->releaseDate;
     }
@@ -251,7 +227,7 @@ class Credit extends AbstractModel
      * @param DateTime|string|null $releaseDate
      * @return $this
      */
-    public function setReleaseDate($releaseDate = null)
+    public function setReleaseDate($releaseDate = null): self
     {
         if (!$releaseDate instanceof DateTime && $releaseDate !== null) {
             $releaseDate = new DateTime($releaseDate);
@@ -262,10 +238,7 @@ class Credit extends AbstractModel
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -274,17 +247,14 @@ class Credit extends AbstractModel
      * @param string $title
      * @return $this
      */
-    public function setTitle($title)
+    public function setTitle($title): self
     {
         $this->title = $title;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getJob()
+    public function getJob(): string
     {
         return $this->job;
     }
@@ -293,17 +263,14 @@ class Credit extends AbstractModel
      * @param string $job
      * @return $this
      */
-    public function setJob($job)
+    public function setJob($job): self
     {
         $this->job = $job;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDepartment()
+    public function getDepartment(): string
     {
         return $this->department;
     }
@@ -312,17 +279,14 @@ class Credit extends AbstractModel
      * @param string $department
      * @return $this
      */
-    public function setDepartment($department)
+    public function setDepartment($department): self
     {
         $this->department = $department;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getOriginalName()
+    public function getOriginalName(): string
     {
         return $this->originalName;
     }
@@ -331,17 +295,14 @@ class Credit extends AbstractModel
      * @param string $originalName
      * @return $this
      */
-    public function setOriginalName($originalName)
+    public function setOriginalName($originalName): self
     {
         $this->originalName = $originalName;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -350,17 +311,14 @@ class Credit extends AbstractModel
      * @param string $name
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getMediaType()
+    public function getMediaType(): string
     {
         return $this->mediaType;
     }
@@ -369,17 +327,14 @@ class Credit extends AbstractModel
      * @param string $mediaType
      * @return $this
      */
-    public function setMediaType($mediaType)
+    public function setMediaType($mediaType): self
     {
         $this->mediaType = $mediaType;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getEpisodeCount()
+    public function getEpisodeCount(): int
     {
         return $this->episodeCount;
     }
@@ -388,7 +343,7 @@ class Credit extends AbstractModel
      * @param int $episodeCount
      * @return $this
      */
-    public function setEpisodeCount($episodeCount)
+    public function setEpisodeCount($episodeCount): self
     {
         $this->episodeCount = $episodeCount;
 
@@ -407,7 +362,7 @@ class Credit extends AbstractModel
      * @param mixed $firstAirDate
      * @return $this
      */
-    public function setFirstAirDate($firstAirDate)
+    public function setFirstAirDate($firstAirDate): self
     {
         $this->firstAirDate = $firstAirDate;
 

@@ -24,8 +24,6 @@ abstract class AbstractTrailer extends AbstractModel
 {
     /**
      * Returns the http url to the trailer
-     *
-     * @return string
      */
-    abstract public function getUrl();
+    abstract public function getUrl(): string;
 }

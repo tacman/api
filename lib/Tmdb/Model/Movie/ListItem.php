@@ -65,10 +65,7 @@ class ListItem extends AbstractModel
      */
     private $posterImage;
 
-    /**
-     * @return string
-     */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -77,17 +74,14 @@ class ListItem extends AbstractModel
      * @param string $description
      * @return $this
      */
-    public function setDescription($description)
+    public function setDescription($description): self
     {
         $this->description = $description;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getFavoriteCount()
+    public function getFavoriteCount(): int
     {
         return $this->favoriteCount;
     }
@@ -96,17 +90,14 @@ class ListItem extends AbstractModel
      * @param int $favoriteCount
      * @return $this
      */
-    public function setFavoriteCount($favoriteCount)
+    public function setFavoriteCount($favoriteCount): self
     {
         $this->favoriteCount = $favoriteCount;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getId()
+    public function getId(): string
     {
         return $this->id;
     }
@@ -115,17 +106,14 @@ class ListItem extends AbstractModel
      * @param string $id
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): self
     {
         $this->id = $id;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getIso6391()
+    public function getIso6391(): string
     {
         return $this->iso6391;
     }
@@ -134,17 +122,14 @@ class ListItem extends AbstractModel
      * @param string $iso6391
      * @return $this
      */
-    public function setIso6391($iso6391)
+    public function setIso6391($iso6391): self
     {
         $this->iso6391 = $iso6391;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getItemCount()
+    public function getItemCount(): int
     {
         return $this->itemCount;
     }
@@ -153,17 +138,14 @@ class ListItem extends AbstractModel
      * @param int $itemCount
      * @return $this
      */
-    public function setItemCount($itemCount)
+    public function setItemCount($itemCount): self
     {
         $this->itemCount = $itemCount;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -172,17 +154,14 @@ class ListItem extends AbstractModel
      * @param string $name
      * @return $this
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
 
         return $this;
     }
 
-    /**
-     * @return PosterImage
-     */
-    public function getPosterImage()
+    public function getPosterImage(): \Tmdb\Model\Image\PosterImage
     {
         return $this->posterImage;
     }
@@ -191,17 +170,14 @@ class ListItem extends AbstractModel
      * @param PosterImage $posterImage
      * @return $this
      */
-    public function setPosterImage($posterImage)
+    public function setPosterImage($posterImage): self
     {
         $this->posterImage = $posterImage;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getPosterPath()
+    public function getPosterPath(): string
     {
         return $this->posterPath;
     }
@@ -210,7 +186,7 @@ class ListItem extends AbstractModel
      * @param string $posterPath
      * @return $this
      */
-    public function setPosterPath($posterPath)
+    public function setPosterPath($posterPath): self
     {
         $this->posterPath = $posterPath;
 

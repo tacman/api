@@ -36,37 +36,30 @@ class GuestSessionRepository extends AbstractRepository
      * @param array $options
      * @return ResultCollection|Movie[]
      */
-    public function getRatedMovies(array $options = [])
+    public function getRatedMovies(array $options = []): \Tmdb\Model\Collection\ResultCollection
     {
         return $this->getMovieFactory()->createResultCollection(
             $this->getApi()->getRatedMovies($options)
         );
     }
 
-    /**
-     * @return MovieFactory
-     */
-    public function getMovieFactory()
+    public function getMovieFactory(): \Tmdb\Factory\MovieFactory
     {
         return new MovieFactory($this->getClient()->getHttpClient());
     }
 
     /**
      * Return the Movies API Class
-     *
-     * @return GuestSession
      */
-    public function getApi()
+    public function getApi(): \Tmdb\Api\GuestSession
     {
         return $this->getClient()->getGuestSessionApi();
     }
 
     /**
      * Return the Guest Session Factory
-     *
-     * @return GuestSessionFactory
      */
-    public function getFactory()
+    public function getFactory(): \Tmdb\Factory\GuestSessionFactory
     {
         return new GuestSessionFactory($this->getClient()->getHttpClient());
     }

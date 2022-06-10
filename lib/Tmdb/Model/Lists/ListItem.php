@@ -79,10 +79,7 @@ class ListItem extends AbstractModel
      */
     private $voteCount;
 
-    /**
-     * @return BackdropImage
-     */
-    public function getBackdropImage()
+    public function getBackdropImage(): \Tmdb\Model\Image\BackdropImage
     {
         return $this->backdropImage;
     }
@@ -91,17 +88,14 @@ class ListItem extends AbstractModel
      * @param BackdropImage $backdropImage
      * @return $this
      */
-    public function setBackdropImage($backdropImage)
+    public function setBackdropImage($backdropImage): self
     {
         $this->backdropImage = $backdropImage;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getBackdropPath()
+    public function getBackdropPath(): string
     {
         return $this->backdropPath;
     }
@@ -110,17 +104,14 @@ class ListItem extends AbstractModel
      * @param string $backdropPath
      * @return $this
      */
-    public function setBackdropPath($backdropPath)
+    public function setBackdropPath($backdropPath): self
     {
         $this->backdropPath = $backdropPath;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -129,17 +120,14 @@ class ListItem extends AbstractModel
      * @param int $id
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): self
     {
         $this->id = $id;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getOriginalTitle()
+    public function getOriginalTitle(): string
     {
         return $this->originalTitle;
     }
@@ -148,17 +136,14 @@ class ListItem extends AbstractModel
      * @param string $originalTitle
      * @return $this
      */
-    public function setOriginalTitle($originalTitle)
+    public function setOriginalTitle($originalTitle): self
     {
         $this->originalTitle = $originalTitle;
 
         return $this;
     }
 
-    /**
-     * @return PosterImage
-     */
-    public function getPosterImage()
+    public function getPosterImage(): \Tmdb\Model\Image\PosterImage
     {
         return $this->posterImage;
     }
@@ -167,17 +152,14 @@ class ListItem extends AbstractModel
      * @param PosterImage $posterImage
      * @return $this
      */
-    public function setPosterImage($posterImage)
+    public function setPosterImage($posterImage): self
     {
         $this->posterImage = $posterImage;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getPosterPath()
+    public function getPosterPath(): string
     {
         return $this->posterPath;
     }
@@ -186,17 +168,14 @@ class ListItem extends AbstractModel
      * @param string $posterPath
      * @return $this
      */
-    public function setPosterPath($posterPath)
+    public function setPosterPath($posterPath): self
     {
         $this->posterPath = $posterPath;
 
         return $this;
     }
 
-    /**
-     * @return DateTime
-     */
-    public function getReleaseDate()
+    public function getReleaseDate(): \DateTime
     {
         return $this->releaseDate;
     }
@@ -205,17 +184,14 @@ class ListItem extends AbstractModel
      * @param DateTime $releaseDate
      * @return $this
      */
-    public function setReleaseDate($releaseDate)
+    public function setReleaseDate($releaseDate): self
     {
         $this->releaseDate = $releaseDate;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -224,17 +200,14 @@ class ListItem extends AbstractModel
      * @param string $title
      * @return $this
      */
-    public function setTitle($title)
+    public function setTitle($title): self
     {
         $this->title = $title;
 
         return $this;
     }
 
-    /**
-     * @return float
-     */
-    public function getVoteAverage()
+    public function getVoteAverage(): float
     {
         return $this->voteAverage;
     }
@@ -243,17 +216,14 @@ class ListItem extends AbstractModel
      * @param float $voteAverage
      * @return $this
      */
-    public function setVoteAverage($voteAverage)
+    public function setVoteAverage($voteAverage): self
     {
         $this->voteAverage = $voteAverage;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getVoteCount()
+    public function getVoteCount(): int
     {
         return $this->voteCount;
     }
@@ -262,7 +232,7 @@ class ListItem extends AbstractModel
      * @param int $voteCount
      * @return $this
      */
-    public function setVoteCount($voteCount)
+    public function setVoteCount($voteCount): self
     {
         $this->voteCount = $voteCount;
 

@@ -40,10 +40,7 @@ class CountryCertification extends AbstractModel
      */
     private $order;
 
-    /**
-     * @return string
-     */
-    public function getCertification()
+    public function getCertification(): string
     {
         return $this->certification;
     }
@@ -52,17 +49,14 @@ class CountryCertification extends AbstractModel
      * @param string $certification
      * @return $this
      */
-    public function setCertification($certification)
+    public function setCertification($certification): self
     {
         $this->certification = $certification;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getMeaning()
+    public function getMeaning(): string
     {
         return $this->meaning;
     }
@@ -71,17 +65,14 @@ class CountryCertification extends AbstractModel
      * @param string $meaning
      * @return $this
      */
-    public function setMeaning($meaning)
+    public function setMeaning($meaning): self
     {
         $this->meaning = $meaning;
 
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getOrder()
+    public function getOrder(): int
     {
         return $this->order;
     }
@@ -90,7 +81,7 @@ class CountryCertification extends AbstractModel
      * @param int $order
      * @return $this
      */
-    public function setOrder($order)
+    public function setOrder($order): self
     {
         $this->order = $order;
 

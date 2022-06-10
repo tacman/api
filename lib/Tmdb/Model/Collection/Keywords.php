@@ -25,10 +25,8 @@ class Keywords extends GenericCollection
 {
     /**
      * Returns all keywords
-     *
-     * @return array
      */
-    public function getKeywords()
+    public function getKeywords(): array
     {
         return $this->data;
     }

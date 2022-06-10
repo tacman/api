@@ -42,18 +42,13 @@ class CreditsRepository extends AbstractRepository
 
     /**
      * Return the related API class
-     *
-     * @return Credits
      */
-    public function getApi()
+    public function getApi(): \Tmdb\Api\Credits
     {
         return $this->getClient()->getCreditsApi();
     }
 
-    /**
-     * @return CreditsFactory
-     */
-    public function getFactory()
+    public function getFactory(): \Tmdb\Factory\CreditsFactory
     {
         return new CreditsFactory($this->getClient()->getHttpClient());
     }

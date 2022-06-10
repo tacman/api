@@ -41,10 +41,8 @@ abstract class AbstractRepository
 
     /**
      * Return the client
-     *
-     * @return Client
      */
-    public function getClient()
+    public function getClient(): \Tmdb\Client
     {
         return $this->client;
     }
@@ -59,25 +57,20 @@ abstract class AbstractRepository
 
     /**
      * Return the API Class
-     *
-     * @return ApiInterface
      */
-    abstract public function getApi();
+    abstract public function getApi(): \Tmdb\Api\ApiInterface;
 
     /**
      * Return the Factory Class
-     *
-     * @return AbstractFactory
      */
-    abstract public function getFactory();
+    abstract public function getFactory(): \Tmdb\Factory\AbstractFactory;
 
     /**
      * Process query parameters
      *
      * @param array $parameters
-     * @return array
      */
-    protected function parseQueryParameters(array $parameters = [])
+    protected function parseQueryParameters(array $parameters = []): array
     {
         foreach ($parameters as $key => $candidate) {
             if (is_a($candidate, 'Tmdb\Model\Common\QueryParameter\QueryParameterInterface')) {

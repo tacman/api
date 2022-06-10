@@ -48,7 +48,7 @@ class TvEpisodeRepository extends AbstractRepository
      * @return null|AbstractModel
      * @throws RuntimeException
      */
-    public function load($tvShow, $season, $episode, array $parameters = [], array $headers = [])
+    public function load($tvShow, $season, $episode, array $parameters = [], array $headers = []): ?\Tmdb\Model\AbstractModel
     {
         if ($tvShow instanceof Tv) {
             $tvShow = $tvShow->getId();
@@ -92,18 +92,13 @@ class TvEpisodeRepository extends AbstractRepository
 
     /**
      * Return the Seasons API Class
-     *
-     * @return TvEpisode
      */
-    public function getApi()
+    public function getApi(): \Tmdb\Api\TvEpisode
     {
         return $this->getClient()->getTvEpisodeApi();
     }
 
-    /**
-     * @return TvEpisodeFactory
-     */
-    public function getFactory()
+    public function getFactory(): \Tmdb\Factory\TvEpisodeFactory
     {
         return new TvEpisodeFactory($this->getClient()->getHttpClient());
     }
@@ -120,7 +115,7 @@ class TvEpisodeRepository extends AbstractRepository
      * @param $headers
      * @return null|AbstractModel
      */
-    public function getCredits($tvShow, $season, $episode, array $parameters = [], array $headers = [])
+    public function getCredits($tvShow, $season, $episode, array $parameters = [], array $headers = []): ?\Tmdb\Model\AbstractModel
     {
         if ($tvShow instanceof Tv) {
             $tvShow = $tvShow->getId();
@@ -157,7 +152,7 @@ class TvEpisodeRepository extends AbstractRepository
      * @param $headers
      * @return null|AbstractModel
      */
-    public function getExternalIds($tvShow, $season, $episode, array $parameters = [], array $headers = [])
+    public function getExternalIds($tvShow, $season, $episode, array $parameters = [], array $headers = []): ?\Tmdb\Model\AbstractModel
     {
         if ($tvShow instanceof Tv) {
             $tvShow = $tvShow->getId();
@@ -194,7 +189,7 @@ class TvEpisodeRepository extends AbstractRepository
      * @param $headers
      * @return null|AbstractModel
      */
-    public function getImages($tvShow, $season, $episode, array $parameters = [], array $headers = [])
+    public function getImages($tvShow, $season, $episode, array $parameters = [], array $headers = []): ?\Tmdb\Model\AbstractModel
     {
         if ($tvShow instanceof Tv) {
             $tvShow = $tvShow->getId();
@@ -229,7 +224,7 @@ class TvEpisodeRepository extends AbstractRepository
      * @param $headers
      * @return null|\Tmdb\Model\AbstractModel
      */
-    public function getTranslations($tvShow, $season, $episode, array $parameters = [], array $headers = [])
+    public function getTranslations($tvShow, $season, $episode, array $parameters = [], array $headers = []): ?\Tmdb\Model\AbstractModel
     {
         if ($tvShow instanceof Tv) {
             $tvShow = $tvShow->getId();
@@ -302,9 +297,8 @@ class TvEpisodeRepository extends AbstractRepository
      * @param mixed $tvShow
      * @param mixed $season
      * @param mixed $episode
-     * @return AccountStates
      */
-    public function getAccountStates($tvShow, $season, $episode)
+    public function getAccountStates($tvShow, $season, $episode): \Tmdb\Model\AbstractModel
     {
         if ($tvShow instanceof Tv) {
             $tvShow = $tvShow->getId();
@@ -332,9 +326,8 @@ class TvEpisodeRepository extends AbstractRepository
      * @param mixed $season
      * @param mixed $episode
      * @param double $rating
-     * @return Result
      */
-    public function rate($tvShow, $season, $episode, $rating)
+    public function rate($tvShow, $season, $episode, $rating): \Tmdb\Model\AbstractModel
     {
         if ($tvShow instanceof Tv) {
             $tvShow = $tvShow->getId();

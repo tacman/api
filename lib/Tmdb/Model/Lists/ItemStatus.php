@@ -38,10 +38,7 @@ class ItemStatus extends AbstractModel
      */
     private $itemPresent;
 
-    /**
-     * @return string
-     */
-    public function getId()
+    public function getId(): string
     {
         return $this->id;
     }
@@ -50,17 +47,14 @@ class ItemStatus extends AbstractModel
      * @param string $id
      * @return $this
      */
-    public function setId($id)
+    public function setId($id): self
     {
         $this->id = $id;
 
         return $this;
     }
 
-    /**
-     * @return boolean
-     */
-    public function getItemPresent()
+    public function getItemPresent(): bool
     {
         return $this->itemPresent;
     }
@@ -69,7 +63,7 @@ class ItemStatus extends AbstractModel
      * @param boolean $itemPresent
      * @return $this
      */
-    public function setItemPresent($itemPresent)
+    public function setItemPresent($itemPresent): self
     {
         $this->itemPresent = $itemPresent;
 
